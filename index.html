@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gimakx | Premium Custom BJJ Gi Manufacturer</title>
+<meta name="description" content="Gimakx manufactures premium custom BJJ Gis, rash guards, and BJJ apparel for academies and teams worldwide. B2B bulk orders, fully customizable, IBJJF-compliant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dark: #9A7A2E;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark-2: #1A1A1A;
+    --dark-3: #242424;
+    --dark-4: #2E2E2E;
+    --white: #FFFFFF;
+    --off-white: #F5F2EE;
+    --gray: #888888;
+    --light-gray: #CCCCCC;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--white); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    padding: 10px 24px;
+    border-radius: 2px;
+    font-weight: 600 !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      linear-gradient(135deg, rgba(201,168,76,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.05) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 5% 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-eyebrow-line {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-eyebrow span {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    line-height: 0.92;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    padding: 16px 36px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 15px 36px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.25);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.15);
+    margin-top: 3.5rem;
+  }
+
+  .hero-stat {
+    background: var(--dark);
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+
+  .hero-stat-number {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    display: block;
+  }
+
+  .hero-stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 4px;
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image-frame {
+    width: 100%;
+    aspect-ratio: 4/5;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .hero-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85) contrast(1.1);
+  }
+
+  .hero-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.6) 0%, transparent 50%);
+  }
+
+  .hero-badge {
+    position: absolute;
+    top: 24px;
+    right: -16px;
+    background: var(--gold);
+    color: var(--black);
+    padding: 12px 20px;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .hero-badge strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .hero-badge span {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* MARQUEE */
+  .marquee-strip {
+    background: var(--gold);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-inner {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+  }
+
+  .marquee-item {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: var(--black);
+    padding: 0 3rem;
+  }
+
+  .marquee-dot {
+    color: rgba(0,0,0,0.35);
+    font-size: 0.6rem;
+    vertical-align: middle;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* SECTION BASE */
+  section {
+    padding: 100px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .full-width-section {
+    max-width: none;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .section-eyebrow-line {
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-eyebrow span {
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--gray);
+    line-height: 1.8;
+    max-width: 560px;
+    font-weight: 300;
+  }
+
+  /* PRODUCTS */
+  #products {
+    background: var(--dark);
+  }
+
+  .products-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 5%;
+  }
+
+  .products-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: rgba(201,168,76,0.1);
+  }
+
+  .product-card {
+    background: var(--dark-2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .product-card:hover { background: var(--dark-3); }
+
+  .product-card:hover .product-img img {
+    transform: scale(1.05);
+  }
+
+  .product-img {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    position: relative;
+    background: var(--dark-3);
+  }
+
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: brightness(0.9);
+  }
+
+  .product-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 1px;
+  }
+
+  .product-info {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(201,168,76,0.12);
+  }
+
+  .product-name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+  }
+
+  .product-desc {
+    font-size: 0.82rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  .product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product-price {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--gold);
+  }
+
+  .product-moq {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-align: right;
+  }
+
+  .product-moq strong {
+    display: block;
+    color: var(--light-gray);
+    font-size: 0.75rem;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-image-stack {
+    position: relative;
+  }
+
+  .about-img-main {
+    width: 80%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 2px;
+    filter: brightness(0.85) contrast(1.1);
+  }
+
+  .about-img-accent {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 55%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 3px solid var(--black);
+    filter: brightness(0.85);
+  }
+
+  .about-gold-bar {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    width: 3px;
+    height: 80px;
+    background: var(--gold);
+  }
+
+  .about-content { padding-bottom: 30px; }
+
+  .about-features {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-feature {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .about-feature-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .about-feature-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  .about-feature-text strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+
+  .about-feature-text span {
+    font-size: 0.8rem;
+    color: var(--gray);
+    font-weight: 300;
+  }
+
+  /* PROCESS */
+  #process {
+    background: var(--dark);
+  }
+
+  .process-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 5%;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(201,168,76,0.1);
+    margin-top: 4rem;
+  }
+
+  .process-step {
+    background: var(--dark-2);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .process-step:hover { background: var(--dark-3); }
+
+  .process-number {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    color: rgba(201,168,76,0.08);
+    line-height: 1;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    letter-spacing: -2px;
+  }
+
+  .process-step-num {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+  }
+
+  .process-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .process-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  .process-step h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+    color: var(--white);
+  }
+
+  .process-step p {
+    font-size: 0.82rem;
+    color: var(--gray);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(201,168,76,0.1);
+    margin-top: 4rem;
+  }
+
+  .testimonial-card {
+    background: var(--dark-2);
+    padding: 2rem;
+    position: relative;
+  }
+
+  .testimonial-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 1.25rem;
+  }
+
+  .testimonial-stars svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--gold);
+  }
+
+  .testimonial-text {
+    font-size: 0.88rem;
+    color: var(--light-gray);
+    line-height: 1.8;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgba(201,168,76,0.12);
+    padding-top: 1.25rem;
+  }
+
+  .testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--black);
+    flex-shrink: 0;
+  }
+
+  .testimonial-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .testimonial-role {
+    font-size: 0.72rem;
+    color: var(--gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .quote-mark {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: rgba(201,168,76,0.08);
+    line-height: 1;
+  }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .pricing-card {
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 2px;
+    padding: 2.5rem 2rem;
+    background: var(--dark-2);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .pricing-card:hover { border-color: rgba(201,168,76,0.4); }
+
+  .pricing-card.featured {
+    border-color: var(--gold);
+    background: var(--dark-3);
+  }
+
+  .pricing-featured-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 20px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .pricing-name {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .pricing-tagline {
+    font-size: 0.75rem;
+    color: var(--gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-currency {
+    font-size: 1.2rem;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .pricing-amount {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .pricing-unit {
+    font-size: 0.75rem;
+    color: var(--gray);
+  }
+
+  .pricing-divider {
+    height: 1px;
+    background: rgba(201,168,76,0.12);
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--light-gray);
+    font-weight: 300;
+  }
+
+  .pricing-features li svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 2.5;
+    flex-shrink: 0;
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--dark);
+  }
+
+  .contact-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 5%;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 4rem;
+  }
+
+  .contact-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .contact-info-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .contact-info-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-info-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  .contact-info-text strong {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4px;
+  }
+
+  .contact-info-text a,
+  .contact-info-text span {
+    font-size: 0.9rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  .contact-info-text a:hover { color: var(--gold); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    padding: 14px 16px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255,255,255,0.2);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.04);
+  }
+
+  .form-group select option { background: var(--dark-3); color: var(--white); }
+
+  .form-group textarea { resize: vertical; min-height: 130px; }
+
+  .form-submit-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .form-note {
+    font-size: 0.75rem;
+    color: var(--gray);
+    font-weight: 300;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(201,168,76,0.12);
+    padding: 60px 5% 30px;
+  }
+
+  .footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .footer-brand-logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .footer-brand-logo span { color: var(--white); }
+
+  .footer-brand-desc {
+    font-size: 0.82rem;
+    color: var(--gray);
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 280px;
+  }
+
+  .footer-col h4 {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.75rem;
+    color: var(--gray);
+    font-weight: 300;
+  }
+
+  .footer-tagline {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: rgba(201,168,76,0.5);
+  }
+
+  /* MOBILE NAV MENU */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,10,0.98);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:hover { color: var(--gold); }
+
+  .mobile-menu-close {
+    position: absolute;
+    top: 24px;
+    right: 5%;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: var(--font-display);
+    letter-spacing: 2px;
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-visual { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-image-stack { display: none; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .products-header { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-stats { grid-template-columns: repeat(3, 1fr); }
+    .process-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  /* SCROLL INDICATOR */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.5;
+  }
+
+  .scroll-indicator span {
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  /* IBJJF BADGE */
+  .compliance-strip {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .compliance-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 2px;
+    padding: 8px 14px;
+  }
+
+  .compliance-badge svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 2;
+  }
+
+  .compliance-badge span {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileClose">✕ CLOSE</button>
+  <a href="#products" onclick="closeMobile()">Products</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#process" onclick="closeMobile()">Process</a>
+  <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">GIMA<span>KX</span></a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0; max-width:none;">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>B2B Manufacturer · Sialkot, Pakistan</span>
+      </div>
+      <h1 class="hero-title">
+        FORGE YOUR<br>
+        <span class="gold">GI.</span><br>
+        BRAND YOUR<br>LEGACY.
+      </h1>
+      <p class="hero-subtitle">
+        Premium custom BJJ Gis, rash guards, and training apparel — fully customizable, IBJJF-compliant, built to order for academies and teams worldwide.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Request Free Sample</a>
+        <a href="#products" class="btn-outline">View Products</a>
+      </div>
+
+      <div class="compliance-strip">
+        <div class="compliance-badge">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>IBJJF Compliant</span>
+        </div>
+        <div class="compliance-badge">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Pre-Shrunk Fabric</span>
+        </div>
+        <div class="compliance-badge">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>100% Customizable</span>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number">20+</span>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">15+</span>
+          <div class="hero-stat-label">Colors Available</div>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">100%</span>
+          <div class="hero-stat-label">Satisfaction Rate</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-image-frame">
+        <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80" alt="BJJ Gi" loading="eager">
+        <div class="hero-image-overlay"></div>
+      </div>
+      <div class="hero-badge">
+        <strong>MOQ</strong>
+        <span>10 Units</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item">CUSTOM BJJ GI <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">RASH GUARDS <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">BULK ORDERS <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">IBJJF COMPLIANT <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">PREMIUM PEARL WEAVE <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">2 WEEK LEAD TIME <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">FREE SAMPLE <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">CUSTOM BJJ GI <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">RASH GUARDS <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">BULK ORDERS <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">IBJJF COMPLIANT <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">PREMIUM PEARL WEAVE <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">2 WEEK LEAD TIME <span class="marquee-dot">●</span></span>
+    <span class="marquee-item">FREE SAMPLE <span class="marquee-dot">●</span></span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div id="products" style="background: var(--dark);">
+  <div class="products-wrapper">
+    <div class="products-header fade-up">
+      <div>
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>Our Products</span>
+        </div>
+        <h2 class="section-title">BUILT FOR THE MAT.<br>MADE TO LAST.</h2>
+      </div>
+      <p class="section-subtitle" style="align-self:end;">
+        Every Gimakx product is engineered for peak performance — durable, breathable, and fully customizable to represent your academy's identity.
+      </p>
+    </div>
+
+    <div class="products-grid">
+      <!-- Product 1 -->
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=80" alt="GiPro Standard Gi" loading="lazy">
+          <div class="product-tag">Standard</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">GiPro Standard</div>
+          <div class="product-desc">Best for academies on a budget. Pearl weave cotton, 350 gsm, available in 15+ colors. Pre-shrunk for a perfect fit.</div>
+          <div class="product-meta">
+            <div class="product-price">$69.99</div>
+            <div class="product-moq">
+              <strong>MOQ: 10 units</strong>
+              2 week lead time
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0648?w=600&q=80" alt="GiPro Custom Gi" loading="lazy">
+          <div class="product-tag">Popular</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Fortitude Custom</div>
+          <div class="product-desc">Our flagship Gi — 450 gsm premium pearl weave, fully customizable embroidery, belts, stitching, and BJJ bag. IBJJF-compliant.</div>
+          <div class="product-meta">
+            <div class="product-price">$89.99</div>
+            <div class="product-moq">
+              <strong>MOQ: 15 units</strong>
+              3–4 week lead time
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Evosoft Rash Guard" loading="lazy">
+          <div class="product-tag">No-Gi</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Evosoft Rash Guard</div>
+          <div class="product-desc">240 gsm heavy-duty lycra. Four-way stretch, flat-lock stitch, compression fit. Perfect for No-Gi, MMA, and fitness. Fully customizable designs.</div>
+          <div class="product-meta">
+            <div class="product-price">$30.99</div>
+            <div class="product-moq">
+              <strong>MOQ: 10 units</strong>
+              2–3 week lead time
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&q=80" alt="Strix T-Shirts" loading="lazy">
+          <div class="product-tag">Apparel</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Strix T-Shirts</div>
+          <div class="product-desc">Cotton-polyester blend with sublimated artwork. Built for grapplers, styled for life. Multiple collar styles, athletic fit, unique custom designs.</div>
+          <div class="product-meta">
+            <div class="product-price">$24.99</div>
+            <div class="product-moq">
+              <strong>MOQ: 10 units</strong>
+              2 week lead time
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card fade-up">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80" alt="GiFlex Hoodie" loading="lazy">
+          <div class="product-tag">Apparel</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">GiFlex Hoodie</div>
+          <div class="product-desc">Comfort, style, and performance. Made for fighters and martial artists who live the BJJ lifestyle. Warm, stylish, fully customizable.</div>
+          <div class="product-meta">
+            <div class="product-price">$39.99</div>
+            <div class="product-moq">
+              <strong>MOQ: 10 units</strong>
+              2–3 week lead time
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 - CTA Card -->
+      <div class="product-card fade-up" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:3rem 2rem; min-height:300px;">
+        <div style="font-family:var(--font-display); font-size:1.2rem; letter-spacing:3px; color:var(--gold); margin-bottom:1rem;">ALL PRODUCTS</div>
+        <p style="font-size:0.82rem; color:var(--gray); line-height:1.7; margin-bottom:1.5rem; font-weight:300;">Custom badges, BJJ bags, flags, and more — everything under one roof.</p>
+        <a href="#contact" class="btn-primary">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" style="padding-bottom:0;">
+  <div class="about-grid">
+    <div class="about-image-stack">
+      <img class="about-img-main" src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=700&q=80" alt="BJJ Training" loading="lazy">
+      <img class="about-img-accent" src="https://images.unsplash.com/photo-1590415237-6d6a8a6b2e91?w=500&q=80" alt="BJJ Gi Detail" loading="lazy">
+      <div class="about-gold-bar"></div>
+    </div>
+    <div class="about-content fade-up">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>About Gimakx</span>
+      </div>
+      <h2 class="section-title">PASSION FOR<br>THE GENTLE ART</h2>
+      <p class="section-subtitle" style="margin-bottom:1rem;">
+        Welcome to Gimakx — where passion for Brazilian Jiu-Jitsu fuels our commitment to excellence. As a leading B2B manufacturer, we craft high-quality, durable gear for academies and practitioners of all levels.
+      </p>
+      <p style="font-size:0.9rem; color:var(--gray); line-height:1.8; font-weight:300; max-width:520px;">
+        Our journey began with a shared love for the art of Jiu-Jitsu and a desire to enhance the experience for athletes worldwide. From meticulous material selection to innovative design, each product is crafted with precision and care. With 20+ years of combined experience, we help BJJ institutes grow by providing gear that strengthens brand identity and builds team pride.
+      </p>
+
+      <div class="about-features">
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="about-feature-text">
+            <strong>100% Customer Satisfaction</strong>
+            <span>We stand behind every product we manufacture. Quality guaranteed.</span>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="about-feature-text">
+            <strong>Quick Lead Times</strong>
+            <span>Standard orders in 2 weeks. Custom Gis in 3–4 weeks.</span>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="about-feature-text">
+            <strong>Lowest Market Rates</strong>
+            <span>Competitive B2B pricing without compromising on quality.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<div id="process" style="background: var(--dark); margin-top: 100px;">
+  <div class="process-wrapper">
+    <div class="fade-up" style="text-align:center; max-width:600px; margin:0 auto;">
+      <div class="section-eyebrow" style="justify-content:center;">
+        <div class="section-eyebrow-line"></div>
+        <span>How It Works</span>
+        <div class="section-eyebrow-line"></div>
+      </div>
+      <h2 class="section-title">FROM DESIGN TO<br>YOUR MAT</h2>
+      <p class="section-subtitle" style="margin: 0 auto; text-align:center;">
+        A simple, transparent process to get your custom gear from concept to delivery.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step fade-up">
+        <div class="process-number">01</div>
+        <div class="process-step-num">STEP 01</div>
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Request a Quote</h3>
+        <p>Fill out our inquiry form with your product type, quantity, and customization requirements. We respond within 24 hours with a detailed quote.</p>
+      </div>
+
+      <div class="process-step fade-up">
+        <div class="process-number">02</div>
+        <div class="process-step-num">STEP 02</div>
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Design & Approve</h3>
+        <p>Our design team creates your custom artwork and mockups. Review, revise, and approve your design. We offer unlimited revisions until you're 100% happy.</p>
+      </div>
+
+      <div class="process-step fade-up">
+        <div class="process-number">03</div>
+        <div class="process-step-num">STEP 03</div>
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Free Sample</h3>
+        <p>Before full production, we produce a free physical sample for your approval. Touch and feel the quality yourself before committing to your full order.</p>
+      </div>
+
+      <div class="process-step fade-up">
+        <div class="process-number">04</div>
+        <div class="process-step-num">STEP 04</div>
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>Production & Delivery</h3>
+        <p>Upon approval, we begin full production with our premium materials. Your order is quality-checked at every stage and delivered worldwide to your doorstep.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="fade-up">
+  <div class="section-eyebrow" style="justify-content:center;">
+    <div class="section-eyebrow-line"></div>
+    <span>Client Reviews</span>
+    <div class="section-eyebrow-line"></div>
+  </div>
+  <h2 class="section-title" style="text-align:center;">WHAT ACADEMIES<br>ARE SAYING</h2>
+
+  <div class="testimonials-grid" style="margin-top:3rem;">
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="testimonial-text">"The quality of our custom Gis exceeded our expectations. The pearl weave cotton is incredibly durable and our students love the customized embroidery. Gimakx delivered everything on time and within budget."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MR</div>
+        <div>
+          <div class="testimonial-name">Marcus Rodriguez</div>
+          <div class="testimonial-role">Head Instructor · Alliance BJJ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="testimonial-text">"Ordered 50 rash guards for our competition team. The Evosoft fabric is top-tier — compression fit, sweat-wicking, and the custom sublimation print looks incredible on the mat. Will definitely be reordering."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">SK</div>
+        <div>
+          <div class="testimonial-name">Sarah Kim</div>
+          <div class="testimonial-role">Coach · Gracie Academy UK</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="testimonial-text">"Best pricing I've found for bulk custom Gis. The free sample process gave us total confidence before placing our 100-unit order. Communication was excellent throughout. Gimakx is our exclusive supplier now."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">DP</div>
+        <div>
+          <div class="testimonial-name">Diego Pereira</div>
+          <div class="testimonial-role">Owner · Submission Factory BJJ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background: var(--dark); max-width:none; padding: 100px 5%;">
+  <div style="max-width:1400px; margin:0 auto;">
+    <div class="fade-up" style="text-align:center; max-width:600px; margin:0 auto 0;">
+      <div class="section-eyebrow" style="justify-content:center;">
+        <div class="section-eyebrow-line"></div>
+        <span>Pricing</span>
+        <div class="section-eyebrow-line"></div>
+      </div>
+      <h2 class="section-title">TRANSPARENT.<br>COMPETITIVE.<br>FAIR.</h2>
+      <p class="section-subtitle" style="margin: 0 auto; text-align:center;">
+        No hidden fees. No surprises. Just quality gear at the best B2B rates in the market.
+      </p>
+    </div>
+
+    <div class="pricing-grid fade-up">
+      <div class="pricing-card">
+        <div class="pricing-name">GiPro Standard</div>
+        <div class="pricing-tagline">Best for low budgets</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-amount">69</span>
+          <span class="pricing-unit">.99 / unit</span>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Minimum 10 units</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 2 week lead time</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 15+ color options</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 350 gsm pearl weave</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pre-shrunk fabric</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> IBJJF compliant</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="width:100%; text-align:center;">Request Quote</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-featured-badge">Most Popular</div>
+        <div class="pricing-name">Fortitude Custom</div>
+        <div class="pricing-tagline">Best for institutes & pros</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-amount">89</span>
+          <span class="pricing-unit">.99 / unit</span>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Minimum 15 units</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 3–4 week lead time</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Fully customizable</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 450 gsm pearl weave</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Custom embroidery & belts</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Custom BJJ bag included</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Free sample before order</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="width:100%; text-align:center;">Request Quote</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-name">Evosoft Rash Guard</div>
+        <div class="pricing-tagline">Best for No-Gi & MMA</div>
+        <div class="pricing-price">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-amount">30</span>
+          <span class="pricing-unit">.99 / unit</span>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Minimum 10 units</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 2–3 week lead time</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Fully customizable designs</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 240 gsm heavy lycra</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Four-way stretch</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> IBJJF compliant</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="width:100%; text-align:center;">Request Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div id="contact" style="background: var(--dark);">
+  <div class="contact-wrapper">
+    <div class="fade-up">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Get In Touch</span>
+      </div>
+      <h2 class="section-title">LET'S BUILD<br>YOUR BRAND.</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="fade-up">
+        <p class="section-subtitle">
+          Ready to outfit your academy with premium custom gear? Get in touch for a free quote, product samples, or any questions about our manufacturing process.
+        </p>
+
+        <div class="contact-info-items">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <strong>Email Us</strong>
+              <a href="mailto:support@gimakx.com">support@gimakx.com</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <strong>Location</strong>
+              <span>Sialkot, Punjab, Pakistan</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <strong>Response Time</strong>
+              <span>Within 24 hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form fade-up" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="john@academy.com" required>
+        </div>
+        <div class="form-group">
+          <label>Product Interest</label>
+          <select>
+            <option value="">Select a product...</option>
+            <option>GiPro Standard Gi</option>
+            <option>Fortitude Custom Gi</option>
+            <option>Evosoft Rash Guard</option>
+            <option>Strix T-Shirts</option>
+            <option>GiFlex Hoodie</option>
+            <option>Multiple Products</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us about your academy, quantity needed, and any customization requirements..."></textarea>
+        </div>
+        <div class="form-submit-row">
+          <button type="submit" class="btn-primary" onclick="handleSubmit(event)">Send Inquiry</button>
+          <span class="form-note">Free sample available on request</span>
+        </div>
+        <div id="formSuccess" style="display:none; background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.3); border-radius:2px; padding:1rem; font-size:0.85rem; color:var(--gold); margin-top:0.5rem;">
+          ✓ Thank you! Your inquiry has been received. We'll respond within 24 hours.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="#" class="footer-brand-logo">GIMA<span>KX</span></a>
+      <p class="footer-brand-desc">
+        Premium B2B manufacturer of custom BJJ Gis, rash guards, and training apparel. Trusted by academies worldwide. Sialkot, Pakistan.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul class="footer-links">
+        <li><a href="#products">GiPro Standard Gi</a></li>
+        <li><a href="#products">Fortitude Custom Gi</a></li>
+        <li><a href="#products">Evosoft Rash Guard</a></li>
+        <li><a href="#products">Strix T-Shirts</a></li>
+        <li><a href="#products">GiFlex Hoodie</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="#contact">Request a Quote</a></li>
+        <li><a href="mailto:support@gimakx.com">support@gimakx.com</a></li>
+        <li><a href="#contact">Free Sample</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copyright">© 2025 Gimakx. All rights reserved. Manufactured in Sialkot, Pakistan.</div>
+    <div class="footer-tagline">FORGED FOR THE MAT</div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+
+  hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Stagger product cards
+  document.querySelectorAll('.product-card').forEach((card, i) => {
+    card.style.transitionDelay = (i * 80) + 'ms';
+  });
+
+  // Smooth nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('formSuccess').style.display = 'block';
+    document.getElementById('contactForm').querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+  }
+
+  // Nav scroll style
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 80) {
+      nav.style.height = '60px';
+    } else {
+      nav.style.height = '72px';
+    }
+  });
+</script>
+</body>
+</html>
+HTMLEOF
