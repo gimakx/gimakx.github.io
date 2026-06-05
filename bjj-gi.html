@@ -10,12 +10,43 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="logo.png">
 <link rel="stylesheet" href="gimakx.css">
+<style>
+.gallery-caption{margin-top:14px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+.gallery-caption b{color:var(--gold)}
+.configurator{margin:24px 0 0;display:flex;flex-direction:column;gap:26px}
+.config-group{}
+.config-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.config-val{color:var(--gold);font-weight:700;letter-spacing:0.5px;text-transform:none;font-size:13px}
+.config-options{display:flex;gap:8px;flex-wrap:wrap}
+.config-opt{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);padding:11px 18px;border-radius:3px;cursor:pointer;font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.5px;transition:all 0.18s;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:84px}
+.config-opt small{font-size:10px;font-weight:500;color:rgba(255,255,255,0.35);letter-spacing:1px}
+.config-opt:hover{border-color:rgba(200,146,42,0.45)}
+.config-opt.active{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.config-opt.active small{color:rgba(8,17,31,0.6)}
+.config-swatches{display:grid;grid-template-columns:repeat(9,1fr);gap:9px;max-width:440px}
+.config-sw{cursor:pointer;border-radius:50%;aspect-ratio:1;border:2px solid rgba(255,255,255,0.12);position:relative;transition:transform 0.15s,border-color 0.15s}
+.config-sw:hover{transform:scale(1.14)}
+.config-sw.active{border-color:var(--gold)}
+.config-sw.active::after{content:'';position:absolute;inset:3px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.7)}
+.config-sw .star{position:absolute;top:-6px;right:-6px;font-size:10px;color:var(--gold);line-height:1}
+.config-sizes{display:flex;gap:8px;flex-wrap:wrap}
+.size-opt{min-width:50px;height:46px;padding:0 10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);border-radius:3px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;transition:all 0.18s}
+.size-opt:hover{border-color:rgba(200,146,42,0.45)}
+.size-opt.active{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.config-sizelink{font-size:11px;color:rgba(255,255,255,0.4);text-decoration:none;margin-top:12px;display:inline-block}
+.config-sizelink:hover{color:var(--gold)}
+.config-note{font-size:12px;color:var(--gold);margin-top:12px}
+.config-cta{margin-top:6px}
+.rfq-config{background:rgba(200,146,42,0.08);border:1px solid rgba(200,146,42,0.28);border-radius:4px;padding:14px 16px;margin-bottom:22px;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7}
+.rfq-config b{color:var(--gold);font-weight:600}
+@media(max-width:560px){.config-swatches{grid-template-columns:repeat(8,1fr)}}
+</style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="mainNav" class="solid">
-  <a href="index.html" class="nav-logo">GI<span>M</span>AKX</a>
+  <a href="index.html" class="nav-logo"><img src="images/logo-jp.png" alt="Gimakx"></a>
   <ul class="nav-center">
     <li><a href="bjj-gi.html" class="active">BJJ Gi</a></li>
     <li><a href="evosoft.html">Evosoft</a></li>
@@ -38,14 +69,9 @@
 <section class="product-hero">
   <div class="gallery">
     <div class="gallery-main">
-      <img id="galleryMain" src="images/fortitude-front.jpg" alt="GiPro Fortitude BJJ Gi — front">
+      <img id="galleryMain" src="images/GPNBL.jpg" alt="GiPro Custom BJJ Gi — Navy Blue">
     </div>
-    <div class="gallery-thumbs">
-      <div class="gallery-thumb active" onclick="swapGallery(this,'images/fortitude-front.jpg')"><img src="images/fortitude-front.jpg" alt="Front" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="gallery-thumb" onclick="swapGallery(this,'images/fortitude-back.jpg')"><img src="images/fortitude-back.jpg" alt="Back" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="gallery-thumb" onclick="swapGallery(this,'images/fortitude-side.jpg')"><img src="images/fortitude-side.jpg" alt="Side" style="width:100%;height:100%;object-fit:cover"></div>
-      <div class="gallery-thumb" onclick="swapGallery(this,'images/Aerotough-Gi-Front.jpg')"><img src="images/Aerotough-Gi-Front.jpg" alt="Aerotough" style="width:100%;height:100%;object-fit:cover"></div>
-    </div>
+    <div class="gallery-caption" id="galleryCaption"><b>Navy Blue</b> · GiPro Fortitude</div>
   </div>
   <div class="product-summary">
     <div class="s-eye">BJJ Gi — Flagship Range</div>
@@ -56,16 +82,64 @@
       <span class="pbadge">15 Colors</span>
       <span class="pbadge">Custom Embroidery</span>
     </div>
-    <p class="product-lead">The GiPro is our flagship custom BJJ Gi — engineered for professional academies and available in three distinct GSM weights. Pearl and gold weave construction, IBJJF-approved, and fully customizable to your academy's identity.</p>
-    <div class="quick-specs">
-      <div class="quick-spec"><div class="quick-spec-label">Top Weight</div><div class="quick-spec-val">380 / 450 / 500gsm</div></div>
-      <div class="quick-spec"><div class="quick-spec-label">Trouser</div><div class="quick-spec-val">270gsm Ripstop</div></div>
-      <div class="quick-spec"><div class="quick-spec-label">Sizing</div><div class="quick-spec-val">A0–A4 · W1–W4 · K0–K4</div></div>
-      <div class="quick-spec"><div class="quick-spec-label">MOQ</div><div class="quick-spec-val">20 Units</div></div>
-    </div>
-    <div class="product-cta-row">
-      <a href="#rfq" class="btn-gold">Request a Quote →</a>
-      <a href="#variants" class="btn-outline">Compare Weights</a>
+    <p class="product-lead">The GiPro is our flagship custom BJJ Gi — available in three GSM weights and 15 colors. Configure your Gi below, then send it straight to a quote.</p>
+
+    <div class="configurator">
+      <!-- WEIGHT -->
+      <div class="config-group">
+        <div class="config-label">Weight <span class="config-val" id="selWeight">Fortitude · 450gsm</span></div>
+        <div class="config-options" id="weightOpts">
+          <button type="button" class="config-opt" data-weight="Aerotough · 380gsm">Aerotough<small>380gsm</small></button>
+          <button type="button" class="config-opt active" data-weight="Fortitude · 450gsm">Fortitude<small>450gsm</small></button>
+          <button type="button" class="config-opt" data-weight="Monolith · 500gsm">Monolith<small>500gsm</small></button>
+        </div>
+      </div>
+
+      <!-- COLOR -->
+      <div class="config-group">
+        <div class="config-label">Color <span class="config-val" id="selColor">Navy Blue</span></div>
+        <div class="config-swatches" id="configSwatches">
+          <div class="config-sw" data-name="Off White" data-img="" style="background:#F5F0E8" title="Off White"></div>
+          <div class="config-sw" data-name="Maroon" data-img="images/GPMRN.jpg" style="background:#6B0F1A" title="Maroon"></div>
+          <div class="config-sw" data-name="White" data-img="images/GPWHT.jpg" style="background:#FFFFFF" title="White"></div>
+          <div class="config-sw active" data-name="Navy Blue" data-img="images/GPNBL.jpg" style="background:#1A2B5E" title="Navy Blue"></div>
+          <div class="config-sw" data-name="Olive Green" data-img="images/GPOGR.jpg" style="background:#4A5C2A" title="Olive Green"></div>
+          <div class="config-sw" data-name="Royal Blue" data-img="images/GPRBL.jpg" style="background:#1E44CC" title="Royal Blue"></div>
+          <div class="config-sw" data-name="Pink" data-img="images/GPPNK.jpg" style="background:#E8339A" title="Pink"></div>
+          <div class="config-sw" data-name="Red" data-img="images/GPRED.jpg" style="background:#CC1122" title="Red"></div>
+          <div class="config-sw" data-name="Golden" data-img="" style="background:#C8922A" title="Golden"></div>
+          <div class="config-sw" data-name="Black" data-img="images/GPBLK.jpg" style="background:#111111" title="Black"></div>
+          <div class="config-sw" data-name="Gray" data-img="images/GPGRY.jpg" style="background:#5A6070" title="Gray"></div>
+          <div class="config-sw" data-name="Parrot Green" data-img="images/GPPGR.jpg" style="background:#44CC22" title="Parrot Green"></div>
+          <div class="config-sw" data-name="Sky Blue" data-img="images/GPSBL.jpg" style="background:#44AAEE" title="Sky Blue"></div>
+          <div class="config-sw" data-name="Brown" data-img="" style="background:#7A4422" title="Brown"></div>
+          <div class="config-sw" data-name="Yellow" data-img="" style="background:#E8C42A" title="Yellow"></div>
+          <div class="config-sw" data-name="Purple" data-img="images/GPPRP.jpg" style="background:#7722CC" title="Purple"></div>
+          <div class="config-sw" data-name="Camouflage" data-img="" data-special="1" style="background:repeating-linear-gradient(45deg,#4a5c3a,#4a5c3a 5px,#3a4c2a 5px,#3a4c2a 10px,#6b7a5a 10px,#6b7a5a 15px)" title="Camouflage (special order)"><span class="star">★</span></div>
+        </div>
+        <p class="config-note" id="colorNote" style="display:none">★ Camouflage is a special order — ask our B2B team for availability.</p>
+      </div>
+
+      <!-- CATEGORY -->
+      <div class="config-group">
+        <div class="config-label">Category <span class="config-val" id="selCat">Men</span></div>
+        <div class="config-options" id="catOpts">
+          <button type="button" class="config-opt active" data-cat="men">Men</button>
+          <button type="button" class="config-opt" data-cat="women">Women</button>
+          <button type="button" class="config-opt" data-cat="kids">Kids</button>
+        </div>
+      </div>
+
+      <!-- SIZE -->
+      <div class="config-group">
+        <div class="config-label">Size <span class="config-val" id="selSize">— Select a size</span></div>
+        <div class="config-sizes" id="sizeOpts"></div>
+        <a href="index.html#size-guide" class="config-sizelink">Not sure of your size? View the size guide →</a>
+      </div>
+
+      <div class="config-cta">
+        <a href="#rfq" class="btn-gold" onclick="syncConfigToRFQ()">Request Quote for This Gi →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -153,40 +227,6 @@
   </div>
 </section>
 
-<!-- COLOR PICKER -->
-<section class="s-wrap" id="colors">
-  <div class="s-eye">Customization</div>
-  <h2 class="s-h2">Pick Your <em>Color</em></h2>
-  <div class="color-picker-wrap">
-    <div class="color-preview" id="colorPreview" style="background:#1A2B5E">
-      <span class="color-preview-label" id="colorPreviewLabel">Navy Blue</span>
-      <span class="color-preview-note" id="colorPreviewNote" style="display:none">★ Special Order Only</span>
-    </div>
-    <div>
-      <div class="swatches-grid" id="swatchGrid">
-        <div class="swatch" data-color="#F5F0E8" data-name="Off White"><div class="swatch-dot" style="background:#F5F0E8;border-color:rgba(255,255,255,0.15)"></div><span class="swatch-name">Off White</span></div>
-        <div class="swatch" data-color="#6B0F1A" data-name="Maroon"><div class="swatch-dot" style="background:#6B0F1A"></div><span class="swatch-name">Maroon</span></div>
-        <div class="swatch" data-color="#FFFFFF" data-name="White"><div class="swatch-dot" style="background:#FFFFFF;border-color:rgba(255,255,255,0.25)"></div><span class="swatch-name">White</span></div>
-        <div class="swatch selected" data-color="#1A2B5E" data-name="Navy Blue"><div class="swatch-dot" style="background:#1A2B5E"></div><span class="swatch-name">Navy Blue</span></div>
-        <div class="swatch" data-color="#4A5C2A" data-name="Olive Green"><div class="swatch-dot" style="background:#4A5C2A"></div><span class="swatch-name">Olive Green</span></div>
-        <div class="swatch" data-color="#1E44CC" data-name="Royal Blue"><div class="swatch-dot" style="background:#1E44CC"></div><span class="swatch-name">Royal Blue</span></div>
-        <div class="swatch" data-color="#E8339A" data-name="Pink"><div class="swatch-dot" style="background:#E8339A"></div><span class="swatch-name">Pink</span></div>
-        <div class="swatch" data-color="#CC1122" data-name="Red"><div class="swatch-dot" style="background:#CC1122"></div><span class="swatch-name">Red</span></div>
-        <div class="swatch" data-color="#C8922A" data-name="Golden"><div class="swatch-dot" style="background:#C8922A"></div><span class="swatch-name">Golden</span></div>
-        <div class="swatch" data-color="#111111" data-name="Black"><div class="swatch-dot" style="background:#111111;border-color:rgba(255,255,255,0.1)"></div><span class="swatch-name">Black</span></div>
-        <div class="swatch" data-color="#5A6070" data-name="Gray"><div class="swatch-dot" style="background:#5A6070"></div><span class="swatch-name">Gray</span></div>
-        <div class="swatch" data-color="#44CC22" data-name="Parrot Green"><div class="swatch-dot" style="background:#44CC22"></div><span class="swatch-name">Parrot Green</span></div>
-        <div class="swatch" data-color="#44AAEE" data-name="Sky Blue"><div class="swatch-dot" style="background:#44AAEE"></div><span class="swatch-name">Sky Blue</span></div>
-        <div class="swatch" data-color="#7A4422" data-name="Brown"><div class="swatch-dot" style="background:#7A4422"></div><span class="swatch-name">Brown</span></div>
-        <div class="swatch" data-color="#E8C42A" data-name="Yellow"><div class="swatch-dot" style="background:#E8C42A"></div><span class="swatch-name">Yellow</span></div>
-        <div class="swatch" data-color="#7722CC" data-name="Purple"><div class="swatch-dot" style="background:#7722CC"></div><span class="swatch-name">Purple</span></div>
-        <div class="swatch" data-color="repeating-linear-gradient(45deg,#4a5c3a,#4a5c3a 5px,#3a4c2a 5px,#3a4c2a 10px,#6b7a5a 10px,#6b7a5a 15px)" data-name="Camouflage" data-special="1"><div class="swatch-dot special" style="background:repeating-linear-gradient(45deg,#4a5c3a,#4a5c3a 5px,#3a4c2a 5px,#3a4c2a 10px,#6b7a5a 10px,#6b7a5a 15px)"></div><span class="swatch-name">Camouflage ★</span></div>
-      </div>
-      <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:24px;line-height:1.7">All 15 standard colors are available across every GiPro weight, with mix-and-match trim, stitching, and contrast collar options. <strong style="color:var(--gold)">Camouflage</strong> is available as a special order only — ask our B2B team.</p>
-    </div>
-  </div>
-</section>
-
 <!-- SPEC TABLE -->
 <section class="s-wrap" style="padding-top:0">
   <div class="s-eye">Full Specifications</div>
@@ -248,6 +288,7 @@
   </div>
   <div class="rfq-right">
     <h3>Quote — GiPro Custom Gi</h3>
+    <div class="rfq-config" id="rfqConfig">Your selection: <b id="rfqWeight">Fortitude · 450gsm</b> · <b id="rfqColor">Navy Blue</b> · <b id="rfqCat">Men</b> · Size <b id="rfqSize">not selected</b></div>
     <form class="rfq-form-body" onsubmit="handleRFQ(event)">
       <div class="form-grid">
         <div class="form-field"><label>Academy / Company Name *</label><input type="text" placeholder="e.g. Checkmat London" required></div>
@@ -313,33 +354,112 @@
 </footer>
 
 <script>
+// Detailed weight comparison tabs (informational)
 function showVariant(id,btn){
   document.querySelectorAll('.variant-panel').forEach(p=>p.classList.remove('active'))
   document.querySelectorAll('.variant-tab').forEach(b=>b.classList.remove('active'))
   document.getElementById('v-'+id).classList.add('active')
   btn.classList.add('active')
 }
-function swapGallery(thumb,src){
-  document.getElementById('galleryMain').src=src
-  document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'))
-  thumb.classList.add('active')
+
+// ── GiPro Configurator ──
+const FALLBACK_IMG='images/fortitude-front.jpg';
+const SIZES={
+  men:['A0','A1','A2','A3','A4'],
+  women:['W1','W2','W3','W4'],
+  kids:['K0','K1','K2','K3','K4']
+};
+const CAT_LABEL={men:'Men',women:'Women',kids:'Kids'};
+const state={weight:'Fortitude · 450gsm',color:'Navy Blue',category:'Men',size:''};
+
+function updateSummary(){
+  document.getElementById('rfqWeight').textContent=state.weight;
+  document.getElementById('rfqColor').textContent=state.color;
+  document.getElementById('rfqCat').textContent=state.category;
+  document.getElementById('rfqSize').textContent=state.size||'not selected';
+  document.getElementById('galleryCaption').innerHTML='<b>'+state.color+'</b> · GiPro '+state.weight.split(' · ')[0];
 }
-// Color picker
-document.querySelectorAll('#swatchGrid .swatch').forEach(sw=>{
+
+// Weight
+document.querySelectorAll('#weightOpts .config-opt').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#weightOpts .config-opt').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    state.weight=b.dataset.weight;
+    document.getElementById('selWeight').textContent=state.weight;
+    updateSummary();
+  });
+});
+
+// Color → swaps the product photo
+document.querySelectorAll('#configSwatches .config-sw').forEach(sw=>{
   sw.addEventListener('click',()=>{
-    document.querySelectorAll('#swatchGrid .swatch').forEach(s=>s.classList.remove('selected'))
-    sw.classList.add('selected')
-    document.getElementById('colorPreview').style.background=sw.dataset.color
-    document.getElementById('colorPreviewLabel').textContent=sw.dataset.name
-    document.getElementById('colorPreviewNote').style.display=sw.dataset.special?'block':'none'
-  })
-})
-function handleRFQ(e){
-  e.preventDefault()
-  const btn=e.target.querySelector('.btn-submit')
-  btn.textContent='Sending...';btn.disabled=true
-  setTimeout(()=>{btn.textContent='Request Sent ✓';btn.style.background='#2d7a4f'},1200)
+    document.querySelectorAll('#configSwatches .config-sw').forEach(s=>s.classList.remove('active'));
+    sw.classList.add('active');
+    state.color=sw.dataset.name;
+    document.getElementById('selColor').textContent=state.color;
+    document.getElementById('galleryMain').src=sw.dataset.img||FALLBACK_IMG;
+    document.getElementById('galleryMain').alt='GiPro Custom BJJ Gi — '+state.color;
+    document.getElementById('colorNote').style.display=sw.dataset.special?'block':'none';
+    updateSummary();
+  });
+});
+
+// Category → loads only that category's sizes
+function loadSizes(cat){
+  const wrap=document.getElementById('sizeOpts');
+  wrap.innerHTML='';
+  SIZES[cat].forEach(s=>{
+    const b=document.createElement('button');
+    b.type='button';b.className='size-opt';b.textContent=s;
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('#sizeOpts .size-opt').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      state.size=s;
+      document.getElementById('selSize').textContent=s;
+      updateSummary();
+    });
+    wrap.appendChild(b);
+  });
+  state.size='';
+  document.getElementById('selSize').textContent='— Select a size';
+  updateSummary();
 }
+document.querySelectorAll('#catOpts .config-opt').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#catOpts .config-opt').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    state.category=CAT_LABEL[b.dataset.cat];
+    document.getElementById('selCat').textContent=state.category;
+    loadSizes(b.dataset.cat);
+  });
+});
+
+// Push config into the quote form's notes when CTA clicked
+function syncConfigToRFQ(){
+  const wsel=document.querySelector('#rfq select');
+  if(wsel){
+    const w=state.weight.split(' · ')[0];
+    [...wsel.options].forEach(o=>{if(o.text.includes(w))wsel.value=o.value;});
+  }
+  const ta=document.querySelector('#rfq textarea');
+  if(ta){
+    const line='Selected: GiPro '+state.weight+' | Color: '+state.color+' | '+state.category+' | Size: '+(state.size||'not selected')+'\n';
+    if(!ta.value.startsWith('Selected: ')) ta.value=line+ta.value;
+    else ta.value=line+ta.value.split('\n').slice(1).join('\n');
+  }
+}
+
+function handleRFQ(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.btn-submit');
+  btn.textContent='Sending...';btn.disabled=true;
+  setTimeout(()=>{btn.textContent='Request Sent ✓';btn.style.background='#2d7a4f';},1200);
+}
+
+// Init
+loadSizes('men');
+updateSummary();
 </script>
 </body>
 </html>
