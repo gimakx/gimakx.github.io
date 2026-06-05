@@ -1,0 +1,19 @@
+# Concept / design exploration files — not part of the live site
+layout-1-dark-luxury.html
+layout-2-editorial.html
+layout-3-bold-sport.html
+bjj-b2b-landing.html
+gimakx-redesign.html
+
+# Knowledge graph artifacts
+gimakx-knowledge-graph.html
+gimakx-graph.json
+gimakx-GRAPH_REPORT.md
+
+# Archives
+*.zip
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.claude/
