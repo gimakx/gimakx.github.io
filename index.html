@@ -78,11 +78,20 @@
 .gipro-section,.features-section{position:relative;overflow:hidden}
 .gipro-section>*:not(.arc-bg),.features-section>*:not(.arc-bg){position:relative;z-index:1}
 .arc-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.arc{position:absolute;border-radius:50%;opacity:0.5;
-  background:conic-gradient(from 0deg,transparent 0deg,rgba(200,146,42,0.5) 65deg,rgba(255,206,92,0.98) 110deg,rgba(200,146,42,0.5) 155deg,transparent 215deg,transparent 360deg);
+.arc{position:absolute;border-radius:50%;opacity:0.6;
+  background:conic-gradient(from 0deg,
+    rgba(200,146,42,0.10) 0deg,
+    rgba(200,146,42,0.10) 62deg,
+    rgba(232,168,58,0.55) 86deg,
+    rgba(255,214,110,0.95) 98deg,
+    #FFF1C0 102deg,
+    rgba(255,214,110,0.95) 106deg,
+    rgba(232,168,58,0.55) 118deg,
+    rgba(200,146,42,0.10) 142deg,
+    rgba(200,146,42,0.10) 360deg);
   -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 6px));
   mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 6px));
-  filter:drop-shadow(0 0 8px rgba(200,146,42,0.55))}
+  filter:drop-shadow(0 0 8px rgba(255,205,95,0.85)) drop-shadow(0 0 16px rgba(200,146,42,0.5))}
 .arc1{width:620px;height:620px;top:-180px;right:-140px;animation:arcspin 33s linear infinite}
 .arc2{width:920px;height:920px;bottom:-340px;left:-220px;animation:arcspin 52s linear infinite reverse}
 .arc3{width:760px;height:760px;top:-160px;left:38%;animation:arcspin 43s linear infinite}
