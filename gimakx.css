@@ -112,13 +112,16 @@ nav.scrolled,nav.solid{background:rgba(8,17,31,0.97);backdrop-filter:blur(12px);
 .color-preview{aspect-ratio:1;border-radius:8px;border:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:background 0.3s;position:relative;overflow:hidden}
 .color-preview-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:rgba(8,17,31,0.7);padding:8px 18px;border-radius:2px;color:var(--white)}
 .color-preview-note{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gold);background:rgba(8,17,31,0.7);padding:5px 12px;border-radius:2px}
-.swatches-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
-.swatch{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer}
-.swatch-dot{width:100%;aspect-ratio:1;border-radius:4px;border:2px solid transparent;transition:all 0.2s;position:relative}
+.swatch-marquee{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+.swatch-track{display:flex;width:max-content;animation:swatchScroll 42s linear infinite}
+.swatch-marquee:hover .swatch-track{animation-play-state:paused}
+@keyframes swatchScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.swatch{display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;flex:0 0 auto;width:150px;margin-right:18px}
+.swatch-dot{width:150px;height:150px;border-radius:6px;border:2px solid transparent;transition:all 0.2s;position:relative}
 .swatch:hover .swatch-dot{transform:scale(1.08);border-color:rgba(255,255,255,0.5)}
 .swatch.selected .swatch-dot{border-color:var(--gold);box-shadow:0 0 0 2px rgba(200,146,42,0.3)}
 .swatch-dot.special::after{content:'★';position:absolute;top:-6px;right:-6px;font-size:10px;color:var(--gold);background:var(--navy-mid);border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;line-height:16px}
-.swatch-name{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.35);text-align:center;line-height:1.3}
+.swatch-name{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:center;line-height:1.3}
 
 /* ── SPEC TABLE ── */
 .spec-table{width:100%;border-collapse:collapse;margin-top:40px;border:1px solid rgba(255,255,255,0.07)}
@@ -236,3 +239,69 @@ footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06)}
   .variant-tabs{width:100%}
   .variant-tab{flex:1}
 }
+
+/* ── Size Guide (moved from landing page) ── */
+.size-section{background:var(--navy-mid);padding:80px 5%}
+.size-tabs{display:flex;gap:0;border:1px solid rgba(255,255,255,0.07);width:fit-content;margin:32px 0 40px;flex-wrap:wrap}
+.size-tab{padding:12px 32px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);cursor:pointer;border-right:1px solid rgba(255,255,255,0.07);transition:all 0.2s;background:transparent;border-top:none;border-bottom:none;border-left:none;font-family:'Barlow',sans-serif}
+.size-tab:last-child{border-right:none}
+.size-tab.active{background:var(--gold);color:var(--navy)}
+.size-panel{display:none}
+.size-panel.active{display:block}
+.size-table-wrap{overflow-x:auto;border:1px solid rgba(255,255,255,0.07)}
+.size-table{width:100%;border-collapse:collapse;font-size:11px;min-width:900px}
+.size-table th{background:var(--navy);padding:10px 8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,255,255,0.06);text-align:center;white-space:nowrap;font-size:11px}
+.size-table th.row-head{background:rgba(200,146,42,0.08);color:rgba(255,255,255,0.6);font-size:10px}
+.size-table td{padding:8px 6px;border:1px solid rgba(255,255,255,0.04);text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;color:rgba(255,255,255,0.55);background:var(--navy-card)}
+.size-table td:first-child{background:rgba(8,17,31,0.8);color:rgba(255,255,255,0.4);font-size:10px;letter-spacing:0.5px;white-space:nowrap}
+.size-table td.a0{color:#64B5F6}.size-table td.a1{color:#81C784}.size-table td.a2{color:var(--gold-light)}.size-table td.a3{color:#FF8A65}.size-table td.a4{color:#CE93D8}
+.size-table td.w1{color:#F48FB1}.size-table td.w2{color:#80DEEA}.size-table td.w3{color:#A5D6A7}.size-table td.w4{color:#FFCC02}
+.size-table td.k0{color:#90CAF9}.size-table td.k1{color:#A5D6A7}.size-table td.k2{color:var(--gold-light)}.size-table td.k3{color:#FF8A65}.size-table td.k4{color:#CE93D8}
+
+/* ── Animated gold beam border (hover + always-on) ── */
+@property --beam{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes beamspin{to{--beam:360deg}}
+.nav-center li a::before,
+.feature-box::before,
+.variant-card::before,
+.btn-gold::before,
+.btn-outline::before,
+.nav-rfq::before,
+.btn-submit::before,
+.evosoft-visual::before,
+.evo-spec-row::before,
+.gallery-main::before,
+.pb-media::before{
+  content:'';position:absolute;border-radius:inherit;padding:1.6px;pointer-events:none;z-index:4;
+  background:conic-gradient(from var(--beam),transparent 0deg,rgba(200,146,42,0.05) 40deg,var(--gold) 85deg,var(--gold-pale) 110deg,var(--gold) 135deg,rgba(200,146,42,0.05) 180deg,transparent 225deg,transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;
+  filter:drop-shadow(0 0 3px rgba(200,146,42,0.6));
+  animation:beamspin 3.6s linear infinite;
+}
+/* fallback: if @property/mask unsupported, no broken visuals */
+@supports not (background:conic-gradient(from var(--beam),#000,#000)){
+  .nav-center li a::before,.feature-box::before,.variant-card::before,.btn-gold::before,.btn-outline::before,.nav-rfq::before,.btn-submit::before,.evosoft-visual::before,.evo-spec-row::before,.gallery-main::before,.pb-media::before{display:none}
+}
+/* Small objects (nav items + buttons) — beam on hover, ~30% faster, white-gold so it reads on gold buttons */
+.btn-gold,.btn-outline,.nav-rfq,.btn-submit{position:relative}
+.nav-center li a::before{inset:15px 4px;border-radius:5px;opacity:0;transition:opacity .3s;animation-duration:2.5s}
+.nav-center li a:hover::before{opacity:1}
+.btn-gold::before,.btn-outline::before,.nav-rfq::before,.btn-submit::before{inset:0;opacity:0;transition:opacity .3s;animation-duration:2.5s;
+  background:conic-gradient(from var(--beam),transparent 0deg,rgba(255,255,255,0.05) 40deg,var(--gold-pale) 80deg,#FFF6E0 110deg,var(--gold-pale) 140deg,rgba(255,255,255,0.05) 180deg,transparent 225deg,transparent 360deg);
+  filter:drop-shadow(0 0 3px rgba(255,236,184,0.7));}
+.btn-gold:hover::before,.btn-outline:hover::before,.nav-rfq:hover::before,.btn-submit:hover::before{opacity:1}
+/* Feature boxes — beam ring on hover */
+.feature-box{position:relative}
+.feature-box::before{inset:0;opacity:0;transition:opacity .3s;animation-duration:4.2s}
+.feature-box:hover::before{opacity:1}
+/* GiPro variant cards — beam always on; middle (featured) spins in reverse */
+.variant-card::before{inset:0;opacity:1;animation-duration:4.8s}
+.variant-card.featured::before{animation-direction:reverse}
+/* Inner-page product images — always-on beam */
+.gallery-main::before,.pb-media::before{inset:0;opacity:1;animation-duration:5.2s}
+/* Homepage Evosoft section — image, spec row & button glow continuously */
+.evosoft-visual,.evo-spec-row{position:relative}
+.evosoft-visual{overflow:hidden}
+.evosoft-visual::before,.evo-spec-row::before{inset:0;opacity:1;animation-duration:5.2s}
+.evosoft-content .btn-gold::before{opacity:1}

@@ -65,22 +65,7 @@
 .color-count{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:900;color:var(--gold);line-height:1}
 
 /* SIZE CHART */
-.size-section{background:var(--navy-mid);padding:80px 5%}
-.size-tabs{display:flex;gap:0;border:1px solid rgba(255,255,255,0.07);width:fit-content;margin:32px 0 40px;flex-wrap:wrap}
-.size-tab{padding:12px 32px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);cursor:pointer;border-right:1px solid rgba(255,255,255,0.07);transition:all 0.2s;background:transparent;border-top:none;border-bottom:none;border-left:none;font-family:'Barlow',sans-serif}
-.size-tab:last-child{border-right:none}
-.size-tab.active{background:var(--gold);color:var(--navy)}
-.size-panel{display:none}
-.size-panel.active{display:block}
-.size-table-wrap{overflow-x:auto;border:1px solid rgba(255,255,255,0.07)}
-.size-table{width:100%;border-collapse:collapse;font-size:11px;min-width:900px}
-.size-table th{background:var(--navy);padding:10px 8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,255,255,0.06);text-align:center;white-space:nowrap;font-size:11px}
-.size-table th.row-head{background:rgba(200,146,42,0.08);color:rgba(255,255,255,0.6);font-size:10px}
-.size-table td{padding:8px 6px;border:1px solid rgba(255,255,255,0.04);text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;color:rgba(255,255,255,0.55);background:var(--navy-card)}
-.size-table td:first-child{background:rgba(8,17,31,0.8);color:rgba(255,255,255,0.4);font-size:10px;letter-spacing:0.5px;white-space:nowrap}
-.size-table td.a0{color:#64B5F6}.size-table td.a1{color:#81C784}.size-table td.a2{color:var(--gold-light)}.size-table td.a3{color:#FF8A65}.size-table td.a4{color:#CE93D8}
-.size-table td.w1{color:#F48FB1}.size-table td.w2{color:#80DEEA}.size-table td.w3{color:#A5D6A7}.size-table td.w4{color:#FFCC02}
-.size-table td.k0{color:#90CAF9}.size-table td.k1{color:#A5D6A7}.size-table td.k2{color:var(--gold-light)}.size-table td.k3{color:#FF8A65}.size-table td.k4{color:#CE93D8}
+
 .size-note{font-size:11px;color:rgba(255,255,255,0.25);margin-top:16px;font-style:italic}
 
 /* EVOSOFT */
@@ -89,6 +74,21 @@
 .evosoft-visual{aspect-ratio:4/5;background:linear-gradient(160deg,#0D1A2E,#172C4E);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:center}
 .evosoft-visual span{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.12)}
 .evosoft-visual img{width:100%;height:100%;object-fit:cover}
+/* ── Continuous gold arc background (subtle) ── */
+.gipro-section,.features-section{position:relative;overflow:hidden}
+.gipro-section>*:not(.arc-bg),.features-section>*:not(.arc-bg){position:relative;z-index:1}
+.arc-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.arc{position:absolute;border-radius:50%;opacity:0.5;
+  background:conic-gradient(from 0deg,transparent 0deg,rgba(200,146,42,0.5) 65deg,rgba(255,206,92,0.98) 110deg,rgba(200,146,42,0.5) 155deg,transparent 215deg,transparent 360deg);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 6px));
+  mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 6px));
+  filter:drop-shadow(0 0 8px rgba(200,146,42,0.55))}
+.arc1{width:620px;height:620px;top:-180px;right:-140px;animation:arcspin 33s linear infinite}
+.arc2{width:920px;height:920px;bottom:-340px;left:-220px;animation:arcspin 52s linear infinite reverse}
+.arc3{width:760px;height:760px;top:-160px;left:38%;animation:arcspin 43s linear infinite}
+.arc4{width:540px;height:540px;bottom:-220px;right:8%;animation:arcspin 38s linear infinite reverse}
+@keyframes arcspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.arc{animation:none}}
 .evosoft-content .s-h2{margin-bottom:20px}
 .evosoft-content p{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.45);margin-bottom:28px}
 .evo-spec-row{display:flex;gap:0;border:1px solid rgba(255,255,255,0.07);margin-bottom:40px}
@@ -129,7 +129,7 @@
     <li><a href="evosoft.html">Evosoft</a></li>
     <li><a href="apparels.html">Apparels</a></li>
     <li><a href="accessories.html">Accessories</a></li>
-    <li><a href="index.html#size-guide">Size Guide</a></li>
+    <li><a href="bjj-gi.html#size-guide">Size Guide</a></li>
   </ul>
   <div class="nav-right">
     <span class="nav-badge">B2B Only</span>
@@ -203,6 +203,7 @@
 
 <!-- GIPRO SECTION -->
 <section class="s-wrap gipro-section" id="gipro">
+  <div class="arc-bg" aria-hidden="true"><span class="arc arc1"></span><span class="arc arc2"></span></div>
   <div class="gipro-intro">
     <div>
       <div class="s-eye">BJJ Gi — Primary Range</div>
@@ -272,14 +273,15 @@
   <div class="color-header">
     <div>
       <div class="s-eye">Customization</div>
-      <h2 class="s-h2"><em>15 Colors.</em><br>Your Identity.</h2>
+      <h2 class="s-h2"><em>12+ Colors.</em><br>Your Identity.</h2>
     </div>
     <div style="text-align:right">
-      <div class="color-count">15+</div>
+      <div class="color-count">12+</div>
       <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-top:4px">Standard Colors</div>
     </div>
   </div>
-  <div class="swatches-grid">
+  <div class="swatch-marquee">
+   <div class="swatch-track" id="swatchTrack">
     <div class="swatch"><div class="swatch-dot" style="background:#F5F0E8;border-color:rgba(255,255,255,0.15)"></div><span class="swatch-name">Off White</span></div>
     <div class="swatch"><div class="swatch-dot" style="background:#6B0F1A"></div><span class="swatch-name">Maroon</span></div>
     <div class="swatch"><div class="swatch-dot" style="background:#FFFFFF;border-color:rgba(255,255,255,0.25)"></div><span class="swatch-name">White</span></div>
@@ -297,12 +299,14 @@
     <div class="swatch"><div class="swatch-dot" style="background:#E8C42A"></div><span class="swatch-name">Yellow</span></div>
     <div class="swatch"><div class="swatch-dot" style="background:#7722CC"></div><span class="swatch-name">Purple</span></div>
     <div class="swatch"><div class="swatch-dot special" style="background:repeating-linear-gradient(45deg,#4a5c3a,#4a5c3a 5px,#3a4c2a 5px,#3a4c2a 10px,#6b7a5a 10px,#6b7a5a 15px)"></div><span class="swatch-name">Camouflage ★</span></div>
+   </div>
   </div>
   <p style="font-size:12px;color:rgba(255,255,255,0.25);margin-top:20px">★ Camouflage available as special order only. Contact our B2B team for availability.</p>
 </section>
 
 <!-- FEATURES -->
 <section class="s-wrap features-section" id="features">
+  <div class="arc-bg" aria-hidden="true"><span class="arc arc3"></span><span class="arc arc4"></span></div>
   <div class="s-eye">Engineering</div>
   <h2 class="s-h2">Built for the <em>Mat.</em><br>Built to Last.</h2>
   <div class="features-grid">
@@ -313,102 +317,6 @@
     <div class="feature-box"><div class="feature-icon"></div><div class="feature-title">Strategic Reinforced Stitching</div><p class="feature-desc">Triple-stitched seams at all high-stress zones. Reinforced collar, knee panels, and cuff areas. Engineered to outlast the most demanding training schedules.</p></div>
     <div class="feature-box"><div class="feature-icon"></div><div class="feature-title">Adjustable Waistband</div><p class="feature-desc">Comfortable, adjustable trouser waistband with draw-cord system. 270gsm ripstop trouser fabric across all GiPro variants for consistent performance.</p></div>
   </div>
-</section>
-
-<!-- SIZE CHART -->
-<section class="size-section" id="size-guide">
-  <div class="s-eye">Sizing</div>
-  <h2 class="s-h2">Find Your <em>Perfect Fit</em></h2>
-  <div class="size-tabs" role="tablist">
-    <button class="size-tab active" onclick="showSizeTab('men',this)" role="tab" aria-selected="true">Men (A0–A4)</button>
-    <button class="size-tab" onclick="showSizeTab('women',this)" role="tab" aria-selected="false">Women (W1–W4)</button>
-    <button class="size-tab" onclick="showSizeTab('kids',this)" role="tab" aria-selected="false">Kids (K0–K4)</button>
-  </div>
-
-  <div id="tab-men" class="size-panel active">
-    <div class="size-table-wrap">
-      <table class="size-table" aria-label="BJJ Men Size Chart">
-        <thead><tr><th class="row-head">Height (in) ↓ / Weight (lbs) →</th><th>5'1"</th><th>5'2"</th><th>5'3"</th><th>5'4"</th><th>5'5"</th><th>5'6"</th><th>5'7"</th><th>5'8"</th><th>5'9"</th><th>5'10"</th><th>5'11"</th><th>6'0"</th><th>6'1"</th><th>6'2"</th><th>6'3"</th><th>6'4"</th><th>6'5"</th></tr></thead>
-        <tbody>
-          <tr><td>0–115</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>116–120</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>121–125</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>126–130</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>131–135</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>136–140</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>141–145</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>146–150</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>151–155</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>156–160</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td></td><td></td><td></td></tr>
-          <tr><td>161–165</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td></td><td></td></tr>
-          <tr><td>166–170</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td></td><td></td></tr>
-          <tr><td>171–175</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td></td></tr>
-          <tr><td>176–180</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td></td></tr>
-          <tr><td>181–185</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td></tr>
-          <tr><td>186–190</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
-          <tr><td>191–195</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
-          <tr><td>196–200</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
-          <tr><td>201–205</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td></tr>
-          <tr><td>206–210</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
-          <tr><td>211–215</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
-          <tr><td>216–220</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
-          <tr><td>221–225</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
-          <tr><td>226–230</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
-          <tr><td>231–235</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td><td class="a4">A4</td></tr>
-          <tr><td>236–240</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td></tr>
-          <tr><td>241–245</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td></tr>
-          <tr><td>246–250</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td></tr>
-          <tr><td>251–255</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a4">A4</td><td class="a4">A4</td></tr>
-          <tr><td>256–260</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a4">A4</td><td class="a4">A4</td></tr>
-          <tr><td>261–265</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a4">A4</td><td class="a4">A4</td></tr>
-          <tr><td>266–270</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a4">A4</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div id="tab-women" class="size-panel">
-    <div class="size-table-wrap">
-      <table class="size-table" aria-label="BJJ Women Size Chart">
-        <thead><tr><th class="row-head">Height (in) ↓ / Weight (lbs) →</th><th>4'9"</th><th>4'10"</th><th>4'11"</th><th>5'0"</th><th>5'1"</th><th>5'2"</th><th>5'3"</th><th>5'4"</th><th>5'5"</th><th>5'6"</th><th>5'7"</th><th>5'8"</th><th>5'9"</th><th>5'10"</th><th>5'11"</th><th>6'0"</th></tr></thead>
-        <tbody>
-          <tr><td>0–75</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>76–85</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>86–95</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>96–105</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>106–115</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>116–120</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td></tr>
-          <tr><td>121–125</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td></tr>
-          <tr><td>126–130</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td></tr>
-          <tr><td>131–135</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td></tr>
-          <tr><td>136–140</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td></tr>
-          <tr><td>141–145</td><td></td><td></td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td></td></tr>
-          <tr><td>146–150</td><td></td><td></td><td></td><td></td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
-          <tr><td>151–155</td><td></td><td></td><td></td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
-          <tr><td>156–160</td><td></td><td></td><td></td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
-          <tr><td>161–165</td><td></td><td></td><td></td><td></td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
-          <tr><td>166–170</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
-          <tr><td>171–175</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div id="tab-kids" class="size-panel">
-    <div class="size-table-wrap">
-      <table class="size-table" aria-label="BJJ Kids Size Chart">
-        <thead><tr><th class="row-head">Height (in) ↓ / Weight (lbs) →</th><th>3'8"</th><th>3'9"</th><th>3'10"</th><th>3'11"</th><th>4'0"</th><th>4'1"</th><th>4'2"</th><th>4'3"</th><th>4'4"</th><th>4'5"</th><th>4'6"</th><th>4'7"</th><th>4'8"</th><th>4'9"</th><th>4'10"</th><th>4'11"</th><th>5'0"</th><th>5'1"</th></tr></thead>
-        <tbody>
-          <tr><td>0–50</td><td class="k0">K0</td><td class="k0">K0</td><td class="k0">K0</td><td class="k0">K0</td><td class="k0">K0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>51–65</td><td></td><td></td><td></td><td></td><td class="k1">K1</td><td class="k1">K1</td><td class="k1">K1</td><td class="k1">K1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>66–80</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="k2">K2</td><td class="k2">K2</td><td class="k2">K2</td><td class="k2">K2</td><td class="k2">K2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>81–95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="k3">K3</td><td class="k3">K3</td><td class="k3">K3</td><td class="k3">K3</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>96–110</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="k4">K4</td><td class="k4">K4</td><td class="k4">K4</td><td class="k4">K4</td><td></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <p class="size-note">* All heights in feet/inches · All weights in pounds (lbs) · For border cases, we recommend sizing up.</p>
 </section>
 
 <!-- EVOSOFT -->
@@ -554,7 +462,7 @@
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="index.html#size-guide">Size Guide</a></li>
+        <li><a href="bjj-gi.html#size-guide">Size Guide</a></li>
         <li><a href="#rfq">Request a Quote</a></li>
         <li><a href="mailto:sales@gimakx.com">Contact Us</a></li>
       </ul>
@@ -590,12 +498,10 @@
 
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60)})
-function showSizeTab(id,btn){
-  document.querySelectorAll('.size-panel').forEach(p=>p.classList.remove('active'))
-  document.querySelectorAll('.size-tab').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')})
-  document.getElementById('tab-'+id).classList.add('active')
-  btn.classList.add('active');btn.setAttribute('aria-selected','true')
-}
+
+// Duplicate color swatches once for a seamless auto-scroll loop
+;(function(){var t=document.getElementById('swatchTrack');if(t)t.innerHTML+=t.innerHTML;})();
+
 function toggleMute(){
   const v=document.getElementById('heroVideo')
   if(!v)return

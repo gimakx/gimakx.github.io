@@ -10,6 +10,9 @@ gimakx-knowledge-graph.html
 gimakx-graph.json
 gimakx-GRAPH_REPORT.md
 
+# Knowledge graph artifacts (local only — never serve on the live site)
+graphify-out/
+
 # Archives
 *.zip
 

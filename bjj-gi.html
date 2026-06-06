@@ -13,6 +13,12 @@
 <style>
 .gallery-caption{margin-top:14px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5)}
 .gallery-caption b{color:var(--gold)}
+.gallery-main{position:relative}
+.gallery-soon{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(160deg,#0D1A2E,#172C4E);text-align:center;padding:24px}
+.gallery-soon.show{display:flex}
+.gallery-soon .gs-sw{width:72px;height:72px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);box-shadow:0 6px 24px rgba(0,0,0,0.3)}
+.gallery-soon .gs-txt{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55)}
+.gallery-soon .gs-sub{font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.3)}
 .configurator{margin:24px 0 0;display:flex;flex-direction:column;gap:26px}
 .config-group{}
 .config-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;display:flex;align-items:center;gap:10px}
@@ -52,7 +58,7 @@
     <li><a href="evosoft.html">Evosoft</a></li>
     <li><a href="apparels.html">Apparels</a></li>
     <li><a href="accessories.html">Accessories</a></li>
-    <li><a href="index.html#size-guide">Size Guide</a></li>
+    <li><a href="#size-guide">Size Guide</a></li>
   </ul>
   <div class="nav-right">
     <span class="nav-badge">B2B Only</span>
@@ -70,6 +76,11 @@
   <div class="gallery">
     <div class="gallery-main">
       <img id="galleryMain" src="images/GPNBL.jpg" alt="GiPro Custom BJJ Gi — Navy Blue">
+      <div class="gallery-soon" id="gallerySoon">
+        <div class="gs-sw" id="gsSwatch"></div>
+        <div class="gs-txt" id="gsTxt"></div>
+        <div class="gs-sub">Photo coming soon — available to order</div>
+      </div>
     </div>
     <div class="gallery-caption" id="galleryCaption"><b>Navy Blue</b> · GiPro Fortitude</div>
   </div>
@@ -134,7 +145,7 @@
       <div class="config-group">
         <div class="config-label">Size <span class="config-val" id="selSize">— Select a size</span></div>
         <div class="config-sizes" id="sizeOpts"></div>
-        <a href="index.html#size-guide" class="config-sizelink">Not sure of your size? View the size guide →</a>
+        <a href="#size-guide" class="config-sizelink">Not sure of your size? View the size guide →</a>
       </div>
 
       <div class="config-cta">
@@ -247,9 +258,105 @@
     <tr><th>Lead Time</th><td>4–6 weeks (typical)</td></tr>
   </table>
   <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
-    <a href="index.html#size-guide" class="btn-outline">View Size Guide →</a>
+    <a href="#size-guide" class="btn-outline">View Size Guide →</a>
     <a href="#rfq" class="btn-gold">Request a Quote →</a>
   </div>
+</section>
+
+<!-- SIZE CHART -->
+<section class="size-section" id="size-guide">
+  <div class="s-eye">Sizing</div>
+  <h2 class="s-h2">Find Your <em>Perfect Fit</em></h2>
+  <div class="size-tabs" role="tablist">
+    <button class="size-tab active" onclick="showSizeTab('men',this)" role="tab" aria-selected="true">Men (A0–A4)</button>
+    <button class="size-tab" onclick="showSizeTab('women',this)" role="tab" aria-selected="false">Women (W1–W4)</button>
+    <button class="size-tab" onclick="showSizeTab('kids',this)" role="tab" aria-selected="false">Kids (K0–K4)</button>
+  </div>
+
+  <div id="tab-men" class="size-panel active">
+    <div class="size-table-wrap">
+      <table class="size-table" aria-label="BJJ Men Size Chart">
+        <thead><tr><th class="row-head">Height (in) ↓ / Weight (lbs) →</th><th>5'1"</th><th>5'2"</th><th>5'3"</th><th>5'4"</th><th>5'5"</th><th>5'6"</th><th>5'7"</th><th>5'8"</th><th>5'9"</th><th>5'10"</th><th>5'11"</th><th>6'0"</th><th>6'1"</th><th>6'2"</th><th>6'3"</th><th>6'4"</th><th>6'5"</th></tr></thead>
+        <tbody>
+          <tr><td>0–115</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>116–120</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>121–125</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>126–130</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>131–135</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>136–140</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>141–145</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>146–150</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>151–155</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a0">A0</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>156–160</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td></td><td></td><td></td></tr>
+          <tr><td>161–165</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td></td><td></td></tr>
+          <tr><td>166–170</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td></td><td></td></tr>
+          <tr><td>171–175</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td></td></tr>
+          <tr><td>176–180</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td></td></tr>
+          <tr><td>181–185</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a1">A1</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td></tr>
+          <tr><td>186–190</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
+          <tr><td>191–195</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
+          <tr><td>196–200</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
+          <tr><td>201–205</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td></tr>
+          <tr><td>206–210</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
+          <tr><td>211–215</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a2">A2</td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
+          <tr><td>216–220</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a2">A2</td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
+          <tr><td>221–225</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a2">A2</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
+          <tr><td>226–230</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td></tr>
+          <tr><td>231–235</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td><td class="a4">A4</td></tr>
+          <tr><td>236–240</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td></tr>
+          <tr><td>241–245</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a3">A3</td><td class="a3">A3</td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td></tr>
+          <tr><td>246–250</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td><td class="a4">A4</td></tr>
+          <tr><td>251–255</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a4">A4</td><td class="a4">A4</td></tr>
+          <tr><td>256–260</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a4">A4</td><td class="a4">A4</td></tr>
+          <tr><td>261–265</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a4">A4</td><td class="a4">A4</td></tr>
+          <tr><td>266–270</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a4">A4</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="tab-women" class="size-panel">
+    <div class="size-table-wrap">
+      <table class="size-table" aria-label="BJJ Women Size Chart">
+        <thead><tr><th class="row-head">Height (in) ↓ / Weight (lbs) →</th><th>4'9"</th><th>4'10"</th><th>4'11"</th><th>5'0"</th><th>5'1"</th><th>5'2"</th><th>5'3"</th><th>5'4"</th><th>5'5"</th><th>5'6"</th><th>5'7"</th><th>5'8"</th><th>5'9"</th><th>5'10"</th><th>5'11"</th><th>6'0"</th></tr></thead>
+        <tbody>
+          <tr><td>0–75</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>76–85</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>86–95</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>96–105</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>106–115</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>116–120</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td></tr>
+          <tr><td>121–125</td><td class="w1">W1</td><td class="w1">W1</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td></tr>
+          <tr><td>126–130</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td></tr>
+          <tr><td>131–135</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td></tr>
+          <tr><td>136–140</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td></td><td></td><td></td></tr>
+          <tr><td>141–145</td><td></td><td></td><td class="w2">W2</td><td class="w2">W2</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td></td></tr>
+          <tr><td>146–150</td><td></td><td></td><td></td><td></td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
+          <tr><td>151–155</td><td></td><td></td><td></td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
+          <tr><td>156–160</td><td></td><td></td><td></td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
+          <tr><td>161–165</td><td></td><td></td><td></td><td></td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
+          <tr><td>166–170</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="w3">W3</td><td class="w3">W3</td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
+          <tr><td>171–175</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="w3">W3</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td><td class="w4">W4</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="tab-kids" class="size-panel">
+    <div class="size-table-wrap">
+      <table class="size-table" aria-label="BJJ Kids Size Chart">
+        <thead><tr><th class="row-head">Height (in) ↓ / Weight (lbs) →</th><th>3'8"</th><th>3'9"</th><th>3'10"</th><th>3'11"</th><th>4'0"</th><th>4'1"</th><th>4'2"</th><th>4'3"</th><th>4'4"</th><th>4'5"</th><th>4'6"</th><th>4'7"</th><th>4'8"</th><th>4'9"</th><th>4'10"</th><th>4'11"</th><th>5'0"</th><th>5'1"</th></tr></thead>
+        <tbody>
+          <tr><td>0–50</td><td class="k0">K0</td><td class="k0">K0</td><td class="k0">K0</td><td class="k0">K0</td><td class="k0">K0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>51–65</td><td></td><td></td><td></td><td></td><td class="k1">K1</td><td class="k1">K1</td><td class="k1">K1</td><td class="k1">K1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>66–80</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="k2">K2</td><td class="k2">K2</td><td class="k2">K2</td><td class="k2">K2</td><td class="k2">K2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>81–95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="k3">K3</td><td class="k3">K3</td><td class="k3">K3</td><td class="k3">K3</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>96–110</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="k4">K4</td><td class="k4">K4</td><td class="k4">K4</td><td class="k4">K4</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="size-note">* All heights in feet/inches · All weights in pounds (lbs) · For border cases, we recommend sizing up.</p>
 </section>
 
 <!-- FEATURES -->
@@ -337,7 +444,7 @@
     </div>
     <div class="footer-col"><h4>BJJ Gi</h4><ul><li><a href="bjj-gi.html">GiPro Aerotough</a></li><li><a href="bjj-gi.html">GiPro Fortitude</a></li><li><a href="bjj-gi.html">GiPro Monolith</a></li><li><a href="evosoft.html">Evosoft Rash Guard</a></li></ul></div>
     <div class="footer-col"><h4>More Products</h4><ul><li><a href="apparels.html#gistrix">GiStrix T-Shirts</a></li><li><a href="apparels.html#giflex">GiFlex Hoodies</a></li><li><a href="accessories.html#badges">Custom Badges</a></li><li><a href="accessories.html#belts">Belts</a></li></ul></div>
-    <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html#size-guide">Size Guide</a></li><li><a href="#rfq">Request a Quote</a></li><li><a href="mailto:sales@gimakx.com">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="#size-guide">Size Guide</a></li><li><a href="#rfq">Request a Quote</a></li><li><a href="mailto:sales@gimakx.com">Contact Us</a></li></ul></div>
   </div>
   <div class="footer-payment">
     <span class="payment-label">Accepted Payment Methods</span>
@@ -355,6 +462,13 @@
 
 <script>
 // Detailed weight comparison tabs (informational)
+function showSizeTab(id,btn){
+  document.querySelectorAll('.size-panel').forEach(p=>p.classList.remove('active'))
+  document.querySelectorAll('.size-tab').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')})
+  document.getElementById('tab-'+id).classList.add('active')
+  btn.classList.add('active');btn.setAttribute('aria-selected','true')
+}
+
 function showVariant(id,btn){
   document.querySelectorAll('.variant-panel').forEach(p=>p.classList.remove('active'))
   document.querySelectorAll('.variant-tab').forEach(b=>b.classList.remove('active'))
@@ -398,8 +512,17 @@ document.querySelectorAll('#configSwatches .config-sw').forEach(sw=>{
     sw.classList.add('active');
     state.color=sw.dataset.name;
     document.getElementById('selColor').textContent=state.color;
-    document.getElementById('galleryMain').src=sw.dataset.img||FALLBACK_IMG;
-    document.getElementById('galleryMain').alt='GiPro Custom BJJ Gi — '+state.color;
+    const soon=document.getElementById('gallerySoon');
+    if(sw.dataset.img){
+      const img=document.getElementById('galleryMain');
+      img.src=sw.dataset.img;
+      img.alt='GiPro Custom BJJ Gi — '+state.color;
+      soon.classList.remove('show');
+    } else {
+      document.getElementById('gsSwatch').style.background=sw.style.background;
+      document.getElementById('gsTxt').textContent=state.color;
+      soon.classList.add('show');
+    }
     document.getElementById('colorNote').style.display=sw.dataset.special?'block':'none';
     updateSummary();
   });
