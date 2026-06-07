@@ -27,6 +27,7 @@
 ## Main Pages
 
 - [Home](https://www.gimakx.com/): Overview of Gimakx products and B2B manufacturing capabilities.
+- [About Us](https://www.gimakx.com/about.html): Gimakx company story, craft, and 20+ years of combined experience in BJJ gear manufacturing.
 - [Size Guide](https://www.gimakx.com/bjj-gi.html#size-guide): BJJ Gi sizing from M0 to A5.
 - [Request a Quote](https://www.gimakx.com/index.html#rfq): B2B quote request for custom orders.
 

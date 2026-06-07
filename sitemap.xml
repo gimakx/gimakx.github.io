@@ -41,4 +41,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- About Us -->
+  <url>
+    <loc>https://www.gimakx.com/about.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
