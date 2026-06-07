@@ -13,6 +13,9 @@ gimakx-GRAPH_REPORT.md
 # Knowledge graph artifacts (local only — never serve on the live site)
 graphify-out/
 
+# Remotion video studio (separate dev tool — not part of the website)
+video-studio/
+
 # Archives
 *.zip
 

@@ -1,0 +1,18 @@
+# robots.txt for gimakx.com
+# B2B BJJ Gi Manufacturer
+
+User-agent: *
+Allow: /
+
+# Block access to draft/prototype pages not intended for indexing
+Disallow: /bjj-b2b-landing.html
+Disallow: /gimakx-redesign.html
+Disallow: /gimakx-knowledge-graph.html
+Disallow: /layout-1-dark-luxury.html
+Disallow: /layout-2-editorial.html
+Disallow: /layout-3-bold-sport.html
+Disallow: /graphify-out/
+Disallow: /video-studio/
+
+# Sitemap declaration
+Sitemap: https://www.gimakx.com/sitemap.xml
