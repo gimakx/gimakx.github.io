@@ -97,7 +97,7 @@
 .variant-tags{display:flex;flex-wrap:wrap;gap:8px}
 
 /* COLOR SECTION */
-.color-section{background:var(--navy-mid);padding:80px 5%}
+.color-section{background:rgba(13,26,46,0.84);padding:80px 5%}
 .color-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
 .color-count{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:900;color:var(--gold);line-height:1}
 
@@ -106,7 +106,7 @@
 .size-note{font-size:11px;color:rgba(255,255,255,0.25);margin-top:16px;font-style:italic}
 
 /* EVOSOFT */
-.evosoft-section{background:var(--navy);padding:100px 5%}
+.evosoft-section{background:rgba(8,17,31,0.84);padding:100px 5%}
 .evosoft-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .evosoft-visual{aspect-ratio:4/5;background:linear-gradient(160deg,#0D1A2E,#172C4E);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:center}
 .evosoft-visual span{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.12)}
@@ -143,7 +143,7 @@
 .evo-spec-val{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--white)}
 
 /* SECONDARY PRODUCTS */
-.secondary-section{background:var(--navy-mid);padding:80px 5%}
+.secondary-section{background:rgba(13,26,46,0.84);padding:80px 5%}
 .secondary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
 .secondary-card{background:var(--navy-card);padding:36px 28px;border:1px solid rgba(255,255,255,0.05);transition:all 0.25s;text-decoration:none;display:block}
 .secondary-card:hover{border-color:rgba(200,146,42,0.25);transform:translateY(-3px)}
@@ -168,9 +168,14 @@
   .hero-ctas .btn-gold,.hero-ctas .btn-outline{text-align:center;justify-content:center;padding:13px 20px;font-size:11px}
 }
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* ── Gold dust particle background (sits BEHIND all page content) ── */
+html{background:var(--navy)}
+body{background:transparent}
+#goldDust{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;mix-blend-mode:screen}
 </style>
 </head>
 <body>
+<canvas id="goldDust" aria-hidden="true"></canvas>
 <h1 class="sr-only">Custom BJJ Gi Manufacturer — Wholesale Direct from Factory</h1>
 
 <!-- NAV -->
@@ -181,6 +186,7 @@
     <li><a href="evosoft.html">Evosoft</a></li>
     <li><a href="apparels.html">Apparels</a></li>
     <li><a href="accessories.html">Accessories</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="bjj-gi.html#size-guide">Size Guide</a></li>
   </ul>
   <div class="nav-right">
@@ -548,6 +554,68 @@ function handleRFQ(e){
   btn.textContent='Sending...';btn.disabled=true
   setTimeout(()=>{btn.textContent='Request Sent ✓';btn.style.background='#2d7a4f'},1200)
 }
+
+// Gold dust — softly glowing particles drifting at random over the whole page
+;(function(){
+  const canvas=document.getElementById('goldDust')
+  if(!canvas||!canvas.getContext)return
+  const ctx=canvas.getContext('2d')
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const colors=['200,146,42','232,168,58','255,200,74']
+  let particles=[],w=0,h=0,dpr=1
+
+  function makeParticle(){
+    return{
+      x:Math.random()*w,
+      y:Math.random()*h,
+      r:(Math.random()*1.6+0.4)*dpr,
+      vx:(Math.random()-0.5)*0.9*dpr,
+      vy:(Math.random()-0.5)*0.9*dpr,
+      maxV:(Math.random()*0.5+0.55)*dpr,
+      baseAlpha:Math.random()*0.5+0.2,
+      phase:Math.random()*Math.PI*2,
+      pulse:Math.random()*0.015+0.006,
+      color:colors[(Math.random()*colors.length)|0]
+    }
+  }
+  function resize(){
+    dpr=Math.min(window.devicePixelRatio||1,2)
+    w=canvas.width=window.innerWidth*dpr
+    h=canvas.height=window.innerHeight*dpr
+    canvas.style.width=window.innerWidth+'px'
+    canvas.style.height=window.innerHeight+'px'
+    const count=Math.min(110,Math.round((window.innerWidth*window.innerHeight)/20000))
+    particles=Array.from({length:count},makeParticle)
+  }
+  function frame(t){
+    ctx.clearRect(0,0,w,h)
+    for(const p of particles){
+      if(!reduceMotion){
+        // wander: nudge velocity randomly each frame, then clamp so drift stays gentle
+        p.vx+=(Math.random()-0.5)*0.08*dpr
+        p.vy+=(Math.random()-0.5)*0.08*dpr
+        const sp=Math.hypot(p.vx,p.vy)
+        if(sp>p.maxV){p.vx=p.vx/sp*p.maxV;p.vy=p.vy/sp*p.maxV}
+        p.x+=p.vx;p.y+=p.vy
+        if(p.x<-12)p.x=w+12;else if(p.x>w+12)p.x=-12
+        if(p.y<-12)p.y=h+12;else if(p.y>h+12)p.y=-12
+      }
+      const alpha=p.baseAlpha*(0.55+0.45*Math.sin(p.phase+t*p.pulse))
+      const glowR=p.r*6
+      const glow=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,glowR)
+      glow.addColorStop(0,`rgba(${p.color},${alpha})`)
+      glow.addColorStop(1,`rgba(${p.color},0)`)
+      ctx.fillStyle=glow
+      ctx.beginPath();ctx.arc(p.x,p.y,glowR,0,Math.PI*2);ctx.fill()
+      ctx.fillStyle=`rgba(${p.color},${Math.min(alpha+0.3,1)})`
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()
+    }
+    if(!reduceMotion)requestAnimationFrame(frame)
+  }
+  resize()
+  window.addEventListener('resize',resize,{passive:true})
+  requestAnimationFrame(frame)
+})()
 </script>
 </body>
 </html>
