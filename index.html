@@ -80,20 +80,20 @@
 .gipro-intro-right{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.45);padding-bottom:8px}
 .gipro-intro-right p+p{margin-top:16px}
 .variants-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:88px}
-.variant-card{background:linear-gradient(180deg,#16273F 0%,var(--navy-card) 50%);border:1px solid rgba(255,255,255,0.09);border-radius:14px;position:relative;transition:border-color 0.3s,box-shadow 0.3s;
+.variant-card,.evosoft-visual{background:linear-gradient(180deg,#16273F 0%,var(--navy-card) 50%);border:1px solid rgba(255,255,255,0.09);border-radius:14px;position:relative;transition:border-color 0.3s,box-shadow 0.3s;
   box-shadow:inset 0 1px 0 rgba(255,255,255,0.16),inset 0 -2px 0 rgba(0,0,0,0.5),inset 1px 0 0 rgba(255,255,255,0.04),inset -1px 0 0 rgba(0,0,0,0.3),0 18px 36px -12px rgba(0,0,0,0.6),0 48px 90px -32px rgba(0,0,0,0.85);
   animation:cardfloat 7s ease-in-out infinite;will-change:transform}
-.variant-card::before{content:"";position:absolute;inset:-1px;border-radius:15px;padding:1px;pointer-events:none;z-index:2;
+.variant-card::before,.evosoft-visual::before{content:"";position:absolute;inset:-1px;border-radius:15px;padding:1px;pointer-events:none;z-index:2;
   background:linear-gradient(180deg,rgba(255,255,255,0.3),rgba(255,255,255,0.03) 35%,rgba(200,146,42,0.12) 70%,rgba(200,146,42,0.4));
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
-.variant-card::after{content:"";position:absolute;left:11%;right:11%;bottom:-46px;height:30px;border-radius:50%;
+.variant-card::after,.evosoft-visual::after{content:"";position:absolute;left:11%;right:11%;bottom:-46px;height:30px;border-radius:50%;
   background:radial-gradient(ellipse at center,rgba(0,0,0,0.55),transparent 68%);filter:blur(7px);z-index:-1;
   animation:groundfloat 7s ease-in-out infinite}
 .variant-card:nth-child(2),.variant-card:nth-child(2)::after{animation-delay:-2.4s}
 .variant-card:nth-child(3),.variant-card:nth-child(3)::after{animation-delay:-4.8s}
 @keyframes cardfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @keyframes groundfloat{0%,100%{transform:scaleX(1);opacity:0.85}50%{transform:scaleX(0.9);opacity:0.5}}
-@media(prefers-reduced-motion:reduce){.variant-card,.variant-card::after{animation:none}}
+@media(prefers-reduced-motion:reduce){.variant-card,.variant-card::after,.evosoft-visual,.evosoft-visual::after{animation:none}}
 .variant-card:hover{border-color:rgba(200,146,42,0.45);box-shadow:inset 0 1px 0 rgba(255,255,255,0.16),inset 0 -2px 0 rgba(0,0,0,0.5),0 18px 36px -12px rgba(0,0,0,0.6),0 48px 90px -32px rgba(0,0,0,0.85),0 0 42px -6px rgba(200,146,42,0.28)}
 .variant-card.featured{border-color:rgba(200,146,42,0.28)}
 .variant-video{position:relative;aspect-ratio:1/1;background:linear-gradient(160deg,#0F1E35,#172C4E);overflow:hidden;border-radius:13px 13px 0 0}
@@ -121,9 +121,9 @@
 /* EVOSOFT */
 .evosoft-section{background:rgba(8,17,31,0.84);padding:100px 5%}
 .evosoft-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.evosoft-visual{aspect-ratio:4/5;background:linear-gradient(160deg,#0D1A2E,#172C4E);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:center}
+.evosoft-visual{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
 .evosoft-visual span{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.12)}
-.evosoft-visual img{width:100%;height:100%;object-fit:cover}
+.evosoft-visual img{width:100%;height:100%;object-fit:cover;border-radius:13px}
 /* ── Continuous gold arc background (subtle) ── */
 .gipro-section,.features-section{position:relative;overflow:hidden}
 .gipro-section>*:not(.arc-bg),.features-section>*:not(.arc-bg){position:relative;z-index:1}
@@ -336,6 +336,25 @@ body{background:transparent}
   </div>
 </section>
 
+<!-- EVOSOFT -->
+<section class="evosoft-section" id="evosoft">
+  <div class="evosoft-inner">
+    <div class="evosoft-visual"><img src="images/ERG01RED.jpg" alt="Evosoft BJJ Rash Guard" width="2048" height="2048" loading="lazy"></div>
+    <div class="evosoft-content">
+      <div class="s-eye">BJJ Gi Category</div>
+      <h2 class="s-h2">Evo<em>soft</em><br>Rash Guard</h2>
+      <p>Engineered for performance under the Gi and standalone training. The Evosoft is built from 240gsm sublimation-ready fabric — fully customizable with your academy's branding, colors, and logo.</p>
+      <p>Pairs seamlessly with the GiPro collection for a complete, matched academy kit.</p>
+      <div class="evo-spec-row">
+        <div class="evo-spec"><div class="evo-spec-label">Fabric Weight</div><div class="evo-spec-val">240gsm</div></div>
+        <div class="evo-spec"><div class="evo-spec-label">Customization</div><div class="evo-spec-val">Full Sublimation</div></div>
+        <div class="evo-spec"><div class="evo-spec-label">MOQ</div><div class="evo-spec-val">10 Units</div></div>
+      </div>
+      <a href="evosoft.html" class="btn-gold">Explore Evosoft →</a>
+    </div>
+  </div>
+</section>
+
 <!-- COLOR SECTION -->
 <section class="color-section" id="colors">
   <div class="color-header">
@@ -370,25 +389,6 @@ body{background:transparent}
    </div>
   </div>
   <p style="font-size:12px;color:rgba(255,255,255,0.25);margin-top:20px">★ Camouflage available as special order only. Contact our B2B team for availability.</p>
-</section>
-
-<!-- EVOSOFT -->
-<section class="evosoft-section" id="evosoft">
-  <div class="evosoft-inner">
-    <div class="evosoft-visual"><img src="images/ERG01RED.jpg" alt="Evosoft BJJ Rash Guard" width="2048" height="2048" loading="lazy"></div>
-    <div class="evosoft-content">
-      <div class="s-eye">BJJ Gi Category</div>
-      <h2 class="s-h2">Evo<em>soft</em><br>Rash Guard</h2>
-      <p>Engineered for performance under the Gi and standalone training. The Evosoft is built from 240gsm sublimation-ready fabric — fully customizable with your academy's branding, colors, and logo.</p>
-      <p>Pairs seamlessly with the GiPro collection for a complete, matched academy kit.</p>
-      <div class="evo-spec-row">
-        <div class="evo-spec"><div class="evo-spec-label">Fabric Weight</div><div class="evo-spec-val">240gsm</div></div>
-        <div class="evo-spec"><div class="evo-spec-label">Customization</div><div class="evo-spec-val">Full Sublimation</div></div>
-        <div class="evo-spec"><div class="evo-spec-label">MOQ</div><div class="evo-spec-val">10 Units</div></div>
-      </div>
-      <a href="evosoft.html" class="btn-gold">Explore Evosoft →</a>
-    </div>
-  </div>
 </section>
 
 <!-- SECONDARY PRODUCTS -->
