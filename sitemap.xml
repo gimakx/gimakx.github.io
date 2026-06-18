@@ -12,9 +12,25 @@
   <!-- BJJ Gi — primary product page (flagship) -->
   <url>
     <loc>https://www.gimakx.com/bjj-gi.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Guides hub -->
+  <url>
+    <loc>https://www.gimakx.com/guides/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Guide: BJJ Gi Fabric Weights (380 vs 450 vs 500 GSM) -->
+  <url>
+    <loc>https://www.gimakx.com/guides/bjj-gi-fabric-weights.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Evosoft Rash Guard -->
