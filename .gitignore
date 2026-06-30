@@ -19,6 +19,15 @@ video-studio/
 # Archives
 *.zip
 
+# Internal SEO / GEO working notes — kept on disk, not published to the site repo
+ACTION-PLAN.md
+AI-VISIBILITY-PLAN.md
+FULL-AUDIT-REPORT.md
+GEO-ANALYSIS.md
+
+# Local tooling config (MCP servers, env-var references)
+.mcp.json
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db
