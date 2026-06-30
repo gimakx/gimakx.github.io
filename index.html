@@ -112,9 +112,31 @@
 .variant-tags{display:flex;flex-wrap:wrap;gap:8px}
 
 /* COLOR SECTION */
-.color-section{background:rgba(13,26,46,0.84);padding:80px 5%}
-.color-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
+/* COLOR WHEEL — interactive spinning ring on the right edge, text on the left */
+.color-section{background:rgba(13,26,46,0.84);position:relative;overflow:hidden;min-height:760px;display:flex;align-items:center}
+.color-section::before{content:'';position:absolute;top:50%;right:-220px;width:760px;height:760px;border-radius:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(200,146,42,0.10) 0%,rgba(200,146,42,0.03) 45%,transparent 70%);pointer-events:none}
+.color-inner{position:relative;z-index:2;width:100%;max-width:560px;padding:80px 5%}
 .color-count{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:900;color:var(--gold);line-height:1}
+.color-lead{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.5);max-width:420px;margin:22px 0 34px}
+.color-readout{display:flex;align-items:center;gap:18px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.08);max-width:420px}
+.readout-chip{width:54px;height:54px;border-radius:10px;border:1px solid rgba(255,255,255,0.18);flex-shrink:0;box-shadow:inset 0 1px 0 rgba(255,255,255,0.22),0 8px 18px -8px rgba(0,0,0,0.7);transition:background 0.3s,border-color 0.3s}
+.readout-text{display:flex;flex-direction:column;gap:4px}
+.readout-name{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:900;text-transform:uppercase;line-height:1;color:var(--white)}
+.readout-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.color-hint{margin-top:26px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);display:flex;align-items:center;gap:8px}
+.color-hint svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.6}
+.wheel-stage{position:absolute;inset:0;z-index:1;cursor:grab;touch-action:none}
+.wheel-stage:active{cursor:grabbing}
+.wheel-pointer{position:absolute;top:50%;left:0;z-index:5;transform:translateY(-50%);pointer-events:none;opacity:0;transition:opacity 0.3s}
+.color-section .swatch{position:absolute;top:0;left:0;width:150px;margin:-95px 0 0 -75px;opacity:0;will-change:transform,opacity;pointer-events:auto;cursor:pointer}
+.color-section .swatch.active .swatch-dot{border-color:var(--gold);box-shadow:0 0 0 2px rgba(200,146,42,0.35),0 18px 40px -10px rgba(0,0,0,0.7),0 0 40px -4px rgba(200,146,42,0.4)}
+.color-note{position:absolute;bottom:26px;left:5%;z-index:2;font-size:12px;color:rgba(255,255,255,0.25);max-width:420px}
+@media(max-width:860px){
+  .color-section{min-height:auto;flex-direction:column;align-items:stretch}
+  .color-inner{max-width:none;padding:64px 6% 20px}
+  .wheel-stage{position:relative;height:430px;inset:auto}
+  .color-note{position:relative;left:auto;bottom:auto;padding:0 6% 50px}
+}
 
 /* SIZE CHART */
 
@@ -359,39 +381,50 @@ body{background:transparent}
 
 <!-- COLOR SECTION -->
 <section class="color-section" id="colors">
-  <div class="color-header">
-    <div>
-      <div class="s-eye">Customization</div>
-      <h2 class="s-h2"><em>12+ Colors.</em><br>Your Identity.</h2>
+  <div class="color-inner">
+    <div class="s-eye">Customization</div>
+    <h2 class="s-h2"><em>12+ Colors.</em><br>Your Identity.</h2>
+    <p class="color-lead">Spin the wheel to explore every standard fabric colour. Mix-and-match trim, stitching, and patch placement on any GiPro — camouflage available as a special order.</p>
+
+    <div class="color-readout">
+      <div class="readout-chip" id="readoutChip"></div>
+      <div class="readout-text">
+        <div class="readout-name" id="readoutName">Off White</div>
+        <div class="readout-tag" id="readoutTag">Standard Colour</div>
+      </div>
     </div>
-    <div style="text-align:right">
-      <div class="color-count">12+</div>
-      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-top:4px">Standard Colors</div>
+
+    <div class="color-hint">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M21 3v6h-6"/></svg>
+      Drag to spin · tap a colour to select
     </div>
   </div>
-  <div class="swatch-marquee">
-   <div class="swatch-track" id="swatchTrack">
-    <div class="swatch"><div class="swatch-dot" style="background:#F5F0E8;border-color:rgba(255,255,255,0.15)"></div><span class="swatch-name">Off White</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#6B0F1A"></div><span class="swatch-name">Maroon</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#FFFFFF;border-color:rgba(255,255,255,0.25)"></div><span class="swatch-name">White</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#1A2B5E"></div><span class="swatch-name">Navy Blue</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#4A5C2A"></div><span class="swatch-name">Olive Green</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#1E44CC"></div><span class="swatch-name">Royal Blue</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#E8339A"></div><span class="swatch-name">Pink</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#CC1122"></div><span class="swatch-name">Red</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#C8922A"></div><span class="swatch-name">Golden</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#111111;border-color:rgba(255,255,255,0.1)"></div><span class="swatch-name">Black</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#5A6070"></div><span class="swatch-name">Gray</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#44CC22"></div><span class="swatch-name">Parrot Green</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#44AAEE"></div><span class="swatch-name">Sky Blue</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#7A4422"></div><span class="swatch-name">Brown</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#E8C42A"></div><span class="swatch-name">Yellow</span></div>
-    <div class="swatch"><div class="swatch-dot" style="background:#7722CC"></div><span class="swatch-name">Purple</span></div>
-    <div class="swatch"><div class="swatch-dot special" style="background:repeating-linear-gradient(45deg,#4a5c3a,#4a5c3a 5px,#3a4c2a 5px,#3a4c2a 10px,#6b7a5a 10px,#6b7a5a 15px)"></div><span class="swatch-name">Camouflage ★</span></div>
-   </div>
+
+  <!-- interactive color wheel; cards stay in the DOM for SEO + no-JS fallback -->
+  <div class="wheel-stage" id="wheelStage">
+    <div class="swatch" data-color="#F5F0E8"><div class="swatch-dot" style="background:#F5F0E8;border-color:rgba(255,255,255,0.15)"></div><span class="swatch-name">Off White</span></div>
+    <div class="swatch" data-color="#6B0F1A"><div class="swatch-dot" style="background:#6B0F1A"></div><span class="swatch-name">Maroon</span></div>
+    <div class="swatch" data-color="#FFFFFF"><div class="swatch-dot" style="background:#FFFFFF;border-color:rgba(255,255,255,0.25)"></div><span class="swatch-name">White</span></div>
+    <div class="swatch" data-color="#1A2B5E"><div class="swatch-dot" style="background:#1A2B5E"></div><span class="swatch-name">Navy Blue</span></div>
+    <div class="swatch" data-color="#4A5C2A"><div class="swatch-dot" style="background:#4A5C2A"></div><span class="swatch-name">Olive Green</span></div>
+    <div class="swatch" data-color="#1E44CC"><div class="swatch-dot" style="background:#1E44CC"></div><span class="swatch-name">Royal Blue</span></div>
+    <div class="swatch" data-color="#E8339A"><div class="swatch-dot" style="background:#E8339A"></div><span class="swatch-name">Pink</span></div>
+    <div class="swatch" data-color="#CC1122"><div class="swatch-dot" style="background:#CC1122"></div><span class="swatch-name">Red</span></div>
+    <div class="swatch" data-color="#C8922A"><div class="swatch-dot" style="background:#C8922A"></div><span class="swatch-name">Golden</span></div>
+    <div class="swatch" data-color="#111111"><div class="swatch-dot" style="background:#111111;border-color:rgba(255,255,255,0.1)"></div><span class="swatch-name">Black</span></div>
+    <div class="swatch" data-color="#5A6070"><div class="swatch-dot" style="background:#5A6070"></div><span class="swatch-name">Gray</span></div>
+    <div class="swatch" data-color="#44CC22"><div class="swatch-dot" style="background:#44CC22"></div><span class="swatch-name">Parrot Green</span></div>
+    <div class="swatch" data-color="#44AAEE"><div class="swatch-dot" style="background:#44AAEE"></div><span class="swatch-name">Sky Blue</span></div>
+    <div class="swatch" data-color="#7A4422"><div class="swatch-dot" style="background:#7A4422"></div><span class="swatch-name">Brown</span></div>
+    <div class="swatch" data-color="#E8C42A"><div class="swatch-dot" style="background:#E8C42A"></div><span class="swatch-name">Yellow</span></div>
+    <div class="swatch" data-color="#7722CC"><div class="swatch-dot" style="background:#7722CC"></div><span class="swatch-name">Purple</span></div>
+    <div class="swatch" data-color="repeating-linear-gradient(45deg,#4a5c3a,#4a5c3a 5px,#3a4c2a 5px,#3a4c2a 10px,#6b7a5a 10px,#6b7a5a 15px)" data-special><div class="swatch-dot special" style="background:repeating-linear-gradient(45deg,#4a5c3a,#4a5c3a 5px,#3a4c2a 5px,#3a4c2a 10px,#6b7a5a 10px,#6b7a5a 15px)"></div><span class="swatch-name">Camouflage ★</span></div>
   </div>
-  <p style="font-size:12px;color:rgba(255,255,255,0.25);margin-top:20px">★ Camouflage available as special order only. Contact our B2B team for availability.</p>
+  <svg class="wheel-pointer" id="wheelPointer" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><path d="M4 17 L26 6 L20 17 L26 28 Z" fill="var(--gold)"/></svg>
+
+  <p class="color-note">★ Camouflage available as special order only. Contact our B2B team for availability.</p>
 </section>
+<noscript><style>.wheel-stage{position:static!important;display:flex;flex-wrap:wrap;gap:16px;padding:10px 5% 60px;height:auto}.color-section .swatch{position:static!important;opacity:1!important;margin:0!important}.wheel-pointer{display:none}</style></noscript>
 
 <!-- SECONDARY PRODUCTS -->
 <section class="secondary-section">
@@ -565,8 +598,108 @@ window.addEventListener('load',()=>{
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&v.paused)v.play().catch(()=>{})})
 })
 
-// Duplicate color swatches once for a seamless auto-scroll loop
-;(function(){var t=document.getElementById('swatchTrack');if(t)t.innerHTML+=t.innerHTML;})();
+// Interactive color wheel — cards orbit a ring on the right edge, auto-spin, drag, click-to-select
+;(function(){
+  const stage=document.getElementById('wheelStage');
+  if(!stage) return;
+  const pointer=document.getElementById('wheelPointer');
+  const chip=document.getElementById('readoutChip');
+  const rName=document.getElementById('readoutName');
+  const rTag=document.getElementById('readoutTag');
+  const cards=[...stage.querySelectorAll('.swatch')];
+  const N=cards.length;
+  if(!N) return;
+  const meta=cards.map(el=>({
+    name:el.querySelector('.swatch-name').textContent.replace(' ★','').trim(),
+    color:el.dataset.color,
+    special:el.hasAttribute('data-special')
+  }));
+  const STEP=(Math.PI*2)/N;
+  const FRONT=Math.PI;                 // 9 o'clock = card facing the text
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let base=0, vel=0, dragging=false, autoSpin=!reduceMotion, lastActive=-1;
+
+  function geom(){
+    const w=stage.clientWidth, h=stage.clientHeight;
+    return {cx:w-30, cy:h/2, R:Math.min(h*0.42,340)};
+  }
+  function setActive(i){
+    if(i===lastActive) return;
+    lastActive=i;
+    const m=meta[i];
+    cards.forEach((c,k)=>c.classList.toggle('active',k===i));
+    chip.style.background=m.color;
+    rName.textContent=m.name;
+    rTag.textContent=m.special?'Special Order':'Standard Colour';
+  }
+  function render(){
+    const {cx,cy,R}=geom();
+    let bestI=0,bestD=Infinity;
+    for(let i=0;i<N;i++){
+      const a=base+i*STEP;
+      const x=cx+R*Math.cos(a), y=cy+R*Math.sin(a);
+      const f=Math.cos(a-FRONT);                       // 1 at front (left), -1 at back (right)
+      const scale=0.55+0.45*((f+1)/2);
+      const opacity=Math.max(0,Math.min(1,(f+0.35)/0.6));
+      const el=cards[i];
+      el.style.transform='translate('+x+'px,'+y+'px) scale('+scale.toFixed(3)+')';
+      el.style.opacity=opacity.toFixed(2);
+      el.style.zIndex=Math.round((f+1)*100);
+      el.style.pointerEvents=opacity>0.45?'auto':'none';
+      const d=Math.abs(((a-FRONT)%(Math.PI*2)+Math.PI*3)%(Math.PI*2)-Math.PI);
+      if(d<bestD){bestD=d;bestI=i;}
+    }
+    if(pointer){pointer.style.left=(cx-R-30)+'px';pointer.style.opacity='1';}
+    setActive(bestI);
+  }
+  function tick(){
+    if(!dragging){
+      if(autoSpin && Math.abs(vel)<0.0008) vel=0.0022;   // gentle idle drift
+      base+=vel;
+      vel*=0.95;                                          // momentum decay
+      if(Math.abs(vel)<0.0006 && !autoSpin) vel=0;
+    }
+    render();
+    requestAnimationFrame(tick);
+  }
+  function spinTo(i){
+    autoSpin=false;
+    const target=FRONT-i*STEP;
+    let diff=(target-base)%(Math.PI*2);
+    if(diff>Math.PI) diff-=Math.PI*2;
+    if(diff<-Math.PI) diff+=Math.PI*2;
+    const start=base, t0=performance.now();
+    (function ease(now){
+      const p=Math.min(1,(now-t0)/450), e=1-Math.pow(1-p,3);
+      base=start+diff*e;
+      if(p<1){requestAnimationFrame(ease);} else {autoSpin=!reduceMotion;}
+    })(performance.now());
+  }
+  // drag to spin; auto-spin resumes on release (momentum carries first)
+  let dragAng=0, base0=0, moved=false;
+  function angleAt(ev){
+    const r=stage.getBoundingClientRect(), {cx,cy}=geom();
+    return Math.atan2((ev.clientY-r.top)-cy,(ev.clientX-r.left)-cx);
+  }
+  stage.addEventListener('pointerdown',e=>{
+    dragging=true;autoSpin=false;moved=false;dragAng=angleAt(e);base0=base;vel=0;
+    try{stage.setPointerCapture(e.pointerId);}catch(_){}
+  });
+  stage.addEventListener('pointermove',e=>{
+    if(!dragging) return;
+    let d=angleAt(e)-dragAng;
+    if(Math.abs(d)>0.02) moved=true;
+    const nb=base0+d; vel=nb-base; base=nb;
+  });
+  function endDrag(){dragging=false;autoSpin=!reduceMotion;}
+  stage.addEventListener('pointerup',endDrag);
+  stage.addEventListener('pointercancel',endDrag);
+  cards.forEach((el,i)=>el.addEventListener('click',()=>{if(!moved) spinTo(i);}));
+
+  window.addEventListener('resize',render,{passive:true});
+  render();
+  requestAnimationFrame(tick);
+})();
 
 function toggleMute(){
   const v=document.getElementById('heroVideo')
