@@ -20,7 +20,7 @@
   <!-- Guides hub -->
   <url>
     <loc>https://www.gimakx.com/guides/</loc>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -29,6 +29,14 @@
   <url>
     <loc>https://www.gimakx.com/guides/bjj-gi-fabric-weights.html</loc>
     <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Guide: Academy Partnership Program (start risk-free) -->
+  <url>
+    <loc>https://www.gimakx.com/guides/bjj-academy-partnership-program.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
