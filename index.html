@@ -248,7 +248,7 @@ body{background:transparent}
   <div class="hero-content">
     <div class="hero-left">
       <div class="hero-ctas">
-        <a href="https://wa.me/9213107197037?text=Hi%20Gimakx%2C%20I%27m%20interested%20in%20a%20wholesale%20BJJ%20Gi%20quote." class="btn-gold" target="_blank" rel="noopener noreferrer">Contact on WhatsApp</a>
+        <a href="https://wa.me/923107197037?text=Hi%20Gimakx%2C%20I%27m%20interested%20in%20a%20wholesale%20BJJ%20Gi%20quote." class="btn-gold" target="_blank" rel="noopener noreferrer">Contact on WhatsApp</a>
         <a href="#gipro" class="btn-outline">Explore GiPro</a>
       </div>
     </div>
@@ -471,17 +471,17 @@ body{background:transparent}
     <h3>Start Your Order</h3>
     <form class="rfq-form-body" onsubmit="handleRFQ(event)">
       <div class="form-grid">
-        <div class="form-field"><label>Academy / Company Name *</label><input type="text" placeholder="e.g. Checkmat London" required></div>
-        <div class="form-field"><label>Contact Name *</label><input type="text" placeholder="Full name" required></div>
+        <div class="form-field"><label>Academy / Company Name *</label><input type="text" name="company" placeholder="e.g. Checkmat London" required></div>
+        <div class="form-field"><label>Contact Name *</label><input type="text" name="contact" placeholder="Full name" required></div>
       </div>
       <div class="form-grid">
-        <div class="form-field"><label>Email Address *</label><input type="email" placeholder="name@academy.com" required></div>
-        <div class="form-field"><label>WhatsApp / Phone</label><input type="tel" placeholder="+1 000 000 0000"></div>
+        <div class="form-field"><label>Email Address *</label><input type="email" name="email" placeholder="name@academy.com" required></div>
+        <div class="form-field"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+1 000 000 0000"></div>
       </div>
       <div class="form-grid">
-        <div class="form-field"><label>Country</label><input type="text" placeholder="e.g. United Kingdom"></div>
+        <div class="form-field"><label>Country</label><input type="text" name="country" placeholder="e.g. United Kingdom"></div>
         <div class="form-field"><label>Product of Interest *</label>
-          <select required>
+          <select name="product" required>
             <option value="">Select a product</option>
             <optgroup label="BJJ Gi">
               <option>GiPro Aerotough (380gsm)</option>
@@ -503,18 +503,21 @@ body{background:transparent}
       </div>
       <div class="form-grid">
         <div class="form-field"><label>Estimated Quantity</label>
-          <select><option>20–49 units</option><option>50–99 units</option><option>100–299 units</option><option>300+ units</option></select>
+          <select name="quantity"><option>20–49 units</option><option>50–99 units</option><option>100–299 units</option><option>300+ units</option></select>
         </div>
         <div class="form-field"><label>Preferred Payment</label>
-          <select><option>Bank Transfer</option><option>Western Union</option><option>Payoneer</option></select>
+          <select name="payment"><option>Bank Transfer</option><option>Western Union</option><option>Payoneer</option></select>
         </div>
       </div>
       <div class="form-grid full">
-        <div class="form-field"><label>Additional Details</label><textarea placeholder="Tell us about your academy, custom colors, logo requirements, or any specific needs..."></textarea></div>
+        <div class="form-field"><label>Additional Details</label><textarea name="details" placeholder="Tell us about your academy, custom colors, logo requirements, or any specific needs..."></textarea></div>
       </div>
       <div class="submit-row">
-        <p class="submit-note">* Required fields. We reply within 24hrs.<br>All information is kept strictly confidential.</p>
-        <button type="submit" class="btn-submit">Send Request →</button>
+        <p class="submit-note">* Required fields. We reply within 24hrs. All information is kept strictly confidential.<br>Your request opens pre-filled in WhatsApp or your email app — review it and hit send.</p>
+        <div class="submit-btns">
+          <button type="submit" class="btn-submit" data-channel="whatsapp">Send via WhatsApp →</button>
+          <button type="submit" class="btn-submit alt" data-channel="email">Send via Email</button>
+        </div>
       </div>
     </form>
   </div>
@@ -528,7 +531,7 @@ body{background:transparent}
       <p>Elite B2B BJJ Gi manufacturer. Custom Gis, rash guards, and academy apparel crafted for professional academies worldwide.</p>
       <div class="footer-contact" style="margin-top:20px">
         <a href="mailto:support@gimakx.com">support@gimakx.com</a>
-        <a href="https://wa.me/9213107197037" target="_blank" rel="noopener noreferrer"><img src="images/whatsapp.png" alt="WhatsApp" style="width:16px;height:16px;display:inline-block">+92 (310) 7197-037</a>
+        <a href="https://wa.me/923107197037" target="_blank" rel="noopener noreferrer"><img src="images/whatsapp.png" alt="WhatsApp" style="width:16px;height:16px;display:inline-block">+92 (310) 7197-037</a>
         <a href="https://instagram.com/gimakx" target="_blank" rel="noopener noreferrer">@gimakx</a>
       </div>
     </div>
@@ -710,11 +713,38 @@ function toggleMute(){
   v.muted=!v.muted
   document.getElementById('muteBtn').textContent=v.muted?'🔇':'🔊'
 }
+// Build the RFQ message from the form and hand it to the channel the buyer chose.
+// No backend: WhatsApp opens wa.me pre-filled; Email opens a pre-filled mailto draft.
 function handleRFQ(e){
-  e.preventDefault()
-  const btn=e.target.querySelector('.btn-submit')
-  btn.textContent='Sending...';btn.disabled=true
-  setTimeout(()=>{btn.textContent='Request Sent ✓';btn.style.background='#2d7a4f'},1200)
+  e.preventDefault();
+  const form=e.target;
+  const btn=e.submitter||form.querySelector('.btn-submit');
+  const channel=(btn&&btn.dataset.channel)||'whatsapp';
+  const pairs=[];
+  form.querySelectorAll('.form-field').forEach(function(f){
+    const lab=f.querySelector('label'),fld=f.querySelector('input,select,textarea');
+    if(!lab||!fld||!fld.value||!fld.value.trim())return;
+    pairs.push(lab.textContent.replace(' *','')+': '+fld.value.trim());
+  });
+  const cfg=document.getElementById('rfqConfig');
+  if(cfg)pairs.unshift(cfg.textContent.trim());
+  const h=form.closest('.rfq-right').querySelector('h3');
+  const heading=h?h.textContent.trim():'Request a Quote';
+  const msg='New RFQ from gimakx.com\n'+heading+'\n\n'+pairs.join('\n');
+  if(channel==='email'){
+    const co=form.querySelector('input[name=company]');
+    const subject='RFQ - '+heading+(co&&co.value.trim()?' - '+co.value.trim():'');
+    window.location.href='mailto:support@gimakx.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(msg);
+    btn.textContent='Email Drafted ✓';
+  }else{
+    window.open('https://wa.me/923107197037?text='+encodeURIComponent(msg),'_blank','noopener');
+    btn.textContent='WhatsApp Opened ✓';
+  }
+  btn.style.background='#2d7a4f';btn.style.color='#fff';
+  setTimeout(function(){
+    btn.textContent=btn.dataset.channel==='email'?'Send via Email':'Send via WhatsApp →';
+    btn.style.background='';btn.style.color='';
+  },4000);
 }
 
 // Gold dust — softly glowing particles drifting at random over the whole page

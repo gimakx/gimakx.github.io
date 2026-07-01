@@ -191,6 +191,9 @@ nav.scrolled,nav.solid{background:rgba(8,17,31,0.97);backdrop-filter:blur(12px);
 .submit-note{font-size:11px;color:rgba(255,255,255,0.25);line-height:1.5}
 .btn-submit{padding:15px 36px;background:var(--gold);border:none;font-family:'Barlow',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);cursor:pointer;border-radius:2px;transition:background 0.2s}
 .btn-submit:hover{background:var(--gold-light)}
+.submit-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-submit.alt{background:transparent;border:1.5px solid rgba(200,146,42,0.55);color:var(--gold)}
+.btn-submit.alt:hover{background:rgba(200,146,42,0.12)}
 
 /* ── FOOTER ── */
 footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06)}
