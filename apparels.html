@@ -23,10 +23,48 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gimakx.com" },
-    { "@type": "ListItem", "position": 2, "name": "Apparels", "item": "https://www.gimakx.com/apparels.html" }
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gimakx.com" },
+        { "@type": "ListItem", "position": 2, "name": "Apparels", "item": "https://www.gimakx.com/apparels.html" }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.gimakx.com/apparels.html#gistrix",
+      "name": "GiStrix Custom Academy T-Shirts",
+      "description": "Custom BJJ academy T-shirts in ringspun cotton or performance polyester blend. Full sublimation, screen print, or embroidery. Sizes XS–3XL in men's, women's and youth cuts. MOQ 10 units per design.",
+      "brand": { "@type": "Brand", "name": "Gimakx" },
+      "manufacturer": { "@id": "https://www.gimakx.com/#organization" },
+      "image": "https://www.gimakx.com/images/Strix-Tshirt-Purple-Dragon.jpg",
+      "material": "Ringspun cotton or performance polyester blend",
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Decoration", "value": "Full sublimation, screen print, embroidery" },
+        { "@type": "PropertyValue", "name": "Sizes", "value": "XS–3XL (men's, women's, youth)" },
+        { "@type": "PropertyValue", "name": "MOQ", "value": "10 units" },
+        { "@type": "PropertyValue", "name": "Lead Time", "value": "3-4 weeks" }
+      ],
+      "offers": { "@type": "Offer", "url": "https://www.gimakx.com/apparels.html#gistrix", "seller": { "@id": "https://www.gimakx.com/#organization" }, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "eligibleQuantity": { "@type": "QuantitativeValue", "minValue": 10 } }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.gimakx.com/apparels.html#giflex",
+      "name": "GiFlex Premium Custom Hoodies",
+      "description": "Heavyweight custom academy hoodies in 320–380gsm brushed fleece, pullover or zip. Embroidery, appliqué, or full-front print. Sizes XS–3XL in unisex and fitted cuts. MOQ 10 units per design.",
+      "brand": { "@type": "Brand", "name": "Gimakx" },
+      "manufacturer": { "@id": "https://www.gimakx.com/#organization" },
+      "image": "https://www.gimakx.com/images/GiFlex-Hoodie-Invictus.jpg",
+      "material": "320–380gsm brushed fleece",
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Decoration", "value": "Embroidery, appliqué, full-front print" },
+        { "@type": "PropertyValue", "name": "Sizes", "value": "XS–3XL (unisex, fitted)" },
+        { "@type": "PropertyValue", "name": "MOQ", "value": "10 units" },
+        { "@type": "PropertyValue", "name": "Lead Time", "value": "3-4 weeks" }
+      ],
+      "offers": { "@type": "Offer", "url": "https://www.gimakx.com/apparels.html#giflex", "seller": { "@id": "https://www.gimakx.com/#organization" }, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "eligibleQuantity": { "@type": "QuantitativeValue", "minValue": 10 } }
+    }
   ]
 }
 </script>

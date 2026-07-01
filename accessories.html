@@ -23,10 +23,45 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gimakx.com" },
-    { "@type": "ListItem", "position": 2, "name": "Accessories", "item": "https://www.gimakx.com/accessories.html" }
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gimakx.com" },
+        { "@type": "ListItem", "position": 2, "name": "Accessories", "item": "https://www.gimakx.com/accessories.html" }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.gimakx.com/accessories.html#badges",
+      "name": "Customized BJJ Academy Badges & Patches",
+      "description": "Custom academy patches in woven, embroidered, or PVC rubber construction. Any shape, size, and color count, with iron-on, sew-on, or hook-and-loop backing and merrowed or laser-cut borders.",
+      "brand": { "@type": "Brand", "name": "Gimakx" },
+      "manufacturer": { "@id": "https://www.gimakx.com/#organization" },
+      "image": "https://www.gimakx.com/images/BJJ-Badge-4x4.jpg",
+      "material": "Woven, embroidered, or PVC rubber",
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Backing", "value": "Iron-on, sew-on, hook-and-loop" },
+        { "@type": "PropertyValue", "name": "Borders", "value": "Merrowed or laser-cut" },
+        { "@type": "PropertyValue", "name": "MOQ", "value": "10 units" }
+      ],
+      "offers": { "@type": "Offer", "url": "https://www.gimakx.com/accessories.html#badges", "seller": { "@id": "https://www.gimakx.com/#organization" }, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "eligibleQuantity": { "@type": "QuantitativeValue", "minValue": 10 } }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.gimakx.com/accessories.html#belts",
+      "name": "Competition-Grade BJJ Belts",
+      "description": "Durable dense-cotton BJJ belts with heavyweight core and multi-row stitching. All ranks from white to black plus kids' ranks, A0–A5 lengths, with optional rank bar and custom academy embroidery.",
+      "brand": { "@type": "Brand", "name": "Gimakx" },
+      "manufacturer": { "@id": "https://www.gimakx.com/#organization" },
+      "material": "Heavyweight cotton core, multi-row stitching",
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Ranks", "value": "White, blue, purple, brown, black + kids" },
+        { "@type": "PropertyValue", "name": "Lengths", "value": "A0–A5, youth sizes available" },
+        { "@type": "PropertyValue", "name": "MOQ", "value": "10 units" }
+      ],
+      "offers": { "@type": "Offer", "url": "https://www.gimakx.com/accessories.html#belts", "seller": { "@id": "https://www.gimakx.com/#organization" }, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "eligibleQuantity": { "@type": "QuantitativeValue", "minValue": 10 } }
+    }
   ]
 }
 </script>

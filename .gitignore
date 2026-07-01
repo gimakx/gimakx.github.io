@@ -24,6 +24,8 @@ ACTION-PLAN.md
 AI-VISIBILITY-PLAN.md
 FULL-AUDIT-REPORT.md
 GEO-ANALYSIS.md
+seo-audit-*.docx
+seo-audit-*.pdf
 
 # Local tooling config (MCP servers, env-var references)
 .mcp.json
