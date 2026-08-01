@@ -20,6 +20,7 @@ video-studio/
 *.zip
 
 # Internal SEO / GEO working notes — kept on disk, not published to the site repo
+COMPETITOR-PRICING.md
 ACTION-PLAN.md
 AI-VISIBILITY-PLAN.md
 FULL-AUDIT-REPORT.md
