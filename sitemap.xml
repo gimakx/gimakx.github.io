@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.gimakx.com/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- BJJ Gi — primary product page (flagship) -->
   <url>
     <loc>https://www.gimakx.com/bjj-gi.html</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -20,7 +20,7 @@
   <!-- Guides hub -->
   <url>
     <loc>https://www.gimakx.com/guides/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -28,7 +28,7 @@
   <!-- Guide: BJJ Gi Fabric Weights (380 vs 450 vs 500 GSM) -->
   <url>
     <loc>https://www.gimakx.com/guides/bjj-gi-fabric-weights.html</loc>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -36,7 +36,7 @@
   <!-- Guide: Academy Partnership Program (start risk-free) -->
   <url>
     <loc>https://www.gimakx.com/guides/bjj-academy-partnership-program.html</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -44,7 +44,7 @@
   <!-- Evosoft Rash Guard -->
   <url>
     <loc>https://www.gimakx.com/evosoft.html</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -52,7 +52,7 @@
   <!-- Apparels (GiStrix T-Shirts & GiFlex Hoodies) -->
   <url>
     <loc>https://www.gimakx.com/apparels.html</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -60,7 +60,7 @@
   <!-- Accessories (Custom Badges & Belts) -->
   <url>
     <loc>https://www.gimakx.com/accessories.html</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -68,7 +68,7 @@
   <!-- About Us -->
   <url>
     <loc>https://www.gimakx.com/about.html</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -76,7 +76,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://www.gimakx.com/privacy-policy.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -84,7 +84,7 @@
   <!-- Terms of Service -->
   <url>
     <loc>https://www.gimakx.com/terms.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

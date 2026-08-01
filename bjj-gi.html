@@ -25,9 +25,17 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://www.gimakx.com/#organization",
+      "name": "Gimakx",
+      "url": "https://www.gimakx.com/",
+      "logo": { "@type": "ImageObject", "url": "https://www.gimakx.com/images/logo-jp.png", "width": 1920, "height": 1080 },
+      "sameAs": ["https://www.instagram.com/gimakx"]
+    },
+    {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gimakx.com" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gimakx.com/" },
         { "@type": "ListItem", "position": 2, "name": "BJJ Gi — GiPro", "item": "https://www.gimakx.com/bjj-gi.html" }
       ]
     },
@@ -46,8 +54,7 @@
         { "@type": "PropertyValue", "name": "IBJJF Approved", "value": "Yes" },
         { "@type": "PropertyValue", "name": "MOQ", "value": "10 units" },
         { "@type": "PropertyValue", "name": "Lead Time", "value": "3-4 weeks" }
-      ],
-      "offers": { "@type": "Offer", "url": "https://www.gimakx.com/bjj-gi.html", "seller": { "@id": "https://www.gimakx.com/#organization" }, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "eligibleQuantity": { "@type": "QuantitativeValue", "minValue": 10 } }
+      ]
     },
     {
       "@type": "Product",
@@ -64,8 +71,7 @@
         { "@type": "PropertyValue", "name": "IBJJF Approved", "value": "Yes" },
         { "@type": "PropertyValue", "name": "MOQ", "value": "10 units" },
         { "@type": "PropertyValue", "name": "Lead Time", "value": "3-4 weeks" }
-      ],
-      "offers": { "@type": "Offer", "url": "https://www.gimakx.com/bjj-gi.html", "seller": { "@id": "https://www.gimakx.com/#organization" }, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "eligibleQuantity": { "@type": "QuantitativeValue", "minValue": 10 } }
+      ]
     },
     {
       "@type": "Product",
@@ -82,8 +88,7 @@
         { "@type": "PropertyValue", "name": "IBJJF Approved", "value": "Yes" },
         { "@type": "PropertyValue", "name": "MOQ", "value": "10 units" },
         { "@type": "PropertyValue", "name": "Lead Time", "value": "3-4 weeks" }
-      ],
-      "offers": { "@type": "Offer", "url": "https://www.gimakx.com/bjj-gi.html", "seller": { "@id": "https://www.gimakx.com/#organization" }, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "eligibleQuantity": { "@type": "QuantitativeValue", "minValue": 10 } }
+      ]
     }
   ]
 }
@@ -104,6 +109,7 @@
     { "@type": "Question", "name": "What stitching and reinforcement do your BJJ Gis have?", "acceptedAnswer": { "@type": "Answer", "text": "All high-stress points — shoulders, knees, and collar — are triple-stitched and reinforced with high-tensile thread for maximum durability." } },
     { "@type": "Question", "name": "Do your Gis shrink after washing?", "acceptedAnswer": { "@type": "Answer", "text": "We offer both pre-shrunk cotton and 100% pure cotton options. Pre-shrunk Gis minimize shrinkage during manufacturing, though a small 1–3% natural shrinkage can occur after the first few washes. With 100% pure cotton, some natural shrinkage is expected." } },
     { "@type": "Question", "name": "How long does production take for custom BJJ Gis?", "acceptedAnswer": { "@type": "Answer", "text": "Typical turnaround for the GiPro Custom Series is 3–4 weeks from order confirmation, depending on complexity and quantity. The GiPro Standard Series can be shipped within a few days." } },
+    { "@type": "Question", "name": "Can you add academy branding on Gi bags?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we print your academy logo on Gi bags for a complete branded package. This is a popular add-on for academies placing new uniform set orders." } },
     { "@type": "Question", "name": "Can we order a complete academy kit from one supplier?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Gimakx offers complete academy bundles including BJJ Gis, rash guards, belts, patches, bags, T-shirts, hoodies, and caps — all branded consistently to your academy's identity." } }
   ]
 }
@@ -156,7 +162,7 @@
 
 <!-- NAV -->
 <nav id="mainNav" class="solid">
-  <a href="index.html" class="nav-logo"><img src="images/logo-jp-nav.webp" alt="Gimakx" width="228" height="128"></a>
+  <a href="/" class="nav-logo"><img src="images/logo-jp-nav.webp" alt="Gimakx" width="228" height="128"></a>
   <ul class="nav-center">
     <li><a href="bjj-gi.html" class="active">BJJ Gi</a></li>
     <li><a href="evosoft.html">Evosoft</a></li>
@@ -168,19 +174,20 @@
   <div class="nav-right">
     <span class="nav-badge">B2B Only</span>
     <a href="#rfq" class="nav-rfq">Request Quote</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('mainNav');var o=n.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
-  <a href="index.html">Home</a><span>/</span><span class="current">BJJ Gi — GiPro</span>
+  <a href="/">Home</a><span>/</span><span class="current">BJJ Gi — GiPro</span>
 </div>
 
 <!-- PRODUCT HERO -->
 <section class="product-hero">
   <div class="gallery">
     <div class="gallery-main">
-      <img id="galleryMain" src="images/GPNBL.jpg" alt="GiPro Custom BJJ Gi — Navy Blue" width="2048" height="2048" fetchpriority="high">
+      <img id="galleryMain" src="images/GPNBL-800.webp" alt="GiPro Custom BJJ Gi — Navy Blue" width="800" height="800" fetchpriority="high">
       <div class="gallery-soon" id="gallerySoon">
         <div class="gs-sw" id="gsSwatch"></div>
         <div class="gs-txt" id="gsTxt"></div>
@@ -215,23 +222,23 @@
       <div class="config-group">
         <div class="config-label">Color <span class="config-val" id="selColor">Navy Blue</span></div>
         <div class="config-swatches" id="configSwatches">
-          <div class="config-sw" data-name="Off White" data-img="" style="background:#F5F0E8" title="Off White"></div>
-          <div class="config-sw" data-name="Maroon" data-img="images/GPMRN.jpg" style="background:#6B0F1A" title="Maroon"></div>
-          <div class="config-sw" data-name="White" data-img="images/GPWHT.jpg" style="background:#FFFFFF" title="White"></div>
-          <div class="config-sw active" data-name="Navy Blue" data-img="images/GPNBL.jpg" style="background:#1A2B5E" title="Navy Blue"></div>
-          <div class="config-sw" data-name="Olive Green" data-img="images/GPOGR.jpg" style="background:#4A5C2A" title="Olive Green"></div>
-          <div class="config-sw" data-name="Royal Blue" data-img="images/GPRBL.jpg" style="background:#1E44CC" title="Royal Blue"></div>
-          <div class="config-sw" data-name="Pink" data-img="images/GPPNK.jpg" style="background:#E8339A" title="Pink"></div>
-          <div class="config-sw" data-name="Red" data-img="images/GPRED.jpg" style="background:#CC1122" title="Red"></div>
-          <div class="config-sw" data-name="Golden" data-img="" style="background:#C8922A" title="Golden"></div>
-          <div class="config-sw" data-name="Black" data-img="images/GPBLK.jpg" style="background:#111111" title="Black"></div>
-          <div class="config-sw" data-name="Gray" data-img="images/GPGRY.jpg" style="background:#5A6070" title="Gray"></div>
-          <div class="config-sw" data-name="Parrot Green" data-img="images/GPPGR.jpg" style="background:#44CC22" title="Parrot Green"></div>
-          <div class="config-sw" data-name="Sky Blue" data-img="images/GPSBL.jpg" style="background:#44AAEE" title="Sky Blue"></div>
-          <div class="config-sw" data-name="Brown" data-img="" style="background:#7A4422" title="Brown"></div>
-          <div class="config-sw" data-name="Yellow" data-img="" style="background:#E8C42A" title="Yellow"></div>
-          <div class="config-sw" data-name="Purple" data-img="images/GPPRP.jpg" style="background:#7722CC" title="Purple"></div>
-          <div class="config-sw" data-name="Camouflage" data-img="" data-special="1" style="background:repeating-linear-gradient(45deg,#4a5c3a,#4a5c3a 5px,#3a4c2a 5px,#3a4c2a 10px,#6b7a5a 10px,#6b7a5a 15px)" title="Camouflage (special order)"><span class="star">★</span></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Off White" data-name="Off White" data-img="" style="background:#F5F0E8" title="Off White"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Maroon" data-name="Maroon" data-img="images/GPMRN-800.webp" style="background:#6B0F1A" title="Maroon"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="White" data-name="White" data-img="images/GPWHT-800.webp" style="background:#FFFFFF" title="White"></div>
+          <div class="config-sw active" role="button" tabindex="0" aria-label="Navy Blue" data-name="Navy Blue" data-img="images/GPNBL-800.webp" style="background:#1A2B5E" title="Navy Blue"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Olive Green" data-name="Olive Green" data-img="images/GPOGR-800.webp" style="background:#4A5C2A" title="Olive Green"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Royal Blue" data-name="Royal Blue" data-img="images/GPRBL-800.webp" style="background:#1E44CC" title="Royal Blue"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Pink" data-name="Pink" data-img="images/GPPNK-800.webp" style="background:#E8339A" title="Pink"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Red" data-name="Red" data-img="images/GPRED-800.webp" style="background:#CC1122" title="Red"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Golden" data-name="Golden" data-img="" style="background:#C8922A" title="Golden"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Black" data-name="Black" data-img="images/GPBLK-800.webp" style="background:#111111" title="Black"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Gray" data-name="Gray" data-img="images/GPGRY-800.webp" style="background:#5A6070" title="Gray"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Parrot Green" data-name="Parrot Green" data-img="images/GPPGR-800.webp" style="background:#44CC22" title="Parrot Green"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Sky Blue" data-name="Sky Blue" data-img="images/GPSBL-800.webp" style="background:#44AAEE" title="Sky Blue"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Brown" data-name="Brown" data-img="" style="background:#7A4422" title="Brown"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Yellow" data-name="Yellow" data-img="" style="background:#E8C42A" title="Yellow"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Purple" data-name="Purple" data-img="images/GPPRP-800.webp" style="background:#7722CC" title="Purple"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Camouflage (special order)" data-name="Camouflage" data-img="" data-special="1" style="background:repeating-linear-gradient(45deg,#4a5c3a,#4a5c3a 5px,#3a4c2a 5px,#3a4c2a 10px,#6b7a5a 10px,#6b7a5a 15px)" title="Camouflage (special order)"><span class="star">★</span></div>
         </div>
         <p class="config-note" id="colorNote" style="display:none">★ Camouflage is a special order — ask our B2B team for availability.</p>
       </div>
@@ -295,7 +302,7 @@
   <!-- Aerotough -->
   <div id="v-aerotough" class="variant-panel">
     <div class="variant-panel-media">
-      <img src="images/Aerotough-Gi-Front.jpg" alt="GiPro Aerotough BJJ Gi" width="2048" height="2048" loading="lazy">
+      <img src="images/Aerotough-Gi-Front-800.webp" alt="GiPro Aerotough BJJ Gi" width="800" height="800" loading="lazy">
       <div class="vpm-badge">380gsm</div>
     </div>
     <div class="variant-panel-body">
@@ -311,7 +318,7 @@
   <!-- Fortitude -->
   <div id="v-fortitude" class="variant-panel active">
     <div class="variant-panel-media">
-      <img src="images/fortitude-front.jpg" alt="GiPro Fortitude BJJ Gi" width="2048" height="2048" loading="lazy">
+      <img src="images/fortitude-front-800.webp" alt="GiPro Fortitude BJJ Gi" width="800" height="800" loading="lazy">
       <div class="vpm-badge" style="background:var(--gold);color:var(--navy);border-color:var(--gold)">450gsm · Most Popular</div>
     </div>
     <div class="variant-panel-body">
@@ -555,7 +562,7 @@
   <div class="s-eye">Pairs With</div>
   <h2 class="s-h2">Complete the <em>Kit</em></h2>
   <a href="evosoft.html" class="related-card">
-    <div class="related-media"><img src="images/ERG01RED.jpg" alt="Evosoft Rash Guard" width="2048" height="2048" loading="lazy"></div>
+    <div class="related-media"><img src="images/ERG01RED-800.webp" alt="Evosoft Rash Guard" width="800" height="800" loading="lazy"></div>
     <div class="related-body">
       <h3>Evosoft Rash Guard</h3>
       <p>240gsm sublimation-ready rash guard, fully customizable to match your GiPro order. The perfect under-Gi and standalone training layer for a complete academy kit.</p>
@@ -614,11 +621,11 @@
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <a href="index.html" class="logo"><img src="images/logo-footer-sm.webp" alt="Gimakx" width="679" height="102"></a>
+      <a href="/" class="logo"><img src="images/logo-footer-sm.webp" alt="Gimakx" width="679" height="102"></a>
       <p>Elite B2B BJJ Gi manufacturer. Custom Gis, rash guards, and academy apparel crafted for professional academies worldwide.</p>
       <div class="footer-contact" style="margin-top:20px">
         <a href="mailto:support@gimakx.com">support@gimakx.com</a>
-        <a href="https://wa.me/923107197037" target="_blank" rel="noopener noreferrer"><img src="images/whatsapp.png" alt="WhatsApp" style="width:16px;height:16px;display:inline-block">+92 (310) 7197-037</a>
+        <a href="https://wa.me/923107197037" target="_blank" rel="noopener noreferrer"><img src="images/whatsapp.png" alt="WhatsApp" width="145" height="144" style="width:16px;height:16px;display:inline-block">+92 (310) 7197-037</a>
         <a href="https://instagram.com/gimakx" target="_blank" rel="noopener noreferrer">@gimakx</a>
       </div>
     </div>
@@ -630,8 +637,8 @@
     <span class="payment-label">Accepted Payment Methods</span>
     <div class="payment-methods">
       <div class="payment-pill"><div class="payment-pill-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="20" height="14" rx="2" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><path d="M2 10h20" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><path d="M6 15h4" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="payment-pill-name">Bank Transfer</span></div>
-      <div class="payment-pill"><img src="images/western-union.png" alt="Western Union" class="pay-logo"></div>
-      <div class="payment-pill"><img src="images/payoneer.png" alt="Payoneer" class="pay-logo"></div>
+      <div class="payment-pill"><img src="images/western-union.png" alt="Western Union" width="343" height="90" class="pay-logo"></div>
+      <div class="payment-pill"><img src="images/payoneer.png" alt="Payoneer" width="3334" height="695" class="pay-logo"></div>
     </div>
   </div>
   <div class="footer-bottom">
@@ -657,7 +664,7 @@ function showVariant(id,btn){
 }
 
 // ── GiPro Configurator ──
-const FALLBACK_IMG='images/fortitude-front.jpg';
+const FALLBACK_IMG='images/fortitude-front-800.webp';
 const SIZES={
   men:['A0','A1','A2','A3','A4'],
   women:['W1','W2','W3','W4'],
@@ -706,6 +713,7 @@ document.querySelectorAll('#configSwatches .config-sw').forEach(sw=>{
     document.getElementById('colorNote').style.display=sw.dataset.special?'block':'none';
     updateSummary();
   });
+  sw.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();sw.click();}});
 });
 
 // Category → loads only that category's sizes

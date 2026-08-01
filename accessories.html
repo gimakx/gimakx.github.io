@@ -25,9 +25,17 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://www.gimakx.com/#organization",
+      "name": "Gimakx",
+      "url": "https://www.gimakx.com/",
+      "logo": { "@type": "ImageObject", "url": "https://www.gimakx.com/images/logo-jp.png", "width": 1920, "height": 1080 },
+      "sameAs": ["https://www.instagram.com/gimakx"]
+    },
+    {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gimakx.com" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gimakx.com/" },
         { "@type": "ListItem", "position": 2, "name": "Accessories", "item": "https://www.gimakx.com/accessories.html" }
       ]
     },
@@ -44,8 +52,7 @@
         { "@type": "PropertyValue", "name": "Backing", "value": "Iron-on, sew-on, hook-and-loop" },
         { "@type": "PropertyValue", "name": "Borders", "value": "Merrowed or laser-cut" },
         { "@type": "PropertyValue", "name": "MOQ", "value": "10 units" }
-      ],
-      "offers": { "@type": "Offer", "url": "https://www.gimakx.com/accessories.html#badges", "seller": { "@id": "https://www.gimakx.com/#organization" }, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "eligibleQuantity": { "@type": "QuantitativeValue", "minValue": 10 } }
+      ]
     },
     {
       "@type": "Product",
@@ -59,8 +66,7 @@
         { "@type": "PropertyValue", "name": "Ranks", "value": "White, blue, purple, brown, black + kids" },
         { "@type": "PropertyValue", "name": "Lengths", "value": "A0–A5, youth sizes available" },
         { "@type": "PropertyValue", "name": "MOQ", "value": "10 units" }
-      ],
-      "offers": { "@type": "Offer", "url": "https://www.gimakx.com/accessories.html#belts", "seller": { "@id": "https://www.gimakx.com/#organization" }, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "eligibleQuantity": { "@type": "QuantitativeValue", "minValue": 10 } }
+      ]
     }
   ]
 }
@@ -90,7 +96,7 @@
 
 <!-- NAV -->
 <nav id="mainNav" class="solid">
-  <a href="index.html" class="nav-logo"><img src="images/logo-jp-nav.webp" alt="Gimakx" width="228" height="128"></a>
+  <a href="/" class="nav-logo"><img src="images/logo-jp-nav.webp" alt="Gimakx" width="228" height="128"></a>
   <ul class="nav-center">
     <li><a href="bjj-gi.html">BJJ Gi</a></li>
     <li><a href="evosoft.html">Evosoft</a></li>
@@ -102,18 +108,19 @@
   <div class="nav-right">
     <span class="nav-badge">B2B Only</span>
     <a href="#rfq" class="nav-rfq">Request Quote</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('mainNav');var o=n.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
-  <a href="index.html">Home</a><span>/</span><span class="current">Accessories</span>
+  <a href="/">Home</a><span>/</span><span class="current">Accessories</span>
 </div>
 
 <!-- CATEGORY INTRO -->
 <section class="s-wrap" style="padding-bottom:40px">
   <div class="s-eye">Category — Accessories</div>
-  <h1 class="s-h2">Finishing <em>Touches</em></h1>
+  <h1 class="s-h2">BJJ Accessories — Custom <em>Badges &amp; Belts</em></h1>
   <p style="font-size:16px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.5);max-width:620px;margin-top:8px">The details that make a Gi yours. Custom academy badges and competition-grade belts, manufactured to the same standard as the rest of the Gimakx range — and ready to ship with your order.</p>
 </section>
 
@@ -123,7 +130,7 @@
   <!-- Badges -->
   <div class="product-block" id="badges">
     <div class="pb-media">
-      <img src="images/BJJ-Badge-4x4.jpg" alt="Custom embroidered BJJ academy badge" width="2048" height="2048" loading="lazy">
+      <img src="images/BJJ-Badge-4x4-800.webp" alt="Custom embroidered BJJ academy badge" width="800" height="800" fetchpriority="high">
     </div>
     <div class="pb-body">
       <span class="pb-cat">Accessories</span>
@@ -255,11 +262,11 @@
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <a href="index.html" class="logo"><img src="images/logo-footer-sm.webp" alt="Gimakx" width="679" height="102"></a>
+      <a href="/" class="logo"><img src="images/logo-footer-sm.webp" alt="Gimakx" width="679" height="102"></a>
       <p>Elite B2B BJJ Gi manufacturer. Custom Gis, rash guards, and academy apparel crafted for professional academies worldwide.</p>
       <div class="footer-contact" style="margin-top:20px">
         <a href="mailto:support@gimakx.com">support@gimakx.com</a>
-        <a href="https://wa.me/923107197037" target="_blank" rel="noopener noreferrer"><img src="images/whatsapp.png" alt="WhatsApp" style="width:16px;height:16px;display:inline-block">+92 (310) 7197-037</a>
+        <a href="https://wa.me/923107197037" target="_blank" rel="noopener noreferrer"><img src="images/whatsapp.png" alt="WhatsApp" width="145" height="144" style="width:16px;height:16px;display:inline-block">+92 (310) 7197-037</a>
         <a href="https://instagram.com/gimakx" target="_blank" rel="noopener noreferrer">@gimakx</a>
       </div>
     </div>
@@ -271,8 +278,8 @@
     <span class="payment-label">Accepted Payment Methods</span>
     <div class="payment-methods">
       <div class="payment-pill"><div class="payment-pill-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="20" height="14" rx="2" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><path d="M2 10h20" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><path d="M6 15h4" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="payment-pill-name">Bank Transfer</span></div>
-      <div class="payment-pill"><img src="images/western-union.png" alt="Western Union" class="pay-logo"></div>
-      <div class="payment-pill"><img src="images/payoneer.png" alt="Payoneer" class="pay-logo"></div>
+      <div class="payment-pill"><img src="images/western-union.png" alt="Western Union" width="343" height="90" class="pay-logo"></div>
+      <div class="payment-pill"><img src="images/payoneer.png" alt="Payoneer" width="3334" height="695" class="pay-logo"></div>
     </div>
   </div>
   <div class="footer-bottom">

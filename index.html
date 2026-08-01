@@ -19,8 +19,25 @@
 <meta property="og:url" content="https://www.gimakx.com/">
 <meta property="og:title" content="Gimakx — Custom BJJ Gi Manufacturer">
 <meta property="og:description" content="Direct-from-factory BJJ Gi manufacturer. IBJJF approved, 12+ colors, MOQ 10 units. Worldwide B2B shipping.">
-<meta property="og:image" content="https://www.gimakx.com/images/Website%20Banner%20v3.png">
+<meta property="og:image" content="https://www.gimakx.com/images/og-home-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.gimakx.com/images/og-home-1200.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the minimum order quantity at Gimakx?", "acceptedAnswer": { "@type": "Answer", "text": "The minimum order is 10 units per design. New academies can start with exactly that — 10 custom Gis in mixed sizes, with a free mockup and no contracts, through the Gimakx Academy Partnership Program." } },
+    { "@type": "Question", "name": "How long does production take?", "acceptedAnswer": { "@type": "Answer", "text": "Typical turnaround for the GiPro Custom Series is 3–4 weeks from order confirmation, depending on complexity and quantity. The GiPro Standard Series can ship within a few days." } },
+    { "@type": "Question", "name": "Do you offer private labeling?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Gimakx attaches your own custom neck labels, size tags, woven patches, and branded packaging so the final product looks 100% yours." } },
+    { "@type": "Question", "name": "Are Gimakx BJJ Gis IBJJF approved?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Standard cuts and fabrics follow IBJJF regulations for sleeve length, patch placement, and fabric type. All three GiPro weights — Aerotough 380gsm, Fortitude 450gsm, and Monolith 500gsm — are IBJJF approved." } },
+    { "@type": "Question", "name": "Which payment methods do you accept?", "acceptedAnswer": { "@type": "Answer", "text": "Gimakx accepts Bank Transfer (TT), Western Union, and Payoneer for B2B orders." } },
+    { "@type": "Question", "name": "Do you ship worldwide?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Gimakx ships B2B orders to academies, gyms, and fight brands worldwide, factory-direct from Pakistan." } }
+  ]
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,7 +46,7 @@
       "@type": "Organization",
       "@id": "https://www.gimakx.com/#organization",
       "name": "Gimakx",
-      "url": "https://www.gimakx.com",
+      "url": "https://www.gimakx.com/",
       "logo": { "@type": "ImageObject", "url": "https://www.gimakx.com/images/logo-jp.png", "width": 1920, "height": 1080 },
       "description": "Elite B2B BJJ Gi manufacturer. Custom Gis, rash guards, academy apparel. MOQ 10 units. Worldwide shipping.",
       "contactPoint": [
@@ -45,7 +62,7 @@
     {
       "@type": "WebSite",
       "@id": "https://www.gimakx.com/#website",
-      "url": "https://www.gimakx.com",
+      "url": "https://www.gimakx.com/",
       "name": "Gimakx",
       "publisher": { "@id": "https://www.gimakx.com/#organization" }
     }
@@ -56,14 +73,14 @@
 /* ── Homepage-specific styles (shared styles live in gimakx.css) ── */
 
 /* HERO VIDEO */
-.hero{position:relative;width:100%;height:78vh;min-height:500px;overflow:hidden;display:flex;align-items:flex-end}
+.hero{position:relative;width:100%;height:auto;min-height:max(78vh,500px);overflow:hidden;display:flex;align-items:flex-end}
 .hero-video-wrap{position:absolute;inset:0;z-index:0}
 .hero-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,17,31,0.92) 0%,rgba(8,17,31,0.3) 50%,rgba(8,17,31,0.15) 100%);z-index:1}
 .hero-overlay-side{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,17,31,0.7) 0%,transparent 60%);z-index:1}
 .hero-placeholder{position:absolute;inset:0;background:linear-gradient(160deg,#0D1A2E 0%,#172C4E 50%,#0A1520 100%);display:flex;align-items:center;justify-content:center}
 .hero-placeholder-text{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.1)}
-.hero-content{position:relative;z-index:2;padding:0 5% 80px;width:100%;display:grid;grid-template-columns:1fr auto;align-items:flex-end;gap:40px}
+.hero-content{position:relative;z-index:2;padding:150px 5% 80px;width:100%;display:grid;grid-template-columns:1fr auto;align-items:flex-end;gap:40px}
 .hero-left .hero-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(200,146,42,0.12);border:1px solid rgba(200,146,42,0.3);padding:8px 16px;margin-bottom:28px;border-radius:2px}
 .hero-tag-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.35}}
@@ -197,14 +214,17 @@
   .variants-grid,.gipro-intro,.evosoft-inner{grid-template-columns:1fr}
   .variants-grid{gap:60px}
   .secondary-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-content{grid-template-columns:1fr;padding:0 5% 48px}
+  .hero-content{grid-template-columns:1fr;padding:130px 5% 48px}
   .hero-right{flex-direction:row;align-items:center;justify-content:flex-start}
-  .hero{height:65vh;min-height:420px}
+  .hero{height:auto;min-height:max(65vh,420px)}
+  .hero-h1{font-size:clamp(52px,11vw,88px)}
 }
 @media(max-width:560px){
   .secondary-grid{grid-template-columns:1fr}
-  .hero{height:58vh;min-height:360px}
-  .hero-content{padding:0 4% 32px}
+  .hero{height:auto;min-height:max(58vh,360px)}
+  .hero-content{padding:120px 4% 32px}
+  .hero-h1{font-size:clamp(42px,12vw,64px)}
+  .hero-sub{font-size:14px;margin-bottom:28px}
   .hero-ctas{flex-direction:column;align-items:stretch;gap:10px}
   .hero-ctas .btn-gold,.hero-ctas .btn-outline{text-align:center;justify-content:center;padding:13px 20px;font-size:11px}
 }
@@ -213,15 +233,21 @@
 html{background:var(--navy)}
 body{background:transparent}
 #goldDust{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;mix-blend-mode:screen}
+/* FAQ (same pattern as product pages) */
+.faq-list{border:1px solid rgba(255,255,255,0.07);margin-top:40px}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:28px 32px}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px}
+.faq-a{font-size:14px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.5);margin:0}
+@media(max-width:560px){.faq-item{padding:20px 16px}}
 </style>
 </head>
 <body>
 <canvas id="goldDust" aria-hidden="true"></canvas>
-<h1 class="sr-only">Custom BJJ Gi Manufacturer — Wholesale Direct from Factory</h1>
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="index.html" class="nav-logo"><img src="images/logo-jp-nav.webp" alt="Gimakx" width="228" height="128"></a>
+  <a href="/" class="nav-logo"><img src="images/logo-jp-nav.webp" alt="Gimakx" width="228" height="128"></a>
   <ul class="nav-center">
     <li><a href="bjj-gi.html">BJJ Gi</a></li>
     <li><a href="evosoft.html">Evosoft</a></li>
@@ -233,6 +259,7 @@ body{background:transparent}
   <div class="nav-right">
     <span class="nav-badge">B2B Only</span>
     <a href="#rfq" class="nav-rfq">Request Quote</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('mainNav');var o=n.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -247,6 +274,9 @@ body{background:transparent}
   <div class="hero-overlay-side"></div>
   <div class="hero-content">
     <div class="hero-left">
+      <div class="hero-tag"><span class="hero-tag-dot"></span><span>B2B Only · Factory Direct · MOQ 10 Units</span></div>
+      <h1 class="hero-h1">Custom BJJ Gi<strong>Manufacturer</strong></h1>
+      <p class="hero-sub">Gimakx manufactures custom BJJ Gis, rash guards, and academy apparel — factory-direct for academies, gyms, and fight brands worldwide. IBJJF-approved fabrics, full private labeling, minimum order just 10 units per design.</p>
       <div class="hero-ctas">
         <a href="https://wa.me/923107197037?text=Hi%20Gimakx%2C%20I%27m%20interested%20in%20a%20wholesale%20BJJ%20Gi%20quote." class="btn-gold" target="_blank" rel="noopener noreferrer">Contact on WhatsApp</a>
         <a href="#gipro" class="btn-outline">Explore GiPro</a>
@@ -458,6 +488,38 @@ body{background:transparent}
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="s-wrap faq-section" id="faq">
+  <div class="s-eye">Quick Answers</div>
+  <h2 class="s-h2">Wholesale <em>FAQ</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3 class="faq-q">What is the minimum order quantity at Gimakx?</h3>
+      <p class="faq-a">The minimum order is 10 units per design. New academies can start with exactly that — 10 custom Gis in mixed sizes, with a free mockup and no contracts, through the <a href="guides/bjj-academy-partnership-program.html" style="color:var(--gold)">Gimakx Academy Partnership Program</a>.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">How long does production take?</h3>
+      <p class="faq-a">Typical turnaround for the GiPro Custom Series is 3–4 weeks from order confirmation, depending on complexity and quantity. The GiPro Standard Series can ship within a few days.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Do you offer private labeling?</h3>
+      <p class="faq-a">Yes — we attach your own custom neck labels, size tags, woven patches, and branded packaging so the final product looks 100% yours.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Are Gimakx BJJ Gis IBJJF approved?</h3>
+      <p class="faq-a">Yes. Standard cuts and fabrics follow IBJJF regulations for sleeve length, patch placement, and fabric type. All three GiPro weights — Aerotough 380gsm, Fortitude 450gsm, and Monolith 500gsm — are IBJJF approved.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Which payment methods do you accept?</h3>
+      <p class="faq-a">We accept Bank Transfer (TT), Western Union, and Payoneer for B2B orders.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Do you ship worldwide?</h3>
+      <p class="faq-a">Yes — we ship B2B orders to academies, gyms, and fight brands worldwide, factory-direct from Pakistan.</p>
+    </div>
+  </div>
+</section>
+
 <!-- RFQ -->
 <section class="rfq-section" id="rfq">
   <div class="rfq-left">
@@ -524,11 +586,11 @@ body{background:transparent}
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <a href="index.html" class="logo"><img src="images/logo-footer-sm.webp" alt="Gimakx" width="679" height="102"></a>
+      <a href="/" class="logo"><img src="images/logo-footer-sm.webp" alt="Gimakx" width="679" height="102"></a>
       <p>Elite B2B BJJ Gi manufacturer. Custom Gis, rash guards, and academy apparel crafted for professional academies worldwide.</p>
       <div class="footer-contact" style="margin-top:20px">
         <a href="mailto:support@gimakx.com">support@gimakx.com</a>
-        <a href="https://wa.me/923107197037" target="_blank" rel="noopener noreferrer"><img src="images/whatsapp.png" alt="WhatsApp" style="width:16px;height:16px;display:inline-block">+92 (310) 7197-037</a>
+        <a href="https://wa.me/923107197037" target="_blank" rel="noopener noreferrer"><img src="images/whatsapp.png" alt="WhatsApp" width="145" height="144" style="width:16px;height:16px;display:inline-block">+92 (310) 7197-037</a>
         <a href="https://instagram.com/gimakx" target="_blank" rel="noopener noreferrer">@gimakx</a>
       </div>
     </div>
@@ -569,11 +631,11 @@ body{background:transparent}
         <span class="payment-pill-name">Bank Transfer</span>
       </div>
       <div class="payment-pill">
-        <img src="images/western-union.png" alt="Western Union" class="pay-logo">
+        <img src="images/western-union.png" alt="Western Union" width="343" height="90" class="pay-logo">
         
       </div>
       <div class="payment-pill">
-        <img src="images/payoneer.png" alt="Payoneer" class="pay-logo">
+        <img src="images/payoneer.png" alt="Payoneer" width="3334" height="695" class="pay-logo">
         
       </div>
     </div>

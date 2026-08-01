@@ -1,18 +1,31 @@
 # robots.txt for gimakx.com
-# B2B BJJ Gi Manufacturer
+# B2B BJJ Gi Manufacturer — https://www.gimakx.com/
 
+# Default: all crawlers welcome
 User-agent: *
 Allow: /
 
-# Block access to draft/prototype pages not intended for indexing
-Disallow: /bjj-b2b-landing.html
-Disallow: /gimakx-redesign.html
-Disallow: /gimakx-knowledge-graph.html
-Disallow: /layout-1-dark-luxury.html
-Disallow: /layout-2-editorial.html
-Disallow: /layout-3-bold-sport.html
-Disallow: /graphify-out/
-Disallow: /video-studio/
+# AI / answer-engine crawlers — explicitly welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
 
 # Sitemap declaration
 Sitemap: https://www.gimakx.com/sitemap.xml
