@@ -199,6 +199,28 @@
 .evo-spec-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:6px}
 .evo-spec-val{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--white)}
 
+/* CLIENT REVIEWS */
+.reviews-section{padding:96px 5% 100px;position:relative}
+.reviews-section::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,26,46,0) 0%,rgba(13,26,46,0.55) 40%,rgba(13,26,46,0) 100%);pointer-events:none}
+.reviews-section>*{position:relative}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:48px}
+.review-card{background:var(--navy-card);border:1px solid rgba(255,255,255,0.06);border-top:3px solid var(--gold);display:flex;flex-direction:column;transition:transform 0.25s,border-color 0.25s}
+.review-card:hover{transform:translateY(-4px);border-color:rgba(200,146,42,0.28);border-top-color:var(--gold-light)}
+.review-media{aspect-ratio:3/2;overflow:hidden;background:var(--navy-mid);position:relative}
+.review-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s}
+.review-card:hover .review-media img{transform:scale(1.035)}
+.review-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,17,31,0) 55%,rgba(17,30,48,0.85) 100%)}
+.review-body{padding:32px 34px 34px;display:flex;flex-direction:column;flex:1}
+.review-stars{color:var(--gold);font-size:14px;letter-spacing:4px;margin-bottom:16px;line-height:1}
+.review-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(21px,2vw,26px);font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--white);line-height:1.15;margin-bottom:14px}
+.review-quote{position:relative;font-size:14px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.55);margin:0 0 26px;padding-left:20px;border-left:2px solid rgba(200,146,42,0.35);flex:1}
+.review-meta{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.07)}
+.review-initials{width:44px;height:44px;flex-shrink:0;border:1px solid rgba(200,146,42,0.35);background:rgba(200,146,42,0.08);color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:1px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.review-name{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--white);line-height:1.2}
+.review-role{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-top:3px}
+@media(max-width:860px){.reviews-grid{grid-template-columns:1fr;gap:24px}.reviews-section{padding:72px 5% 76px}}
+@media(max-width:560px){.review-body{padding:26px 22px 28px}}
+
 /* SECONDARY PRODUCTS */
 .secondary-section{background:rgba(13,26,46,0.84);padding:80px 5%}
 .secondary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
@@ -455,6 +477,53 @@ body{background:transparent}
   <p class="color-note">★ Camouflage available as special order only. Contact our B2B team for availability.</p>
 </section>
 <noscript><style>.wheel-stage{position:static!important;display:flex;flex-wrap:wrap;gap:16px;padding:10px 5% 60px;height:auto}.color-section .swatch{position:static!important;opacity:1!important;margin:0!important}.wheel-pointer{display:none}</style></noscript>
+
+<!-- CLIENT REVIEWS -->
+<section class="s-wrap reviews-section" id="reviews">
+  <div class="s-eye">Academy Partners</div>
+  <h2 class="s-h2">Trusted On <em>The Mats</em></h2>
+  <div class="reviews-grid">
+
+    <article class="review-card">
+      <div class="review-media">
+        <img src="images/review-chaos-jiujitsu-900.webp" width="900" height="600" loading="lazy" decoding="async"
+             alt="Custom black Chaos Jiu Jitsu BJJ Gi by Gimakx with full-back embroidered academy logo in red and purple">
+      </div>
+      <div class="review-body">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <h3 class="review-title">Embroidery That Holds Up To Daily Rolling</h3>
+        <p class="review-quote">The full-back embroidery came out exactly like the mockup — colours, outline, everything. Our kids train in these every day and the stitching still looks new. Sizing across the whole order was consistent, which made handing them out easy.</p>
+        <div class="review-meta">
+          <div class="review-initials" aria-hidden="true">TL</div>
+          <div>
+            <div class="review-name">Ted Linn</div>
+            <div class="review-role">Owner — Chaos Jiu Jitsu</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <div class="review-media">
+        <img src="images/review-imma-565.webp" width="565" height="376" loading="lazy" decoding="async"
+             alt="White Gimakx BJJ Gi with custom IMMA Institute of Mixed Martial Arts back print in yellow and grey">
+      </div>
+      <div class="review-body">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <h3 class="review-title">Our Academy Branding, Done Properly</h3>
+        <p class="review-quote">Gimakx took our IMMA artwork and put it on the Gi exactly as we designed it. Clean finish, solid weave, and the whites have stayed white through repeated washes. Straightforward to deal with from mockup to delivery.</p>
+        <div class="review-meta">
+          <div class="review-initials" aria-hidden="true">SP</div>
+          <div>
+            <div class="review-name">Sepuloni Pouha</div>
+            <div class="review-role">Institute of Mixed Martial Arts</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
 
 <!-- SECONDARY PRODUCTS -->
 <section class="secondary-section">
