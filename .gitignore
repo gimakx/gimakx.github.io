@@ -31,6 +31,10 @@ seo-audit-*.pdf
 # Local tooling config (MCP servers, env-var references)
 .mcp.json
 
+# Quote calculator — PLAINTEXT source and build script. Never commit.
+# Only the encrypted build output (q-tool-*.html) is published.
+private-tools/
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db
