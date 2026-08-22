@@ -93,6 +93,7 @@
 </style>
 <!-- Cookie consent — loads Microsoft Clarity only after the visitor accepts -->
 <script src="/cookie-consent.js" defer></script>
+<script src="/wa-source.js" defer></script>
 </head>
 <body>
 
@@ -312,7 +313,8 @@ function handleRFQ(e){
   if(cfg)pairs.unshift(cfg.textContent.trim());
   const h=form.closest('.rfq-right').querySelector('h3');
   const heading=h?h.textContent.trim():'Request a Quote';
-  const msg='New RFQ from gimakx.com\n'+heading+'\n\n'+pairs.join('\n');
+  const src=(typeof window.gimakxSource==='function')?window.gimakxSource():'';
+  const msg='New RFQ from gimakx.com'+(src?' · Source: '+src:'')+'\n'+heading+'\n\n'+pairs.join('\n');
   if(channel==='email'){
     const co=form.querySelector('input[name=company]');
     const subject='RFQ - '+heading+(co&&co.value.trim()?' - '+co.value.trim():'');
