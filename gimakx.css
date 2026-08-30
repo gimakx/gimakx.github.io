@@ -368,3 +368,32 @@ footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06)}
 .size-note{font-size:12px;line-height:1.7;color:rgba(255,255,255,0.38);margin-top:12px}
 .size-note strong{color:rgba(255,255,255,0.62);font-weight:600}
 .size-table td.rg-xs{color:#B0BEC5}.size-table td.rg-s{color:#90CAF9}.size-table td.rg-m{color:#FFD54F}.size-table td.rg-l{color:#A5D6A7}.size-table td.rg-xl{color:#FFAB91}.size-table td.rg-2xl{color:#CE93D8}.size-table td.rg-3xl{color:#80DEEA}
+
+/* ── PRODUCT IMAGE ZOOM ── */
+/* The affordance is only applied once image-zoom.js has marked the image, so a
+   no-JS visitor never sees a zoom cursor on something that will not open. */
+.is-zoomable{cursor:zoom-in}
+.is-zoomable:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.zoom-locked{overflow:hidden}
+.zoom-overlay{position:fixed;inset:0;z-index:400;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,9,17,0.93);backdrop-filter:blur(6px)}
+.zoom-overlay.is-open{display:flex}
+.zoom-dialog{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;max-width:min(92vw,900px);max-height:92vh}
+.zoom-img{max-width:100%;max-height:78vh;object-fit:contain;border:1px solid rgba(255,255,255,0.10);border-radius:3px;background:#0D1A2E;transition:opacity .2s}
+.zoom-overlay.is-loading .zoom-img{opacity:.45}
+.zoom-img:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.zoom-cap{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);text-align:center;margin:0;max-width:60ch}
+.zoom-close{position:absolute;top:-6px;right:-6px;transform:translate(50%,-50%);width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--gold);color:var(--navy);border:none;border-radius:50%;cursor:pointer;transition:background .2s}
+.zoom-close:hover{background:var(--gold-light)}
+.zoom-close:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.zoom-spinner{position:absolute;top:50%;left:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border:3px solid rgba(255,255,255,0.18);border-top-color:var(--gold);border-radius:50%;opacity:0;pointer-events:none}
+.zoom-overlay.is-loading .zoom-spinner{opacity:1;animation:zoomspin .7s linear infinite}
+@keyframes zoomspin{to{transform:rotate(360deg)}}
+@media(max-width:860px){
+  .zoom-overlay{padding:16px}
+  .zoom-close{position:fixed;top:12px;right:12px;transform:none}
+  .zoom-img{max-height:72vh}
+}
+@media(prefers-reduced-motion:reduce){
+  .zoom-overlay.is-loading .zoom-spinner{animation:none}
+  .zoom-img{transition:none}
+}
