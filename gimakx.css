@@ -68,8 +68,14 @@ nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45
 .breadcrumb .current{color:var(--gold)}
 
 /* ── PRODUCT HERO ── */
-.product-hero{padding:40px 5% 90px;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
-.product-summary .s-eye{margin-top:0}
+/* The headline is its own grid item so mobile can lift it above the gallery —
+   a cold visitor should read the product name before the photo, and before the
+   consent banner covers the lower third of the screen. Desktop is unchanged:
+   the gallery spans both rows on the left, headline sits above summary on the right. */
+.product-hero{padding:40px 5% 90px;display:grid;grid-template-columns:1.1fr 1fr;grid-template-areas:"gallery headline" "gallery summary";column-gap:64px;row-gap:0;align-items:start}
+.product-headline{grid-area:headline}
+.product-summary{grid-area:summary}
+.product-headline .s-eye{margin-top:0}
 .product-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,6vw,88px);font-weight:900;text-transform:uppercase;line-height:0.9;margin-bottom:18px}
 .product-title em{font-style:italic;color:var(--gold)}
 .product-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
@@ -82,7 +88,7 @@ nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45
 .product-cta-row{display:flex;gap:12px;flex-wrap:wrap}
 
 /* ── GALLERY ── */
-.gallery{position:sticky;top:90px}
+.gallery{grid-area:gallery;position:sticky;top:90px}
 /* Product shots are square (1:1) and carry printed labels, so the frame matches
    the source ratio and `contain` guards the text if a non-square image lands here. */
 .gallery-main{aspect-ratio:1/1;background:linear-gradient(160deg,#0D1A2E,#172C4E);border:1px solid rgba(255,255,255,0.07);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
@@ -243,7 +249,8 @@ footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06)}
   .nav-center li a::after{display:none}
   .nav-toggle{display:flex}
   .nav-badge{display:none}
-  .product-hero{grid-template-columns:1fr;gap:40px}
+  .product-hero{grid-template-columns:1fr;grid-template-areas:"headline" "gallery" "summary";column-gap:0;row-gap:28px}
+  .product-headline .product-title{margin-bottom:0}
   .gallery{position:static}
   .variant-panel.active{grid-template-columns:1fr}
   .color-picker-wrap{grid-template-columns:1fr;gap:32px}
