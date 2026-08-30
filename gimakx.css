@@ -359,3 +359,12 @@ footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06)}
   .cc-actions{gap:10px}
   .cc-btn{flex:1}
 }
+
+/* Rash guard / shorts sizing (Evosoft) */
+.size-intro{font-size:15px;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.5);max-width:70ch;margin-top:10px}
+.size-table th .th-sub{display:block;font-size:9px;font-weight:400;letter-spacing:.5px;color:rgba(255,255,255,0.32);margin-top:2px}
+.size-table td .td-sub{display:block;font-size:9px;font-weight:400;letter-spacing:.3px;color:rgba(255,255,255,0.26);margin-top:1px}
+.size-table.size-table-sm{min-width:0}
+.size-note{font-size:12px;line-height:1.7;color:rgba(255,255,255,0.38);margin-top:12px}
+.size-note strong{color:rgba(255,255,255,0.62);font-weight:600}
+.size-table td.rg-xs{color:#B0BEC5}.size-table td.rg-s{color:#90CAF9}.size-table td.rg-m{color:#FFD54F}.size-table td.rg-l{color:#A5D6A7}.size-table td.rg-xl{color:#FFAB91}.size-table td.rg-2xl{color:#CE93D8}.size-table td.rg-3xl{color:#80DEEA}
