@@ -587,29 +587,29 @@
     <div class="rfq-config" id="rfqConfig">Your selection: <b id="rfqWeight">Fortitude · 450gsm</b> · <b id="rfqColor">Navy Blue</b> · <b id="rfqCat">Men</b> · Size <b id="rfqSize">not selected</b></div>
     <form class="rfq-form-body" onsubmit="handleRFQ(event)">
       <div class="form-grid">
-        <div class="form-field"><label>Academy / Company Name *</label><input type="text" name="company" placeholder="e.g. Checkmat London" required></div>
-        <div class="form-field"><label>Contact Name *</label><input type="text" name="contact" placeholder="Full name" required></div>
+        <div class="form-field"><label for="rfq-company">Academy / Company Name *</label><input id="rfq-company" type="text" name="company" placeholder="e.g. Checkmat London" required></div>
+        <div class="form-field"><label for="rfq-contact">Contact Name *</label><input id="rfq-contact" type="text" name="contact" placeholder="Full name" required></div>
       </div>
       <div class="form-grid">
-        <div class="form-field"><label>Email Address *</label><input type="email" name="email" placeholder="name@academy.com" required></div>
-        <div class="form-field"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+1 000 000 0000"></div>
+        <div class="form-field"><label for="rfq-email">Email Address *</label><input id="rfq-email" type="email" name="email" placeholder="name@academy.com" required></div>
+        <div class="form-field"><label for="rfq-phone">WhatsApp / Phone</label><input id="rfq-phone" type="tel" name="phone" placeholder="+1 000 000 0000"></div>
       </div>
       <div class="form-grid">
-        <div class="form-field"><label>GiPro Weight *</label>
-          <select name="weight" required><option>GiPro Fortitude (450gsm)</option><option>GiPro Aerotough (380gsm)</option><option>GiPro Monolith (500gsm)</option><option>Mixed / Not sure yet</option></select>
+        <div class="form-field"><label for="rfq-weight">GiPro Weight *</label>
+          <select id="rfq-weight" name="weight" required><option>GiPro Fortitude (450gsm)</option><option>GiPro Aerotough (380gsm)</option><option>GiPro Monolith (500gsm)</option><option>Mixed / Not sure yet</option></select>
         </div>
-        <div class="form-field"><label>Estimated Quantity</label>
-          <select name="quantity"><option>10–19 units</option><option>20–49 units</option><option>50–99 units</option><option>100–299 units</option><option>300+ units</option></select>
+        <div class="form-field"><label for="rfq-quantity">Estimated Quantity</label>
+          <select id="rfq-quantity" name="quantity"><option>10–19 units</option><option>20–49 units</option><option>50–99 units</option><option>100–299 units</option><option>300+ units</option></select>
         </div>
       </div>
       <div class="form-grid">
-        <div class="form-field"><label>Country</label><input type="text" name="country" placeholder="e.g. United Kingdom"></div>
-        <div class="form-field"><label>Preferred Payment</label>
-          <select name="payment"><option>Bank Transfer</option><option>Western Union</option><option>Payoneer</option></select>
+        <div class="form-field"><label for="rfq-country">Country</label><input id="rfq-country" type="text" name="country" placeholder="e.g. United Kingdom"></div>
+        <div class="form-field"><label for="rfq-payment">Preferred Payment</label>
+          <select id="rfq-payment" name="payment"><option>Bank Transfer</option><option>Western Union</option><option>Payoneer</option></select>
         </div>
       </div>
       <div class="form-grid full">
-        <div class="form-field"><label>Custom Colors / Logo / Details</label><textarea name="details" placeholder="Tell us your color choices, logo placement, and any custom requirements..."></textarea></div>
+        <div class="form-field"><label for="rfq-details">Custom Colors / Logo / Details</label><textarea id="rfq-details" name="details" placeholder="Tell us your color choices, logo placement, and any custom requirements..."></textarea></div>
       </div>
       <div class="submit-row">
         <p class="submit-note">* Required fields. We reply within 24hrs. All information is kept strictly confidential.<br>Your request opens pre-filled in WhatsApp or your email app — review it and hit send.</p>
