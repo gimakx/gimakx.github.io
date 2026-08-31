@@ -397,3 +397,5 @@ footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06)}
   .zoom-overlay.is-loading .zoom-spinner{animation:none}
   .zoom-img{transition:none}
 }
+/* Answer-first lead paragraph under a section heading (A23) */
+.section-lead{font-size:16px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.55);max-width:78ch;margin:0 0 8px}
