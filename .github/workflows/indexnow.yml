@@ -1,0 +1,181 @@
+name: IndexNow
+
+# Tell Bing (and the other IndexNow participants) which pages changed, every
+# time main is pushed. Until now this was done by hand after each deploy, which
+# only works while someone remembers — and Bing partly feeds ChatGPT Search,
+# which is currently the site's main source of real traffic.
+#
+# Only genuinely changed pages are submitted. Over-submitting unchanged URLs is
+# how a site teaches IndexNow to ignore it.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - '**.css'
+      - '**.js'
+      - 'llms.txt'
+      - 'robots.txt'
+  workflow_dispatch:
+    inputs:
+      submit_all:
+        description: 'Submit every URL in sitemap.xml instead of only changed pages'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # need the previous commit to diff against
+
+      - name: Work out which URLs changed
+        id: urls
+        shell: bash
+        run: |
+          set -euo pipefail
+          HOST="www.gimakx.com"
+
+          sitemap_urls() {
+            grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's|</\?loc>||g'
+          }
+
+          # Pages that exist but are deliberately not indexable, plus the
+          # gitignored design drafts that must never be advertised.
+          is_excluded() {
+            case "$1" in
+              404.html|qtool/*|private-tools/*|gimakx-redesign.html|\
+              layout-*.html|bjj-b2b-landing.html|gimakx-knowledge-graph.html) return 0 ;;
+              *) return 1 ;;
+            esac
+          }
+
+          path_to_url() {
+            case "$1" in
+              index.html)        echo "https://$HOST/" ;;
+              guides/index.html) echo "https://$HOST/guides/" ;;
+              *)                 echo "https://$HOST/$1" ;;
+            esac
+          }
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.submit_all }}" = "true" ]; then
+            echo "manual run: submitting every sitemap URL"
+            sitemap_urls > candidates.txt
+          else
+            CHANGED=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" 2>/dev/null \
+                      || git diff --name-only HEAD~1 HEAD)
+            echo "changed files:"; echo "$CHANGED" | sed 's/^/  /'
+
+            : > candidates.txt
+
+            # A shared stylesheet or script changes how every page renders, so
+            # the whole sitemap is resubmitted. Only 11 URLs, well within limits.
+            if echo "$CHANGED" | grep -qE '\.(css|js)$'; then
+              echo "shared asset changed -> submitting all sitemap URLs"
+              sitemap_urls >> candidates.txt
+            fi
+
+            while IFS= read -r f; do
+              [ -z "$f" ] && continue
+              case "$f" in
+                *.html)
+                  is_excluded "$f" && continue
+                  [ -f "$f" ] || continue          # skip deletions
+                  path_to_url "$f" >> candidates.txt ;;
+                llms.txt|robots.txt)
+                  echo "https://$HOST/$f" >> candidates.txt ;;
+              esac
+            done <<< "$CHANGED"
+          fi
+
+          sort -u candidates.txt -o candidates.txt
+          echo "candidate URLs:"; sed 's/^/  /' candidates.txt
+          echo "count=$(wc -l < candidates.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Wait for GitHub Pages to publish
+        if: steps.urls.outputs.count != '0'
+        run: sleep 75
+
+      - name: Verify the URLs are actually live
+        id: verify
+        if: steps.urls.outputs.count != '0'
+        shell: bash
+        run: |
+          set -uo pipefail
+          : > live.txt
+          while IFS= read -r u; do
+            [ -z "$u" ] && continue
+            code=$(curl -s -o /dev/null -w '%{http_code}' -m 25 --retry 3 --retry-delay 5 "$u")
+            if [ "$code" = "200" ]; then
+              echo "  live  $u"; echo "$u" >> live.txt
+            else
+              echo "  skip  $u  (HTTP $code)"
+            fi
+          done < candidates.txt
+          echo "count=$(wc -l < live.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Submit to IndexNow
+        if: steps.verify.outputs.count != '0'
+        shell: bash
+        run: |
+          set -uo pipefail
+          KEY="1c338e6b579446fa870c9481585aac58"
+
+          # Confirm the key file is reachable before submitting; without it
+          # IndexNow rejects the whole batch.
+          key_code=$(curl -s -o /dev/null -w '%{http_code}' -m 20 "https://www.gimakx.com/$KEY.txt")
+          if [ "$key_code" != "200" ]; then
+            echo "::error::IndexNow key file returned HTTP $key_code - not submitting"
+            exit 1
+          fi
+
+          python3 - <<'PY' > payload.json
+          import json
+          urls = [l.strip() for l in open("live.txt") if l.strip()]
+          print(json.dumps({
+              "host": "www.gimakx.com",
+              "key": "1c338e6b579446fa870c9481585aac58",
+              "keyLocation": "https://www.gimakx.com/1c338e6b579446fa870c9481585aac58.txt",
+              "urlList": urls,
+          }, indent=2))
+          PY
+
+          cat payload.json
+
+          code=$(curl -s -o response.txt -w '%{http_code}' -m 40 \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data-binary @payload.json)
+
+          echo "IndexNow responded HTTP $code"
+          [ -s response.txt ] && cat response.txt
+
+          case "$code" in
+            200|202) echo "submitted $(wc -l < live.txt) URL(s)" ;;
+            *) echo "::error::IndexNow rejected the submission (HTTP $code)"; exit 1 ;;
+          esac
+
+      - name: Summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "### IndexNow"
+            echo ""
+            echo "- candidates: ${{ steps.urls.outputs.count || 0 }}"
+            echo "- live and submitted: ${{ steps.verify.outputs.count || 0 }}"
+            if [ -f live.txt ]; then
+              echo ""
+              sed 's/^/- /' live.txt
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
