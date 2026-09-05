@@ -82,6 +82,36 @@
         { "@type": "Question", "name": "Do you make women's and kids' BJJ Gis?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Women's Gis are cut W1 to W4 and kids' K0 to K4, both with their own size charts rather than being scaled-down men's patterns. All sizes carry the same MOQ of 10 units per design, and mixed sizes within one design are accepted." } },
         { "@type": "Question", "name": "Can we order mixed sizes in one academy order?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A single design can be split across any mix of sizes, so an academy ordering 10 Gis can take a spread of A1 to A3, or combine adult and kids sizes, without raising the minimum order quantity." } }
       ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.gimakx.com/guides/bjj-gi-size-chart.html#howto",
+      "name": "How to read a BJJ Gi size chart",
+      "description": "Read a BJJ Gi size chart in five steps: choose the men's, women's or kids' chart, find your height along the top, find your weight down the left, and read the size in the cell where the two meet.",
+      "totalTime": "PT2M",
+      "inLanguage": "en",
+      "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "0" },
+      "supply": [
+        { "@type": "HowToSupply", "name": "Your height" },
+        { "@type": "HowToSupply", "name": "Your weight" }
+      ],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Choose your chart",
+          "text": "Select the men's, women's or kids' tab below. Each is cut to its own pattern rather than being a scaled-down men's size.",
+          "url": "https://www.gimakx.com/guides/bjj-gi-size-chart.html#step-1" },
+        { "@type": "HowToStep", "position": 2, "name": "Find your height along the top",
+          "text": "Heights run left to right across the header row — 5'1″ to 6'5″ on the men's chart.",
+          "url": "https://www.gimakx.com/guides/bjj-gi-size-chart.html#step-2" },
+        { "@type": "HowToStep", "position": 3, "name": "Find your weight down the left",
+          "text": "Weights run top to bottom down the first column of the same chart.",
+          "url": "https://www.gimakx.com/guides/bjj-gi-size-chart.html#step-3" },
+        { "@type": "HowToStep", "position": 4, "name": "Read the cell where they meet",
+          "text": "That cell is your size. Sizing uses both measurements together, which is why two people of the same height can wear different sizes.",
+          "url": "https://www.gimakx.com/guides/bjj-gi-size-chart.html#step-4" },
+        { "@type": "HowToStep", "position": 5, "name": "Check for an overlap",
+          "text": "If your two measurements land you in more than one size, follow the between-sizes steps below.",
+          "url": "https://www.gimakx.com/guides/bjj-gi-size-chart.html#step-5" }
+      ]
     }
   ]
 }
@@ -99,6 +129,10 @@
 .guide-table th{background:var(--navy);color:var(--gold);text-align:left;padding:11px 14px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:1px;text-transform:uppercase;font-size:11px;white-space:nowrap}
 .guide-table td{padding:10px 14px;border-top:1px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.62)}
 .guide-note{font-size:13px;color:rgba(255,255,255,0.4);font-style:italic;margin:0 0 8px}
+.guide-steps{counter-reset:step;list-style:none;margin:20px 0 8px;padding:0}
+.guide-steps li{position:relative;padding:0 0 22px 54px;counter-increment:step;font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.6)}
+.guide-steps li::before{content:counter(step);position:absolute;left:0;top:1px;width:36px;height:36px;border:1px solid var(--gold);color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center}
+.guide-steps li strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:0.5px;color:#fff;margin-bottom:4px}
 .guide-faq{border-top:1px solid rgba(255,255,255,0.08);padding:16px 0}
 .guide-faq summary{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;color:#fff;text-transform:uppercase;cursor:pointer;letter-spacing:.4px}
 .guide-faq p{margin:12px 0 0}
@@ -164,8 +198,17 @@
     </div>
     <p class="guide-note">Ranges overlap because sizing depends on height <em>and</em> weight together &mdash; use the full charts below to find where your two measurements meet.</p>
 
+    <h2>How to read the chart</h2>
+    <ol class="guide-steps">
+      <li id="step-1"><strong>Choose your chart</strong>Select the men's, women's or kids' tab below. Each is cut to its own pattern rather than being a scaled-down men's size.</li>
+      <li id="step-2"><strong>Find your height along the top</strong>Heights run left to right across the header row &mdash; 5'1&Prime; to 6'5&Prime; on the men's chart.</li>
+      <li id="step-3"><strong>Find your weight down the left</strong>Weights run top to bottom down the first column of the same chart.</li>
+      <li id="step-4"><strong>Read the cell where they meet</strong>That cell is your size. Sizing uses both measurements together, which is why two people of the same height can wear different sizes.</li>
+      <li id="step-5"><strong>Check for an overlap</strong>If your two measurements land you in more than one size, follow the between-sizes steps below.</li>
+    </ol>
+
     <h2>Full size charts</h2>
-    <p>Select men's, women's or kids' sizing below. Read your height across the top and your weight down the left &mdash; the cell where they meet is your size.</p>
+    <p>Men's, women's and kids' sizing, each drafted to its own pattern.</p>
 
 <div class="size-tabs" role="tablist">
         <button class="size-tab active" onclick="showSizeTab('men',this)" role="tab" aria-selected="true">Men (A0–A4)</button>
@@ -258,8 +301,12 @@
     </div>
 
     <h2>How to choose if you are between sizes</h2>
-    <p><strong>Size up</strong> if you prefer a looser competition fit, train in a hot climate and want more airflow, or expect to gain a little weight. <strong>Size down</strong> if you want a closer, more tailored cut that gives opponents less fabric to grip.</p>
-    <p>Because Gimakx Gis are cut from pre-shrunk pearl weave, sizing up purely to allow for shrinkage is rarely necessary &mdash; expect only 1&ndash;3% natural shrinkage after the first few washes.</p>
+    <ol class="guide-steps">
+      <li><strong>Confirm both measurements</strong>Check your height and weight against the chart again &mdash; a size that looks borderline on one measurement is often settled by the other.</li>
+      <li><strong>Size up for a looser fit</strong>Choose the larger size if you prefer a looser competition fit, train in a hot climate and want more airflow, or expect to gain a little weight.</li>
+      <li><strong>Size down for a closer cut</strong>Choose the smaller size if you want a more tailored cut that gives opponents less fabric to grip.</li>
+      <li><strong>Do not size up for shrinkage alone</strong>Gimakx Gis are cut from pre-shrunk pearl weave, so expect only 1&ndash;3% natural shrinkage after the first few washes. Sizing up purely to allow for it is rarely necessary.</li>
+    </ol>
 
     <h2>Caring for the fit</h2>
     <p>Wash cold and hang dry rather than tumble drying. That keeps shrinkage inside the 1&ndash;3% range and protects the pearl weave. Heavier fabrics such as 500 GSM simply need longer to dry. For how fabric weight affects fit and feel, see our <a href="bjj-gi-fabric-weights.html">guide to 380, 450 and 500 GSM</a>.</p>
