@@ -399,3 +399,11 @@ footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06)}
 }
 /* Answer-first lead paragraph under a section heading (A23) */
 .section-lead{font-size:16px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.55);max-width:78ch;margin:0 0 8px}
+
+/* ── WHOLESALE PRICE TABLE ── */
+.price-table{min-width:0}
+.price-table td.pcell{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:var(--gold);letter-spacing:.5px;padding:14px 8px}
+.price-table td:first-child{font-size:12px;color:rgba(255,255,255,0.72);text-align:left;padding-left:16px;white-space:normal}
+.price-table th{font-size:12px;padding:12px 8px}
+.price-table td .td-sub{text-transform:none;letter-spacing:.2px}
+@media(max-width:640px){.price-table td.pcell{font-size:18px}.price-table td:first-child{font-size:11px}}
