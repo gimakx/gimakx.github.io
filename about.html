@@ -49,7 +49,55 @@
       "areaServed": "Worldwide",
       "knowsAbout": ["Brazilian Jiu-Jitsu Gi manufacturing", "Pearl weave and gold weave cotton fabrics", "Rash guard sublimation printing", "Academy uniform customization and private labeling"],
       "paymentAccepted": "Bank Transfer, Western Union, Payoneer",
-      "sameAs": ["https://www.instagram.com/gimakxsportswear","https://www.facebook.com/gimakxsportswear","https://www.tiktok.com/@gimakxsportswear","https://www.youtube.com/@gimakx"]
+      "sameAs": ["https://www.instagram.com/gimakxsportswear","https://www.facebook.com/gimakxsportswear","https://www.tiktok.com/@gimakxsportswear","https://www.youtube.com/@gimakx"],
+      "founder": { "@id": "https://www.gimakx.com/about.html#usman-razaq" },
+      "employee": [{ "@id": "https://www.gimakx.com/about.html#symab-arif" }, { "@id": "https://www.gimakx.com/about.html#usama-iqbal" }, { "@id": "https://www.gimakx.com/about.html#sara-ahmed" }, { "@id": "https://www.gimakx.com/about.html#maryam-gilani" }],
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 5 }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.gimakx.com/about.html#usman-razaq",
+      "name": "Usman Razaq",
+      "jobTitle": "Founder",
+      "worksFor": { "@id": "https://www.gimakx.com/#organization" },
+      "image": "https://www.gimakx.com/images/team/usman-razaq.webp",
+      "url": "https://www.gimakx.com/about.html#usman-razaq"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.gimakx.com/about.html#symab-arif",
+      "name": "Symab Arif",
+      "jobTitle": "Marketing Manager",
+      "worksFor": { "@id": "https://www.gimakx.com/#organization" },
+      "image": "https://www.gimakx.com/images/team/symab-arif.webp",
+      "url": "https://www.gimakx.com/about.html#symab-arif"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.gimakx.com/about.html#usama-iqbal",
+      "name": "Usama Iqbal",
+      "jobTitle": "Production and Shipping Manager",
+      "worksFor": { "@id": "https://www.gimakx.com/#organization" },
+      "image": "https://www.gimakx.com/images/team/usama-iqbal.webp",
+      "url": "https://www.gimakx.com/about.html#usama-iqbal"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.gimakx.com/about.html#sara-ahmed",
+      "name": "Sara Ahmed",
+      "jobTitle": "Content Creator",
+      "worksFor": { "@id": "https://www.gimakx.com/#organization" },
+      "image": "https://www.gimakx.com/images/team/sara-ahmed.webp",
+      "url": "https://www.gimakx.com/about.html#sara-ahmed"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.gimakx.com/about.html#maryam-gilani",
+      "name": "Maryam Gilani",
+      "jobTitle": "Graphic Designer",
+      "worksFor": { "@id": "https://www.gimakx.com/#organization" },
+      "image": "https://www.gimakx.com/images/team/maryam-gilani.webp",
+      "url": "https://www.gimakx.com/about.html#maryam-gilani"
     },
     {
       "@type": "BreadcrumbList",
@@ -75,6 +123,31 @@
 .about-cta h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:10px}
 .about-cta p{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:22px}
 .about-video{margin:34px 0 8px}
+.org-tree{margin:44px 0 8px}
+.org-node{display:flex;flex-direction:column;align-items:center;text-align:center}
+.org-avatar{border-radius:50%;overflow:hidden;background:#fff;border:2px solid rgba(200,146,42,0.45);flex:none;width:104px;height:104px}
+.org-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.org-name{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;line-height:1.2;margin-top:14px}
+.org-role{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);margin-top:6px;line-height:1.5}
+.org-founder .org-avatar{width:148px;height:148px;border-width:3px;border-color:var(--gold)}
+.org-founder .org-name{font-size:25px;margin-top:18px}
+.org-founder .org-role{font-size:12px;letter-spacing:2px}
+.org-stem{width:2px;height:36px;margin:26px auto 0;background:rgba(200,146,42,0.35)}
+.org-row{display:grid;grid-template-columns:repeat(4,1fr);position:relative;padding-top:36px}
+.org-row::before{content:'';position:absolute;top:0;left:12.5%;right:12.5%;height:2px;background:rgba(200,146,42,0.35)}
+.org-row .org-node{padding:0 10px;position:relative}
+.org-row .org-node::before{content:'';position:absolute;top:-36px;left:calc(50% - 1px);width:2px;height:36px;background:rgba(200,146,42,0.35)}
+@media(max-width:720px){
+  .org-row{grid-template-columns:repeat(2,1fr);gap:36px 0;padding-top:34px}
+  .org-row::before{left:25%;right:25%}
+  .org-row .org-node:nth-child(n+3)::before{display:none}
+  .org-avatar{width:92px;height:92px}
+}
+@media(max-width:420px){
+  .org-row{grid-template-columns:1fr;gap:30px;padding-top:30px}
+  .org-row::before,.org-row .org-node::before{display:none}
+  .org-stem{height:24px;margin-top:20px}
+}
 .video-frame{position:relative;width:100%;max-width:300px;aspect-ratio:9/16;margin:0 auto;border:1px solid rgba(255,255,255,0.12);border-radius:12px;overflow:hidden;background:var(--navy-mid)}
 .video-frame>iframe,.video-frame>.video-facade{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video-facade{padding:0;margin:0;background:none;cursor:pointer;display:block}
@@ -134,6 +207,40 @@
       <div class="about-stat"><div class="num">100%</div><div class="lbl">In-House Production</div></div>
       <div class="about-stat"><div class="num">12+</div><div class="lbl">Colors Available</div></div>
       <div class="about-stat"><div class="num">10</div><div class="lbl">Unit Minimum Order</div></div>
+    </div>
+
+    <h2>Our Team</h2>
+    <p>The factory is run by five people. Every Gi that leaves it has passed through this team.</p>
+
+    <div class="org-tree">
+      <div class="org-node org-founder" id="usman-razaq">
+        <div class="org-avatar"><img src="images/team/usman-razaq.webp" alt="Usman Razaq, Founder of Gimakx" width="480" height="480" loading="lazy" decoding="async"></div>
+        <div class="org-name">Usman Razaq</div>
+        <div class="org-role">Founder</div>
+      </div>
+      <div class="org-stem"></div>
+      <div class="org-row">
+        <div class="org-node" id="symab-arif">
+          <div class="org-avatar"><img src="images/team/symab-arif.webp" alt="Symab Arif, Marketing Manager at Gimakx" width="480" height="480" loading="lazy" decoding="async"></div>
+          <div class="org-name">Symab Arif</div>
+          <div class="org-role">Marketing Manager</div>
+        </div>
+        <div class="org-node" id="usama-iqbal">
+          <div class="org-avatar"><img src="images/team/usama-iqbal.webp" alt="Usama Iqbal, Production and Shipping Manager at Gimakx" width="480" height="480" loading="lazy" decoding="async"></div>
+          <div class="org-name">Usama Iqbal</div>
+          <div class="org-role">Production &amp; Shipping Manager</div>
+        </div>
+        <div class="org-node" id="sara-ahmed">
+          <div class="org-avatar"><img src="images/team/sara-ahmed.webp" alt="Sara Ahmed, Content Creator at Gimakx" width="480" height="480" loading="lazy" decoding="async"></div>
+          <div class="org-name">Sara Ahmed</div>
+          <div class="org-role">Content Creator</div>
+        </div>
+        <div class="org-node" id="maryam-gilani">
+          <div class="org-avatar"><img src="images/team/maryam-gilani.webp" alt="Maryam Gilani, Graphic Designer at Gimakx" width="480" height="480" loading="lazy" decoding="async"></div>
+          <div class="org-name">Maryam Gilani</div>
+          <div class="org-role">Graphic Designer</div>
+        </div>
+      </div>
     </div>
 
     <h2>Our Craft</h2>
