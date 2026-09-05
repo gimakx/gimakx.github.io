@@ -748,11 +748,18 @@ body{background:transparent}
 window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60)},{passive:true})
 
 // Hero video is preload="none" so it never competes with first paint; start it after page load.
-// play() on a preload="none" video triggers the download itself. Chrome blocks video-only
-// playback in background tabs, so retry when the tab becomes visible.
+// play() on a preload="none" video triggers the 2.5 MB download itself, so only spend that on a
+// desktop viewport, an unmetered connection, and a visitor who has not asked for reduced motion.
+// Everyone else keeps the 186 KB hero-poster-1920.webp, which is preloaded and looks identical
+// while still. Chrome blocks video-only playback in background tabs, so retry on visibility.
 window.addEventListener('load',()=>{
   const v=document.getElementById('heroVideo')
   if(!v)return
+  const wide=window.matchMedia('(min-width:900px)').matches
+  const conn=navigator.connection||{}
+  const cheap=!conn.saveData&&!/2g/.test(conn.effectiveType||'')
+  const motionOK=!window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if(!(wide&&cheap&&motionOK))return
   v.play().catch(()=>{})
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&v.paused)v.play().catch(()=>{})})
 })
