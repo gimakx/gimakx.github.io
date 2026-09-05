@@ -307,6 +307,7 @@ body{background:transparent}
 </style>
 <!-- Cookie consent — loads Microsoft Clarity only after the visitor accepts -->
 <script src="/cookie-consent.js" defer></script>
+<script src="/currency.js" defer></script>
 <script src="/wa-source.js" defer></script>
 </head>
 <body>
@@ -324,6 +325,7 @@ body{background:transparent}
     <li><a href="guides/bjj-gi-size-chart.html">Size Guide</a></li><li><a href="guides/">Guides</a></li>
   </ul>
   <div class="nav-right">
+    <div class="cur-wrap"><select class="cur-select" aria-label="Display currency"><option value="USD">$ USD</option><option value="GBP">&pound; GBP</option><option value="EUR">&euro; EUR</option></select></div>
     <span class="nav-badge">B2B Only</span>
     <a href="#rfq" class="nav-rfq">Request Quote</a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('mainNav');var o=n.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><span></span><span></span><span></span></button>

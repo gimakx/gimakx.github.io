@@ -407,3 +407,20 @@ footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06)}
 .price-table th{font-size:12px;padding:12px 8px}
 .price-table td .td-sub{text-transform:none;letter-spacing:.2px}
 @media(max-width:640px){.price-table td.pcell{font-size:18px}.price-table td:first-child{font-size:11px}}
+
+/* ── CURRENCY SELECTOR ── */
+.cur-wrap{position:relative;display:flex;align-items:center;flex:none}
+.cur-select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background:transparent;border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.75);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.2px;padding:0 24px 0 10px;min-height:36px;border-radius:2px;cursor:pointer;transition:border-color .2s,color .2s}
+.cur-select:hover{border-color:var(--gold);color:var(--white)}
+.cur-select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.cur-select option{background:var(--navy);color:var(--white)}
+.cur-wrap::after{content:'';position:absolute;right:9px;top:50%;margin-top:-2px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid rgba(255,255,255,0.45);pointer-events:none}
+.fx-note{display:block;margin-top:10px;color:var(--gold-light);font-size:12px;line-height:1.6}
+.fx-note:empty{display:none}
+/* narrow screens: the logo sits flush against the selector at 375px, so trim
+   the control and give it a gap rather than letting the two touch */
+@media(max-width:640px){
+  .cur-wrap{margin-left:10px}
+  .cur-select{font-size:11px;letter-spacing:.5px;padding:0 19px 0 7px}
+  .cur-wrap::after{right:7px}
+}

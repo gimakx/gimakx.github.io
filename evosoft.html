@@ -82,6 +82,7 @@
 </style>
 <!-- Cookie consent — loads Microsoft Clarity only after the visitor accepts -->
 <script src="/cookie-consent.js" defer></script>
+<script src="/currency.js" defer></script>
 <script src="/wa-source.js" defer></script>
 <script src="/image-zoom.js" defer></script>
 </head>
@@ -99,6 +100,7 @@
     <li><a href="#size-guide">Size Guide</a></li><li><a href="guides/">Guides</a></li>
   </ul>
   <div class="nav-right">
+    <div class="cur-wrap"><select class="cur-select" aria-label="Display currency"><option value="USD">$ USD</option><option value="GBP">&pound; GBP</option><option value="EUR">&euro; EUR</option></select></div>
     <span class="nav-badge">B2B Only</span>
     <a href="#rfq" class="nav-rfq">Request Quote</a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('mainNav');var o=n.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><span></span><span></span><span></span></button>
@@ -217,11 +219,11 @@
     <table class="size-table price-table" aria-label="Wholesale price per unit by order quantity">
       <thead><tr><th class="row-head">Product</th><th>10–19 units</th><th>20–49 units</th><th>50+ units</th></tr></thead>
       <tbody>
-        <tr><td>Evosoft Rash Guard<span class="td-sub">240gsm · full sublimation</span></td><td class="pcell">$25</td><td class="pcell">$20</td><td class="pcell">$15</td></tr>
+        <tr><td>Evosoft Rash Guard<span class="td-sub">240gsm · full sublimation</span></td><td class="pcell" data-usd="25">$25</td><td class="pcell" data-usd="20">$20</td><td class="pcell" data-usd="15">$15</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="size-note"><strong>Prices are per unit in USD and exclude shipping.</strong> Freight is quoted per order and paid by the customer under DAP (Incoterms&reg; 2020); customs duties and import taxes are the buyer&rsquo;s responsibility. Minimum order is 10 units per design, and the tier applies per design. Final pricing is confirmed in your written quotation.</p>
+  <p class="size-note"><strong>Prices are per unit in USD and exclude shipping.</strong> Freight is quoted per order and paid by the customer under DAP (Incoterms&reg; 2020); customs duties and import taxes are the buyer&rsquo;s responsibility. Minimum order is 10 units per design, and the tier applies per design. Final pricing is confirmed in your written quotation.<span class="fx-note" data-fx-note></span></p>
   <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
     <a href="#rfq" class="btn-gold">Request a Quote &rarr;</a>
   </div>
