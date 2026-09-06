@@ -44,8 +44,8 @@
         { "@type": "ContactPoint", "contactType": "customer service", "email": "support@gimakx.com" },
         { "@type": "ContactPoint", "contactType": "sales", "telephone": "+92-310-7197037" }
       ],
-      "address": { "@type": "PostalAddress", "addressCountry": "PK" },
-      "foundingLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressCountry": "PK" } },
+      "address": { "@type": "PostalAddress", "addressLocality": "Sialkot", "addressCountry": "PK" },
+      "foundingLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Sialkot", "addressCountry": "PK" } },
       "areaServed": "Worldwide",
       "knowsAbout": ["Brazilian Jiu-Jitsu Gi manufacturing", "Pearl weave and gold weave cotton fabrics", "Rash guard sublimation printing", "Academy uniform customization and private labeling"],
       "paymentAccepted": "Bank Transfer, Western Union, Payoneer",
@@ -105,6 +105,15 @@
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gimakx.com/" },
         { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.gimakx.com/about.html" }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Where are Gimakx Gis manufactured?", "acceptedAnswer": { "@type": "Answer", "text": "All production takes place in house at our own factory in Sialkot, Pakistan — cutting, stitching, embroidery, and final quality checks. Nothing is subcontracted to a third-party workshop, which is how we hold one standard across an entire order." } },
+        { "@type": "Question", "name": "How long has Gimakx been making BJJ uniforms?", "acceptedAnswer": { "@type": "Answer", "text": "Gimakx has been manufacturing BJJ uniforms for 3+ years. The team behind it carries 20+ years of combined production experience — that figure is the experience our people brought with them across garment manufacturing, not the age of the company." } },
+        { "@type": "Question", "name": "Does Gimakx manufacture in-house or subcontract?", "acceptedAnswer": { "@type": "Answer", "text": "100% in house. We own the factory and run every step of production ourselves, from selecting the fabric through to packing. That is what lets us take a 10-unit minimum, apply your branding exactly as specified, and answer a technical question about your order without going through a middleman." } },
+        { "@type": "Question", "name": "Does Gimakx sell to individuals?", "acceptedAnswer": { "@type": "Answer", "text": "Not at present. Gimakx is B2B only and the minimum order is 10 units per design, so we supply academies, gyms, and fight brands rather than individual buyers. We intend to offer individual purchases in the future, but that facility is not available yet." } }
+      ]
     }
   ]
 }
@@ -160,6 +169,12 @@
 .video-cap{text-align:center;font-size:13px;color:rgba(255,255,255,0.45);margin-top:14px}
 @media(prefers-reduced-motion:reduce){.video-play,.video-play::before{transition:none}}
 @media(max-width:560px){.about-stat{min-width:120px;padding:20px 16px}.about-stat .num{font-size:30px}}
+.faq-list{border:1px solid rgba(255,255,255,0.07);margin-top:24px}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:28px 32px}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px}
+.faq-a{font-size:14px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.5);margin:0}
+@media(max-width:560px){.faq-item{padding:20px 16px}}
 </style>
 <!-- Cookie consent — loads Microsoft Clarity only after the visitor accepts -->
 <script src="/cookie-consent.js" defer></script>
@@ -263,6 +278,31 @@
         </button>
       </div>
       <p class="video-cap"><a href="https://www.youtube.com/shorts/AkXHA4A0HUA" target="_blank" rel="noopener noreferrer">Invictus maneo with Gimakx BJJ Gi</a> · 17 seconds · YouTube</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <h3 class="faq-q">Where are Gimakx Gis manufactured?</h3>
+        <p class="faq-a">All production takes place in house at our own factory in <strong>Sialkot, Pakistan</strong> &mdash; cutting, stitching, embroidery, and final quality checks. Nothing is subcontracted to a third-party workshop, which is how we hold one standard across an entire order.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">How long has Gimakx been making BJJ uniforms?</h3>
+        <p class="faq-a">Gimakx has been manufacturing BJJ uniforms for <strong>3+ years</strong>. The team behind it carries <strong>20+ years of combined production experience</strong> &mdash; that figure is the experience our people brought with them across garment manufacturing, not the age of the company.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Does Gimakx manufacture in-house or subcontract?</h3>
+        <p class="faq-a">100% in house. We own the factory and run every step of production ourselves, from selecting the fabric through to packing. That is what lets us take a 10-unit minimum, apply your branding exactly as specified, and answer a technical question about your order without going through a middleman.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Does Gimakx sell to individuals?</h3>
+        <p class="faq-a">Not at present. Gimakx is B2B only and the minimum order is <strong>10 units per design</strong>, so we supply academies, gyms, and fight brands rather than individual buyers. We intend to offer individual purchases in the future, but that facility is not available yet.</p>
+      </div>
+
     </div>
 
     <div class="about-cta">
