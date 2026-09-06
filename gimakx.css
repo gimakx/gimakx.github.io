@@ -10,6 +10,10 @@
   --white:#FFFFFF;--slate:#7A90B0;
 }
 html{scroll-behavior:smooth}
+
+/* Outbound citation to a governing body (IBJJF, ICC). Followed, not nofollowed. */
+.cite{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,146,42,0.4);transition:border-color 0.2s}
+.cite:hover{border-bottom-color:var(--gold)}
 body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* ── NAV ── */
