@@ -41,3 +41,9 @@ private-tools/
 .DS_Store
 Thumbs.db
 .claude/
+
+# scratch copies of third-party pages fetched during research
+bv.html
+books.html
+icc2020.html
+*.tmp.html
