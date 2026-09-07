@@ -215,7 +215,7 @@ nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45
 
 /* ── FOOTER ── */
 footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06)}
-.footer-main{padding:56px 5% 40px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
+.footer-main{padding:56px 5% 40px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:40px}
 .footer-brand .logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.8);text-decoration:none;display:block;margin-bottom:16px}
 .footer-brand .logo img{height:34px;width:auto;display:block}
 .footer-brand .logo span{color:var(--gold)}
