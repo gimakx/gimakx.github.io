@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Custom BJJ Gi — GiPro 380–500gsm, IBJJF Approved | Gimakx</title>
-<meta name="description" content="GiPro custom BJJ Gi by Gimakx. Three GSM weights — Aerotough 380gsm, Fortitude 450gsm, Monolith 500gsm. 12+ colors, IBJJF approved, custom embroidery. B2B bulk orders.">
+<meta name="description" content="GiPro custom BJJ Gi — Aerotough 380gsm, Fortitude 450gsm, Monolith 500gsm. 12+ colors, IBJJF approved, custom embroidery. Request a wholesale quote.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600;700&display=swap">
@@ -238,8 +238,10 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- NAV -->
-<nav id="mainNav" class="solid">
+<nav id="mainNav" class="solid" aria-label="Main">
   <a href="/" class="nav-logo"><img src="images/logo-jp-nav.webp" alt="Gimakx" width="228" height="128"></a>
   <ul class="nav-center">
     <li><a href="bjj-gi.html" class="active">BJJ Gi</a></li>
@@ -258,9 +260,14 @@
 </nav>
 
 <!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <a href="/">Home</a><span>/</span><span class="current">BJJ Gi — GiPro</span>
-</div>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">BJJ Gi — GiPro</li>
+  </ol>
+</nav>
+
+<main id="main" tabindex="-1">
 
 <!-- PRODUCT HERO -->
 <section class="product-hero">
@@ -270,7 +277,7 @@
   </div>
   <div class="gallery">
     <div class="gallery-main">
-      <img id="galleryMain" src="images/GPNBL-800.webp" alt="GiPro Custom BJJ Gi — Navy Blue" width="800" height="800" fetchpriority="high">
+      <img id="galleryMain" src="images/GPNBL-800.webp" alt="GiPro custom BJJ Gi in navy blue with the Gimakx wordmark printed down the lapel, shown with a white belt and the included drawstring bag" width="800" height="800" fetchpriority="high">
       <div class="gallery-soon" id="gallerySoon">
         <div class="gs-sw" id="gsSwatch"></div>
         <div class="gs-txt" id="gsTxt"></div>
@@ -375,15 +382,15 @@
   <div class="s-eye">Choose Your Weight</div>
   <h2 class="s-h2">Three Weights. <em>One Standard.</em></h2>
   <div class="variant-tabs" role="tablist">
-    <button class="variant-tab" onclick="showVariant('aerotough',this)" role="tab">Aerotough<small>380gsm · Lightweight</small></button>
-    <button class="variant-tab active" onclick="showVariant('fortitude',this)" role="tab">Fortitude<small>450gsm · Most Popular</small></button>
-    <button class="variant-tab" onclick="showVariant('monolith',this)" role="tab">Monolith<small>500gsm · Heavyweight</small></button>
+    <button class="variant-tab" id="tab-aerotough" data-variant="aerotough" onclick="showVariant('aerotough',this)" role="tab" aria-selected="false" aria-controls="v-aerotough" tabindex="-1">Aerotough<small>380gsm · Lightweight</small></button>
+    <button class="variant-tab active" id="tab-fortitude" data-variant="fortitude" onclick="showVariant('fortitude',this)" role="tab" aria-selected="true" aria-controls="v-fortitude" tabindex="0">Fortitude<small>450gsm · Most Popular</small></button>
+    <button class="variant-tab" id="tab-monolith" data-variant="monolith" onclick="showVariant('monolith',this)" role="tab" aria-selected="false" aria-controls="v-monolith" tabindex="-1">Monolith<small>500gsm · Heavyweight</small></button>
   </div>
 
   <!-- Aerotough -->
-  <div id="v-aerotough" class="variant-panel">
+  <div id="v-aerotough" class="variant-panel" role="tabpanel" aria-labelledby="tab-aerotough" tabindex="0">
     <div class="variant-panel-media">
-      <img src="images/Aerotough-Gi-Front-800.webp" alt="GiPro Aerotough BJJ Gi" width="800" height="800" loading="lazy">
+      <img src="images/Aerotough-Gi-Front-800.webp" alt="Black GiPro Aerotough Gi at 380gsm, the lightest weight in the range, with a red-piped lapel and red triple stitching at the stress points" width="800" height="800" loading="lazy">
       <div class="vpm-badge">380gsm</div>
     </div>
     <div class="variant-panel-body">
@@ -397,9 +404,9 @@
   </div>
 
   <!-- Fortitude -->
-  <div id="v-fortitude" class="variant-panel active">
+  <div id="v-fortitude" class="variant-panel active" role="tabpanel" aria-labelledby="tab-fortitude" tabindex="0">
     <div class="variant-panel-media">
-      <img src="images/fortitude-front-800.webp" alt="GiPro Fortitude BJJ Gi" width="800" height="800" loading="lazy">
+      <img src="images/fortitude-front-800.webp" alt="White GiPro Fortitude Gi at 450gsm with a reinforced black-stitched collar, a Brazilian Jiu Jitsu shield patch on the sleeve and a red accent at the jacket hem" width="800" height="800" loading="lazy">
       <div class="vpm-badge" style="background:var(--gold);color:var(--navy);border-color:var(--gold)">450gsm · Most Popular</div>
     </div>
     <div class="variant-panel-body">
@@ -413,9 +420,9 @@
   </div>
 
   <!-- Monolith -->
-  <div id="v-monolith" class="variant-panel">
+  <div id="v-monolith" class="variant-panel" role="tabpanel" aria-labelledby="tab-monolith" tabindex="0">
     <div class="variant-panel-media">
-      <img src="images/monolith-front-1600.webp" alt="GiPro Monolith BJJ Gi" width="1600" height="1600" loading="lazy">
+      <img src="images/monolith-front-1600.webp" alt="Royal blue GiPro Monolith Gi at 500gsm, the heaviest weight in the range, with white contrast stitching through the lapel and skirt" width="1600" height="1600" loading="lazy">
       <div class="vpm-badge">500gsm</div>
     </div>
     <div class="variant-panel-body">
@@ -596,7 +603,7 @@
   <div class="s-eye">Pairs With</div>
   <h2 class="s-h2">Complete the <em>Kit</em></h2>
   <a href="evosoft.html" class="related-card">
-    <div class="related-media"><img src="images/ERG01RED-800.webp" alt="Evosoft Rash Guard" width="800" height="800" loading="lazy"></div>
+    <div class="related-media"><img src="images/ERG01RED-800.webp" alt="Evosoft short-sleeve BJJ rash guard in black and red, the rash guard that pairs with the GiPro Gi range" width="800" height="800" loading="lazy"></div>
     <div class="related-body">
       <h3>Evosoft Rash Guard</h3>
       <p>240gsm sublimation-ready rash guard, fully customizable to match your GiPro order. The perfect under-Gi and standalone training layer for a complete academy kit.</p>
@@ -651,6 +658,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-main">
@@ -666,7 +675,7 @@
         <a href="https://www.youtube.com/@gimakx" target="_blank" rel="noopener noreferrer" aria-label="Gimakx on YouTube"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false" style="flex:none"><path d="M21.58 7.19a2.51 2.51 0 0 0-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42a2.51 2.51 0 0 0-1.77 1.77A26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .42 4.81a2.51 2.51 0 0 0 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42a2.51 2.51 0 0 0 1.77-1.77A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.42-4.81zM10 15.02V8.98L15.2 12z"/></svg>YouTube</a>
       </div>
     </div>
-    <div class="footer-col"><p class="footer-col-title">BJJ Gi</p><ul><li><a href="bjj-gi.html">GiPro Aerotough</a></li><li><a href="bjj-gi.html">GiPro Fortitude</a></li><li><a href="bjj-gi.html">GiPro Monolith</a></li><li><a href="evosoft.html">Evosoft Rash Guard</a></li></ul></div>
+    <div class="footer-col"><p class="footer-col-title">BJJ Gi</p><ul><li><a href="bjj-gi.html#v-aerotough">GiPro Aerotough</a></li><li><a href="bjj-gi.html#v-fortitude">GiPro Fortitude</a></li><li><a href="bjj-gi.html#v-monolith">GiPro Monolith</a></li><li><a href="evosoft.html">Evosoft Rash Guard</a></li></ul></div>
     <div class="footer-col"><p class="footer-col-title">More Products</p><ul><li><a href="apparels.html#gistrix">GiStrix T-Shirts</a></li><li><a href="apparels.html#giflex">GiFlex Hoodies</a></li><li><a href="accessories.html#badges">Custom Badges</a></li><li><a href="accessories.html#belts">Belts</a></li></ul></div>
     <div class="footer-col">
       <p class="footer-col-title">Guides</p>
@@ -702,12 +711,59 @@ function showSizeTab(id,btn){
   btn.classList.add('active');btn.setAttribute('aria-selected','true')
 }
 
+const VARIANTS=['aerotough','fortitude','monolith']
+const VARIANT_DEFAULT='fortitude'   // the panel that ships with class="active"
+
 function showVariant(id,btn){
+  const panel=document.getElementById('v-'+id)
+  if(!panel)return
   document.querySelectorAll('.variant-panel').forEach(p=>p.classList.remove('active'))
-  document.querySelectorAll('.variant-tab').forEach(b=>b.classList.remove('active'))
-  document.getElementById('v-'+id).classList.add('active')
-  btn.classList.add('active')
+  document.querySelectorAll('.variant-tab').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');b.tabIndex=-1})
+  panel.classList.add('active')
+  const tab=btn||document.querySelector('.variant-tab[data-variant="'+id+'"]')
+  if(tab){tab.classList.add('active');tab.setAttribute('aria-selected','true');tab.tabIndex=0}
+  // Only a real interaction rewrites the URL. Without this the address bar keeps advertising
+  // the weight the visitor arrived on, so a copied link shows the wrong GSM -- and a second
+  // click on the footer's own link resolves to the current URL, fires no hashchange, and dies.
+  if(btn&&location.hash!=='#v-'+id)history.replaceState(null,'','#v-'+id)
 }
+
+// Footer links across the site point at #v-aerotough / #v-fortitude / #v-monolith.
+// The panels are display:none until activated, so the browser cannot scroll to them
+// on its own -- open the named panel first, then scroll the section into view.
+function openVariantFromHash(scroll){
+  const h=location.hash
+  const m=/^#v-(aerotough|fortitude|monolith)$/.exec(h)
+  if(m){
+    showVariant(m[1])
+    const section=document.getElementById('variants')
+    if(scroll&&section)section.scrollIntoView({behavior:'smooth',block:'start'})
+    return
+  }
+  // Back/forward can land on the bare URL. Restore what a fresh load would render instead of
+  // leaving the last-opened panel up. Other fragments (#rfq, #size-guide) must not disturb it.
+  if(h===''||h==='#')showVariant(VARIANT_DEFAULT)
+}
+window.addEventListener('hashchange',function(){openVariantFromHash(true)})
+openVariantFromHash(false)                                      // open the right panel now, no flash of the default
+window.addEventListener('load',function(){openVariantFromHash(true)})   // scroll after the UA's own anchor scroll, so the landing spot is ours
+
+// role="tablist" promises arrow-key traversal -- deliver it.
+document.querySelectorAll('.variant-tab').forEach(function(b){
+  b.addEventListener('keydown',function(e){
+    const i=VARIANTS.indexOf(b.dataset.variant)
+    let n=-1
+    if(e.key==='ArrowRight'||e.key==='ArrowDown')n=(i+1)%VARIANTS.length
+    else if(e.key==='ArrowLeft'||e.key==='ArrowUp')n=(i+VARIANTS.length-1)%VARIANTS.length
+    else if(e.key==='Home')n=0
+    else if(e.key==='End')n=VARIANTS.length-1
+    if(n<0)return
+    e.preventDefault()
+    const next=document.querySelector('.variant-tab[data-variant="'+VARIANTS[n]+'"]')
+    showVariant(VARIANTS[n],next)
+    next.focus()
+  })
+})
 
 // ── GiPro Configurator ──
 const FALLBACK_IMG='images/fortitude-front-800.webp';
@@ -749,7 +805,7 @@ document.querySelectorAll('#configSwatches .config-sw').forEach(sw=>{
     if(sw.dataset.img){
       const img=document.getElementById('galleryMain');
       img.src=sw.dataset.img;
-      img.alt='GiPro Custom BJJ Gi — '+state.color;
+      img.alt='GiPro custom BJJ Gi in '+state.color.toLowerCase()+' with the Gimakx wordmark printed down the lapel, shown with a white belt and the included drawstring bag';
       soon.classList.remove('show');
     } else {
       document.getElementById('gsSwatch').style.background=sw.style.background;

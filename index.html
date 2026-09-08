@@ -279,10 +279,12 @@ body{background:transparent}
 <script src="/wa-source.js" defer></script>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 <canvas id="goldDust" aria-hidden="true"></canvas>
 
 <!-- NAV -->
-<nav id="mainNav">
+<nav id="mainNav" aria-label="Main">
   <a href="/" class="nav-logo"><img src="images/logo-jp-nav.webp" alt="Gimakx" width="228" height="128"></a>
   <ul class="nav-center">
     <li><a href="bjj-gi.html">BJJ Gi</a></li>
@@ -299,6 +301,8 @@ body{background:transparent}
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('mainNav');var o=n.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<main id="main" tabindex="-1">
 
 <!-- HERO VIDEO -->
 <section class="hero">
@@ -381,7 +385,7 @@ body{background:transparent}
   <div class="variants-grid">
     <div class="variant-card">
       <div class="variant-video">
-        <img src="images/Aerotough-Gi-Front-800.webp" alt="GiPro Aerotough BJJ Gi" width="800" height="800" loading="lazy">
+        <img src="images/Aerotough-Gi-Front-800.webp" alt="GiPro Aerotough 380gsm BJJ Gi in black, jacket and trousers, with red contrast stitching and a red-and-purple Chaos Jiu Jitsu logo embroidered on the chest" width="800" height="800" loading="lazy">
         <div class="variant-badge">380gsm</div>
       </div>
       <div class="variant-body">
@@ -395,7 +399,7 @@ body{background:transparent}
     </div>
     <div class="variant-card featured">
       <div class="variant-video">
-        <img src="images/fortitude-front-800.webp" alt="GiPro Fortitude BJJ Gi" width="800" height="800" loading="lazy">
+        <img src="images/fortitude-front-800.webp" alt="GiPro Fortitude 450gsm BJJ Gi in white with black contrast stitching, red kanji chest embroidery and a US flag sleeve patch, tied with a black belt" width="800" height="800" loading="lazy">
         <div class="variant-badge" style="background:var(--gold);color:var(--navy);border-color:var(--gold)">450gsm · Most Popular</div>
       </div>
       <div class="variant-body">
@@ -409,7 +413,7 @@ body{background:transparent}
     </div>
     <div class="variant-card">
       <div class="variant-video">
-        <img src="images/monolith-front-800.webp" alt="GiPro Monolith BJJ Gi" width="800" height="800" loading="lazy">
+        <img src="images/monolith-front-800.webp" alt="GiPro Monolith 500gsm BJJ Gi in royal blue with white contrast stitching and a gold-and-purple Chaos Jiu Jitsu logo on the chest and trouser leg" width="800" height="800" loading="lazy">
         <div class="variant-badge">500gsm</div>
       </div>
       <div class="variant-body">
@@ -431,7 +435,7 @@ body{background:transparent}
 <!-- EVOSOFT -->
 <section class="evosoft-section" id="evosoft">
   <div class="evosoft-inner">
-    <div class="evosoft-visual"><img src="images/ERG01RED-800.webp" alt="Evosoft BJJ Rash Guard" width="800" height="800" loading="lazy"></div>
+    <div class="evosoft-visual"><img src="images/ERG01RED-800.webp" alt="Evosoft BJJ rash guard in black and red, shown front and back, with a red Gimakx wordmark across the shoulders and a sublimated red diamond print rising from the hem" width="800" height="800" loading="lazy"></div>
     <div class="evosoft-content">
       <div class="s-eye">BJJ Gi Category</div>
       <h2 class="s-h2">Evo<em>soft</em> <br>Rash Guard</h2>
@@ -679,6 +683,8 @@ body{background:transparent}
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-main">
@@ -697,9 +703,9 @@ body{background:transparent}
     <div class="footer-col">
       <p class="footer-col-title">BJJ Gi</p>
       <ul>
-        <li><a href="bjj-gi.html">GiPro Aerotough</a></li>
-        <li><a href="bjj-gi.html">GiPro Fortitude</a></li>
-        <li><a href="bjj-gi.html">GiPro Monolith</a></li>
+        <li><a href="bjj-gi.html#v-aerotough">GiPro Aerotough</a></li>
+        <li><a href="bjj-gi.html#v-fortitude">GiPro Fortitude</a></li>
+        <li><a href="bjj-gi.html#v-monolith">GiPro Monolith</a></li>
         <li><a href="evosoft.html">Evosoft Rash Guard</a></li>
       </ul>
     </div>

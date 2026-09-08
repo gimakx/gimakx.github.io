@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BJJ Gi Size Chart: A0–A4, W1–W4, K0–K4 | Gimakx</title>
-<meta name="description" content="Full BJJ Gi size charts from a manufacturer — men A0–A4, women W1–W4, kids K0–K4 by height and weight. Includes shrinkage guidance and what to do if you are between sizes.">
+<meta name="description" content="BJJ Gi size charts from a manufacturer — men A0–A4, women W1–W4, kids K0–K4 by height and weight, plus shrinkage and between-size guidance. Request a quote.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600;700&display=swap">
@@ -151,8 +151,10 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- NAV -->
-<nav id="mainNav" class="solid">
+<nav id="mainNav" class="solid" aria-label="Main">
   <a href="/" class="nav-logo"><img src="../images/logo-jp-nav.webp" alt="Gimakx" width="228" height="128"></a>
   <ul class="nav-center">
     <li><a href="../bjj-gi.html">BJJ Gi</a></li>
@@ -171,9 +173,15 @@
 </nav>
 
 <!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <a href="/">Home</a><span>/</span><a href="./">Guides</a><span>/</span><span class="current">BJJ Gi Size Chart</span>
-</div>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="./">Guides</a></li>
+    <li aria-current="page">BJJ Gi Size Chart</li>
+  </ol>
+</nav>
+
+<main id="main" tabindex="-1">
 
 <section class="s-wrap" style="padding-top:30px">
   <div class="s-eye">Sizing Guide</div>
@@ -354,6 +362,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-main">
@@ -372,9 +382,9 @@
     <div class="footer-col">
       <p class="footer-col-title">BJJ Gi</p>
       <ul>
-        <li><a href="../bjj-gi.html">GiPro Aerotough</a></li>
-        <li><a href="../bjj-gi.html">GiPro Fortitude</a></li>
-        <li><a href="../bjj-gi.html">GiPro Monolith</a></li>
+        <li><a href="../bjj-gi.html#v-aerotough">GiPro Aerotough</a></li>
+        <li><a href="../bjj-gi.html#v-fortitude">GiPro Fortitude</a></li>
+        <li><a href="../bjj-gi.html#v-monolith">GiPro Monolith</a></li>
         <li><a href="../evosoft.html">Evosoft Rash Guard</a></li>
       </ul>
     </div>
@@ -402,14 +412,14 @@
         <li><a href="../about.html">About Us</a></li>
         <li><a href="bjj-gi-size-chart.html">Size Guide</a></li>
         <li><a href="./">Guides</a></li>
-        <li><a href="../bjj-gi.html#rfq">Request a Quote</a></li>
+        <li><a href="../index.html#rfq">Request a Quote</a></li>
         <li><a href="mailto:support@gimakx.com">Contact Us</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 Gimakx. All rights reserved. www.gimakx.com &middot; +92 (310) 7197-037</p>
-    <div class="footer-legal"><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms</a><a href="#" data-cookie-settings>Cookie Settings</a></div>
+    <span class="footer-copy">© 2026 Gimakx. All rights reserved. www.gimakx.com · +92 (310) 7197-037</span>
+    <ul class="footer-links-row"><li><a href="../privacy-policy.html">Privacy Policy</a></li><li><a href="../terms.html">Terms</a></li><li><a href="/privacy-policy.html#cookies" data-cookie-settings>Cookie Settings</a></li></ul>
   </div>
 </footer>
 

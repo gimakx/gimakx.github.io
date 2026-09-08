@@ -46,7 +46,7 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gimakx.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Evosoft Rash Guard", "item": "https://www.gimakx.com/evosoft.html" }
+        { "@type": "ListItem", "position": 2, "name": "Evosoft — Rash Guard", "item": "https://www.gimakx.com/evosoft.html" }
       ]
     },
     {
@@ -98,8 +98,10 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- NAV -->
-<nav id="mainNav" class="solid">
+<nav id="mainNav" class="solid" aria-label="Main">
   <a href="/" class="nav-logo"><img src="images/logo-jp-nav.webp" alt="Gimakx" width="228" height="128"></a>
   <ul class="nav-center">
     <li><a href="bjj-gi.html">BJJ Gi</a></li>
@@ -118,9 +120,14 @@
 </nav>
 
 <!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <a href="/">Home</a><span>/</span><span class="current">Evosoft — Rash Guard</span>
-</div>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">Evosoft — Rash Guard</li>
+  </ol>
+</nav>
+
+<main id="main" tabindex="-1">
 
 <!-- PRODUCT HERO -->
 <section class="product-hero">
@@ -130,7 +137,7 @@
   </div>
   <div class="gallery">
     <div class="gallery-main">
-      <img src="images/ERG01RED-800.webp" alt="Evosoft BJJ Rash Guard" width="800" height="800" fetchpriority="high">
+      <img src="images/ERG01RED-800.webp" alt="Evosoft custom BJJ rash guard, model ERG01RED in black and red — front view with a red Gimakx monogram on the chest, back view with the full Gimakx wordmark across the shoulders" width="800" height="800" fetchpriority="high">
     </div>
   </div>
   <div class="product-summary">
@@ -182,7 +189,7 @@
   <h2 class="s-h2">Your Design. <em>Edge to Edge.</em></h2>
   <div class="variant-panel active" style="display:grid">
     <div class="variant-panel-media">
-      <img src="images/ERG01RED-800.webp" alt="Evosoft BJJ Rash Guard detail" width="800" height="800" loading="lazy">
+      <img src="images/ERG01RED-800.webp" alt="Sublimated print on the Evosoft rash guard running edge to edge — a red diamond lattice rising from the hem across both the front and back panels" width="800" height="800" loading="lazy">
       <div class="vpm-badge">240gsm</div>
     </div>
     <div class="variant-panel-body">
@@ -349,7 +356,7 @@
   <div class="s-eye">Pairs With</div>
   <h2 class="s-h2">Complete the <em>Kit</em></h2>
   <a href="bjj-gi.html" class="related-card">
-    <div class="related-media"><img src="images/fortitude-front-800.webp" alt="GiPro Custom Gi" width="800" height="800" loading="lazy"></div>
+    <div class="related-media"><img src="images/fortitude-front-800.webp" alt="White GiPro Fortitude Gi with a black belt, the Gi the Evosoft rash guard is worn under" width="800" height="800" loading="lazy"></div>
     <div class="related-body">
       <h3>GiPro Custom Gi</h3>
       <p>Our flagship custom BJJ Gi in three GSM weights — Aerotough, Fortitude, and Monolith. IBJJF-approved, 12+ colors, fully customizable to match your Evosoft order.</p>
@@ -403,6 +410,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-main">
@@ -418,7 +427,7 @@
         <a href="https://www.youtube.com/@gimakx" target="_blank" rel="noopener noreferrer" aria-label="Gimakx on YouTube"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false" style="flex:none"><path d="M21.58 7.19a2.51 2.51 0 0 0-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42a2.51 2.51 0 0 0-1.77 1.77A26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .42 4.81a2.51 2.51 0 0 0 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42a2.51 2.51 0 0 0 1.77-1.77A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.42-4.81zM10 15.02V8.98L15.2 12z"/></svg>YouTube</a>
       </div>
     </div>
-    <div class="footer-col"><p class="footer-col-title">BJJ Gi</p><ul><li><a href="bjj-gi.html">GiPro Aerotough</a></li><li><a href="bjj-gi.html">GiPro Fortitude</a></li><li><a href="bjj-gi.html">GiPro Monolith</a></li><li><a href="evosoft.html">Evosoft Rash Guard</a></li></ul></div>
+    <div class="footer-col"><p class="footer-col-title">BJJ Gi</p><ul><li><a href="bjj-gi.html#v-aerotough">GiPro Aerotough</a></li><li><a href="bjj-gi.html#v-fortitude">GiPro Fortitude</a></li><li><a href="bjj-gi.html#v-monolith">GiPro Monolith</a></li><li><a href="evosoft.html">Evosoft Rash Guard</a></li></ul></div>
     <div class="footer-col"><p class="footer-col-title">More Products</p><ul><li><a href="apparels.html#gistrix">GiStrix T-Shirts</a></li><li><a href="apparels.html#giflex">GiFlex Hoodies</a></li><li><a href="accessories.html#badges">Custom Badges</a></li><li><a href="accessories.html#belts">Belts</a></li></ul></div>
     <div class="footer-col">
       <p class="footer-col-title">Guides</p>
