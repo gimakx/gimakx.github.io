@@ -188,20 +188,20 @@
 }
 </script>
 <style>
-.gallery-caption{margin-top:14px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+.gallery-caption{margin-top:14px;font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5)}
 .gallery-caption b{color:var(--gold)}
 .gallery-main{position:relative}
 .gallery-soon{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(160deg,#0D1A2E,#172C4E);text-align:center;padding:24px}
 .gallery-soon.show{display:flex}
 .gallery-soon .gs-sw{width:72px;height:72px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);box-shadow:0 6px 24px rgba(0,0,0,0.3)}
-.gallery-soon .gs-txt{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55)}
+.gallery-soon .gs-txt{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55)}
 .gallery-soon .gs-sub{font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.3)}
 .configurator{margin:24px 0 0;display:flex;flex-direction:column;gap:26px}
 .config-group{}
 .config-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;display:flex;align-items:center;gap:10px}
 .config-val{color:var(--gold);font-weight:700;letter-spacing:0.5px;text-transform:none;font-size:13px}
 .config-options{display:flex;gap:8px;flex-wrap:wrap}
-.config-opt{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);padding:11px 18px;border-radius:3px;cursor:pointer;font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.5px;transition:all 0.18s;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:84px}
+.config-opt{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);padding:11px 18px;border-radius:3px;cursor:pointer;font-family:'Barlow','Barlow Fallback',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.5px;transition:all 0.18s;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:84px}
 .config-opt small{font-size:10px;font-weight:500;color:rgba(255,255,255,0.35);letter-spacing:1px}
 .config-opt:hover{border-color:rgba(200,146,42,0.45)}
 .config-opt.active{background:var(--gold);border-color:var(--gold);color:var(--navy)}
@@ -213,7 +213,7 @@
 .config-sw.active::after{content:'';position:absolute;inset:3px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.7)}
 .config-sw .star{position:absolute;top:-6px;right:-6px;font-size:10px;color:var(--gold);line-height:1}
 .config-sizes{display:flex;gap:8px;flex-wrap:wrap}
-.size-opt{min-width:50px;height:46px;padding:0 10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);border-radius:3px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;transition:all 0.18s}
+.size-opt{min-width:50px;height:46px;padding:0 10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);border-radius:3px;cursor:pointer;font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:700;font-size:16px;transition:all 0.18s}
 .size-opt:hover{border-color:rgba(200,146,42,0.45)}
 .size-opt.active{background:var(--gold);border-color:var(--gold);color:var(--navy)}
 .config-sizelink{font-size:11px;color:rgba(255,255,255,0.4);text-decoration:none;margin-top:12px;display:inline-block}
@@ -226,7 +226,7 @@
 .faq-list{border:1px solid rgba(255,255,255,0.07);margin-top:40px}
 .faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:28px 32px}
 .faq-item:last-child{border-bottom:none}
-.faq-q{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px}
+.faq-q{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-size:18px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px}
 .faq-a{font-size:14px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.5);margin:0}
 @media(max-width:560px){.faq-item{padding:20px 16px}}
 </style>
