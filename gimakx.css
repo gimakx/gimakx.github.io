@@ -423,9 +423,11 @@ footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06)}
 .size-table th .th-sub{display:block;font-size:9px;font-weight:400;letter-spacing:.5px;color:rgba(255,255,255,0.32);margin-top:2px}
 .size-table td .td-sub{display:block;font-size:9px;font-weight:400;letter-spacing:.3px;color:rgba(255,255,255,0.26);margin-top:1px}
 .size-table.size-table-sm{min-width:0}
+.size-sub{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-size:20px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;margin:34px 0 12px}
 .size-note{font-size:12px;line-height:1.7;color:rgba(255,255,255,0.38);margin-top:12px}
 .size-note strong{color:rgba(255,255,255,0.62);font-weight:600}
 .size-table td.rg-xs{color:#B0BEC5}.size-table td.rg-s{color:#90CAF9}.size-table td.rg-m{color:#FFD54F}.size-table td.rg-l{color:#A5D6A7}.size-table td.rg-xl{color:#FFAB91}.size-table td.rg-2xl{color:#CE93D8}.size-table td.rg-3xl{color:#80DEEA}
+.size-table td.rg-y1{color:#90CAF9}.size-table td.rg-y2{color:#A5D6A7}.size-table td.rg-y3{color:var(--gold-light)}.size-table td.rg-y4{color:#FF8A65}
 
 /* ── PRODUCT IMAGE ZOOM ── */
 /* The affordance is only applied once image-zoom.js has marked the image, so a
