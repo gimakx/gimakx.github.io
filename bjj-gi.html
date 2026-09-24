@@ -368,6 +368,11 @@
         <a href="#size-guide" class="config-sizelink">Not sure of your size? View the size guide →</a>
       </div>
 
+      <!-- SKU (weight + color + category) -->
+      <div class="config-group">
+        <div class="config-label">SKU <span class="config-val" id="selSku">GI450NBLM</span></div>
+      </div>
+
       <div class="config-cta">
         <a href="#rfq" class="btn-gold" onclick="syncConfigToRFQ()">Request Quote for This Gi →</a>
       </div>
@@ -655,7 +660,7 @@
   </div>
   <div class="rfq-right">
     <h3>Quote — GiPro Custom Gi</h3>
-    <div class="rfq-config" id="rfqConfig">Your selection: <b id="rfqWeight">Fortitude · 450gsm</b> · <b id="rfqColor">Navy Blue</b> · <b id="rfqCat">Men</b> · Size <b id="rfqSize">not selected</b></div>
+    <div class="rfq-config" id="rfqConfig">Your selection: <b id="rfqWeight">Fortitude · 450gsm</b> · <b id="rfqColor">Navy Blue</b> · <b id="rfqCat">Men</b> · Size <b id="rfqSize">not selected</b> · SKU <b id="rfqSku">GI450NBLM</b></div>
     <form class="rfq-form-body" onsubmit="handleRFQ(event)">
       <div class="form-grid">
         <div class="form-field"><label for="rfq-company">Academy / Company Name *</label><input id="rfq-company" type="text" name="company" placeholder="e.g. Checkmat London" required></div>
@@ -810,8 +815,15 @@ const SIZES={
 };
 const CAT_LABEL={men:'Men',women:'Women',kids:'Kids'};
 const state={weight:'Fortitude · 450gsm',color:'Navy Blue',category:'Men',size:''};
+// GI + GSM + colour code (as in the hasVariant SKUs in the Product schema above) + M/W/K for the category
+const COLOR_CODE={'Off White':'OWT','Maroon':'MRN','White':'WHT','Navy Blue':'NBL','Olive Green':'OGR','Royal Blue':'RBL','Pink':'PNK','Red':'RED','Golden':'GLD','Black':'BLK','Gray':'GRY','Parrot Green':'PGR','Sky Blue':'SBL','Brown':'BRW','Yellow':'YLW','Purple':'PRL','Camouflage':'CMF'};
+const CAT_CODE={Men:'M',Women:'W',Kids:'K'};
+function currentSku(){return 'GI'+state.weight.match(/(\d+)gsm/)[1]+COLOR_CODE[state.color]+CAT_CODE[state.category];}
 
 function updateSummary(){
+  const sku=currentSku();
+  document.getElementById('selSku').textContent=sku;
+  document.getElementById('rfqSku').textContent=sku;
   document.getElementById('rfqWeight').textContent=state.weight;
   document.getElementById('rfqColor').textContent=state.color;
   document.getElementById('rfqCat').textContent=state.category;
@@ -893,7 +905,7 @@ function syncConfigToRFQ(){
   }
   const ta=document.querySelector('#rfq textarea');
   if(ta){
-    const line='Selected: GiPro '+state.weight+' | Color: '+state.color+' | '+state.category+' | Size: '+(state.size||'not selected')+'\n';
+    const line='Selected: GiPro '+state.weight+' | Color: '+state.color+' | '+state.category+' | Size: '+(state.size||'not selected')+' | SKU: '+currentSku()+'\n';
     if(!ta.value.startsWith('Selected: ')) ta.value=line+ta.value;
     else ta.value=line+ta.value.split('\n').slice(1).join('\n');
   }
