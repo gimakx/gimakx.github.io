@@ -297,14 +297,14 @@
   </div>
   <div class="gallery">
     <div class="gallery-main">
-      <img id="galleryMain" src="images/GPNBL-800.webp" alt="GiPro custom BJJ Gi in navy blue with the Gimakx wordmark printed down the lapel, shown with a white belt and the included drawstring bag" width="800" height="800" fetchpriority="high">
+      <img id="galleryMain" src="images/GPRBL-800.webp" alt="GiPro custom BJJ Gi in royal blue with the Gimakx wordmark printed in gold down the lapel, shown with a white belt and the included drawstring bag" width="800" height="800" fetchpriority="high">
       <div class="gallery-soon" id="gallerySoon">
         <div class="gs-sw" id="gsSwatch"></div>
         <div class="gs-txt" id="gsTxt"></div>
         <div class="gs-sub">Photo coming soon — available to order</div>
       </div>
     </div>
-    <div class="gallery-caption" id="galleryCaption"><b>Navy Blue</b> · GiPro Fortitude</div>
+    <div class="gallery-caption" id="galleryCaption"><b>Royal Blue</b> · GiPro Fortitude</div>
   </div>
   <div class="product-summary">
     <div class="product-badges">
@@ -328,15 +328,15 @@
 
       <!-- COLOR -->
       <div class="config-group">
-        <div class="config-label">Color <span class="config-val" id="selColor">Navy Blue</span></div>
+        <div class="config-label">Color <span class="config-val" id="selColor">Royal Blue</span></div>
         <div class="config-swatches" id="configSwatches">
           <div class="config-sw" role="button" tabindex="0" aria-label="White" data-name="White" data-img="images/GPWHT-800.webp" style="background:#FFFFFF" title="White"></div>
-          <div class="config-sw" role="button" tabindex="0" aria-label="Royal Blue" data-name="Royal Blue" data-img="images/GPRBL-800.webp" style="background:#1E44CC" title="Royal Blue"></div>
+          <div class="config-sw active" role="button" tabindex="0" aria-label="Royal Blue" data-name="Royal Blue" data-img="images/GPRBL-800.webp" style="background:#1E44CC" title="Royal Blue"></div>
           <div class="config-sw" role="button" tabindex="0" aria-label="Black" data-name="Black" data-img="images/GPBLK-800.webp" style="background:#111111" title="Black"></div>
           <div class="config-sw" role="button" tabindex="0" aria-label="Olive Green" data-name="Olive Green" data-img="images/GPOGR-800.webp" style="background:#4A5C2A" title="Olive Green"></div>
           <div class="config-sw" role="button" tabindex="0" aria-label="Pink" data-name="Pink" data-img="images/GPPNK-800.webp" style="background:#E8339A" title="Pink"></div>
           <div class="config-sw" role="button" tabindex="0" aria-label="Maroon" data-name="Maroon" data-img="images/GPMRN-800.webp" style="background:#6B0F1A" title="Maroon"></div>
-          <div class="config-sw active" role="button" tabindex="0" aria-label="Navy Blue" data-name="Navy Blue" data-img="images/GPNBL-800.webp" style="background:#1A2B5E" title="Navy Blue"></div>
+          <div class="config-sw" role="button" tabindex="0" aria-label="Navy Blue" data-name="Navy Blue" data-img="images/GPNBL-800.webp" style="background:#1A2B5E" title="Navy Blue"></div>
           <div class="config-sw" role="button" tabindex="0" aria-label="Red" data-name="Red" data-img="images/GPRED-800.webp" style="background:#CC1122" title="Red"></div>
           <div class="config-sw" role="button" tabindex="0" aria-label="Gray" data-name="Gray" data-img="images/GPGRY-800.webp" style="background:#5A6070" title="Gray"></div>
           <div class="config-sw" role="button" tabindex="0" aria-label="Parrot Green" data-name="Parrot Green" data-img="images/GPPGR-800.webp" style="background:#44CC22" title="Parrot Green"></div>
@@ -370,7 +370,7 @@
 
       <!-- SKU (weight + color + category) -->
       <div class="config-group">
-        <div class="config-label">SKU <span class="config-val" id="selSku">GI450NBLM</span></div>
+        <div class="config-label">SKU <span class="config-val" id="selSku">GI450RBLM</span></div>
       </div>
 
       <div class="config-cta">
@@ -660,7 +660,7 @@
   </div>
   <div class="rfq-right">
     <h3>Quote — GiPro Custom Gi</h3>
-    <div class="rfq-config" id="rfqConfig">Your selection: <b id="rfqWeight">Fortitude · 450gsm</b> · <b id="rfqColor">Navy Blue</b> · <b id="rfqCat">Men</b> · Size <b id="rfqSize">not selected</b> · SKU <b id="rfqSku">GI450NBLM</b></div>
+    <div class="rfq-config" id="rfqConfig">Your selection: <b id="rfqWeight">Fortitude · 450gsm</b> · <b id="rfqColor">Royal Blue</b> · <b id="rfqCat">Men</b> · Size <b id="rfqSize">not selected</b> · SKU <b id="rfqSku">GI450RBLM</b></div>
     <form class="rfq-form-body" onsubmit="handleRFQ(event)">
       <div class="form-grid">
         <div class="form-field"><label for="rfq-company">Academy / Company Name *</label><input id="rfq-company" type="text" name="company" placeholder="e.g. Checkmat London" required></div>
@@ -814,7 +814,7 @@ const SIZES={
   kids:['K0','K1','K2','K3','K4']
 };
 const CAT_LABEL={men:'Men',women:'Women',kids:'Kids'};
-const state={weight:'Fortitude · 450gsm',color:'Navy Blue',category:'Men',size:''};
+const state={weight:'Fortitude · 450gsm',color:'Royal Blue',category:'Men',size:''};
 // GI + GSM + colour code (as in the hasVariant SKUs in the Product schema above) + M/W/K for the category
 const COLOR_CODE={'Off White':'OWT','Maroon':'MRN','White':'WHT','Navy Blue':'NBL','Olive Green':'OGR','Royal Blue':'RBL','Pink':'PNK','Red':'RED','Golden':'GLD','Black':'BLK','Gray':'GRY','Parrot Green':'PGR','Sky Blue':'SBL','Brown':'BRW','Yellow':'YLW','Purple':'PRL','Camouflage':'CMF'};
 const CAT_CODE={Men:'M',Women:'W',Kids:'K'};
