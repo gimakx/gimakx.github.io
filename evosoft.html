@@ -133,6 +133,41 @@
 .faq-q{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-size:18px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px}
 .faq-a{font-size:14px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.5);margin:0}
 @media(max-width:560px){.faq-item{padding:20px 16px}}
+.gallery-caption{margin-top:14px;font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+.gallery-caption b{color:var(--gold)}
+.configurator{margin:24px 0 0;display:flex;flex-direction:column;gap:26px}
+.config-group[hidden],.form-field[hidden]{display:none}
+.config-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.config-val{color:var(--gold);font-weight:700;letter-spacing:0.5px;text-transform:none;font-size:13px}
+.config-options{display:flex;gap:8px;flex-wrap:wrap}
+.config-opt{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);padding:11px 18px;border-radius:3px;cursor:pointer;font-family:'Barlow','Barlow Fallback',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.5px;transition:all 0.18s;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:84px}
+.config-opt small{font-size:10px;font-weight:500;color:rgba(255,255,255,0.35);letter-spacing:1px}
+.config-opt:hover{border-color:rgba(200,146,42,0.45)}
+.config-opt.active{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.config-opt.active small{color:rgba(8,17,31,0.6)}
+.config-swatches{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.config-sw{width:38px;height:38px;padding:0;cursor:pointer;border-radius:50%;border:2px solid rgba(255,255,255,0.12);position:relative;transition:transform 0.15s,border-color 0.15s}
+.config-sw:hover{transform:scale(1.14)}
+.config-sw.active{border-color:var(--gold)}
+.config-sw.active::after{content:'';position:absolute;inset:3px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.7)}
+/* The shorts build is five small either/or choices, so they share rows instead of stacking */
+.config-build{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:22px 20px}
+.config-build .config-label{margin-bottom:10px}
+.config-build .config-opt{padding:9px 12px;min-width:0;flex:1}
+.config-check{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.76);font-size:13px;font-weight:600;cursor:pointer}
+.config-check input{appearance:none;width:22px;height:22px;border:1px solid rgba(255,255,255,0.18);border-radius:3px;background:rgba(255,255,255,0.04);display:grid;place-items:center;cursor:pointer}
+.config-check input:checked{background:var(--gold);border-color:var(--gold)}
+.config-check input:checked::after{content:'✓';color:var(--navy);font-size:16px;font-weight:800;line-height:1}
+.config-sizes{display:flex;gap:8px;flex-wrap:wrap}
+.size-opt{min-width:50px;height:46px;padding:0 10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);border-radius:3px;cursor:pointer;font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:700;font-size:16px;transition:all 0.18s}
+.size-opt:hover{border-color:rgba(200,146,42,0.45)}
+.size-opt.active{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.config-sizelink{font-size:11px;color:rgba(255,255,255,0.4);text-decoration:none;margin-top:12px;display:inline-block}
+.config-sizelink:hover{color:var(--gold)}
+.config-note{font-size:12px;color:rgba(255,255,255,0.45);margin-top:12px;line-height:1.6}
+.config-cta{margin-top:6px}
+.rfq-config{background:rgba(200,146,42,0.08);border:1px solid rgba(200,146,42,0.28);border-radius:4px;padding:14px 16px;margin-bottom:22px;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7}
+.rfq-config b{color:var(--gold);font-weight:600}
 </style>
 <!-- Cookie consent — loads Microsoft Clarity only after the visitor accepts -->
 <script src="/cookie-consent.js" defer></script>
@@ -181,8 +216,9 @@
   </div>
   <div class="gallery">
     <div class="gallery-main">
-      <img src="images/ERG01RED-800.webp" alt="Evosoft custom BJJ rash guard, model ERGCS01 in black and red — front view with a red Gimakx monogram on the chest, back view with the full Gimakx wordmark across the shoulders" width="800" height="800" fetchpriority="high">
+      <img id="galleryMain" src="images/ERG01RED-800.webp" alt="Evosoft custom BJJ rash guard, model ERGCS01 in black and red — front view with a red Gimakx monogram on the chest, back view with the full Gimakx wordmark across the shoulders" width="800" height="800" fetchpriority="high">
     </div>
+    <div class="gallery-caption" id="galleryCaption"><b>Black/Red</b> · Evosoft Rash Guard · ERGCS01</div>
   </div>
   <div class="product-summary">
     <div class="product-badges">
@@ -191,16 +227,91 @@
       <span class="pbadge">Under-Gi &amp; No-Gi</span>
       <span class="pbadge">Custom Design</span>
     </div>
-    <p class="product-lead">The Evosoft is our high-performance custom rash guard, built from 240gsm sublimation-ready fabric. Engineered to be worn under the <a href="bjj-gi.html">Gi</a> or for standalone No-Gi training — fully customizable with your academy's branding, colors, artwork, and logo.</p>
-    <div class="quick-specs">
-      <div class="quick-spec"><div class="quick-spec-label">Fabric Weight</div><div class="quick-spec-val">240gsm</div></div>
-      <div class="quick-spec"><div class="quick-spec-label">Customization</div><div class="quick-spec-val">Full Sublimation</div></div>
-      <div class="quick-spec"><div class="quick-spec-label">Sizing</div><div class="quick-spec-val">XS – 3XL &middot; Y1 – Y4</div></div>
-      <div class="quick-spec"><div class="quick-spec-label">MOQ</div><div class="quick-spec-val">10 Units</div></div>
-    </div>
-    <div class="product-cta-row">
-      <a href="#rfq" class="btn-gold">Request a Quote →</a>
-      <a href="#features" class="btn-outline">See Details</a>
+    <p class="product-lead">The Evosoft is our high-performance custom rash guard, built from 240gsm sublimation-ready fabric. Engineered to be worn under the <a href="bjj-gi.html">Gi</a> or for standalone No-Gi training — fully customizable with your academy's branding, colors, artwork, and logo. Configure a rash guard, shorts or a matched set below, then send it straight to a quote.</p>
+
+    <div class="configurator" id="evoConfig">
+      <!-- PRODUCT -->
+      <div class="config-group">
+        <div class="config-label">Product <span class="config-val" id="selProduct">Rash Guard</span></div>
+        <div class="config-options" data-key="product">
+          <button type="button" class="config-opt active" data-val="rg" aria-pressed="true">Rash Guard<small>ERGCS</small></button>
+          <button type="button" class="config-opt" data-val="sh" aria-pressed="false">No-Gi Shorts<small>ESHCS</small></button>
+          <button type="button" class="config-opt" data-val="set" aria-pressed="false">Matched Set<small>Rash guard + shorts</small></button>
+        </div>
+      </div>
+
+      <!-- GENDER -->
+      <div class="config-group">
+        <div class="config-label">Gender <span class="config-val" id="selGender">Male</span></div>
+        <div class="config-options" data-key="gender">
+          <button type="button" class="config-opt active" data-val="Male" aria-pressed="true">Male</button>
+          <button type="button" class="config-opt" data-val="Female" aria-pressed="false">Female</button>
+          <button type="button" class="config-opt" data-val="Kids" aria-pressed="false">Kids</button>
+        </div>
+      </div>
+
+      <!-- SLEEVE (rash guard, set) -->
+      <div class="config-group" data-for="rg set">
+        <div class="config-label">Sleeves <span class="config-val" id="selSleeve">Short</span></div>
+        <div class="config-options" data-key="sleeve">
+          <button type="button" class="config-opt active" data-val="Short" aria-pressed="true">Short</button>
+          <button type="button" class="config-opt" data-val="Full" aria-pressed="false">Full</button>
+        </div>
+      </div>
+
+      <!-- FIT (rash guard, set) -->
+      <div class="config-group" data-for="rg set">
+        <div class="config-label">Fit <span class="config-val" id="selFit">Compression fit</span></div>
+        <div class="config-options" data-key="fit">
+          <button type="button" class="config-opt active" data-val="Compression fit" aria-pressed="true">Compression fit</button>
+          <button type="button" class="config-opt" data-val="Loose fit" aria-pressed="false">Loose fit</button>
+        </div>
+      </div>
+
+      <!-- SILICONE GRIPPER (rash guard, set) -->
+      <div class="config-group" data-for="rg set">
+        <label class="config-check" for="siliconeGripper">
+          <input id="siliconeGripper" type="checkbox">
+          <span>Silicone Gripper</span>
+        </label>
+      </div>
+
+      <!-- SHORTS BUILD (shorts, set) -->
+      <div class="config-group" data-for="sh set">
+        <div class="config-label">Shorts</div>
+        <div class="config-build">
+          <div>
+            <div class="config-label">Type <span class="config-val" id="selShortType">Broad Short</span></div>
+            <div class="config-options" data-key="shortType">
+              <button type="button" class="config-opt active" data-val="Broad Short" aria-pressed="true">Broad Short</button>
+              <button type="button" class="config-opt" data-val="Broad Short with lining" aria-pressed="false">Broad Short<small>with lining</small></button>
+            </div>
+          </div>
+          <div>
+            <div class="config-label">Side Slits <span class="config-val" id="selSlit">None</span></div>
+            <div class="config-options" data-key="slit">
+              <button type="button" class="config-opt active" data-val="None" aria-pressed="true">None</button>
+              <button type="button" class="config-opt" data-val="Standard" aria-pressed="false">Standard</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIZE -->
+      <div class="config-group">
+        <div class="config-label">Size <span class="config-val" id="selSize">— Select a size</span></div>
+        <div class="config-sizes" id="sizeOpts"></div>
+        <a href="#size-guide" class="config-sizelink">Not sure of your size? View the size guide →</a>
+      </div>
+
+      <!-- SKU (design number + gender) -->
+      <div class="config-group">
+        <div class="config-label">SKU <span class="config-val" id="selSku">ERGCS01M</span></div>
+      </div>
+
+      <div class="config-cta">
+        <a href="#rfq" class="btn-gold" onclick="syncConfigToRFQ()">Request Quote for This Selection →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -260,9 +371,9 @@
     <tr><th>Customization</th><td>Full sublimation — edge-to-edge custom artwork</td></tr>
     <tr><th>Seams</th><td>Flatlock stitch throughout — no raised ridge against the skin</td></tr>
     <tr><th>Inner Labelling</th><td>Tagless — size and care printed inside the garment</td></tr>
-    <tr><th>Sleeve Options</th><td>Short sleeve / long sleeve</td></tr>
+    <tr><th>Sleeve Options</th><td>Short sleeve / full sleeve</td></tr>
     <tr><th>Use Case</th><td>Under-Gi layer &amp; standalone No-Gi training</td></tr>
-    <tr><th>Sizing</th><td>XS – 3XL (men's &amp; women's cuts) &middot; Y1 – Y4 (kids)</td></tr>
+    <tr><th>Sizing</th><td>XS – 3XL (male &amp; female cuts) &middot; Y1 – Y4 (kids)</td></tr>
     <tr><th>Minimum Order</th><td>10 units per design</td></tr>
     <tr><th>Lead Time</th><td>3–4 weeks (typical)</td></tr>
     <tr><th>Country of Origin</th><td>Manufactured in Sialkot, Pakistan</td></tr>
@@ -286,8 +397,8 @@
     <tr><th>Stretch</th><td>4-way stretch — stretches and recovers along both length and width</td></tr>
     <tr><th>Seams</th><td>Flatlock stitch throughout — no raised ridge against the skin</td></tr>
     <tr><th>Inner Labelling</th><td>Tagless — size and care printed inside the garment</td></tr>
-    <tr><th>Waistband</th><td>Hybrid closure as standard &middot; customizable to your specification</td></tr>
-    <tr><th>Liner</th><td>Unlined or compression-lined &mdash; both available, price confirmed in your quotation</td></tr>
+    <tr><th>Type</th><td>Broad short or broad short with lining</td></tr>
+    <tr><th>Side Slits</th><td>None or standard side slits</td></tr>
     <tr><th>Customization</th><td>Full sublimation &mdash; edge-to-edge custom artwork</td></tr>
     <tr><th>Minimum Order</th><td>10 units per design</td></tr>
     <tr><th>Lead Time</th><td>3–4 weeks (typical)</td></tr>
@@ -553,7 +664,8 @@
     <p>We respond to all B2B inquiries within 24 hours. Minimum order 10 units. No distributors — direct from factory.</p>
   </div>
   <div class="rfq-right">
-    <h3>Quote — Evosoft Rash Guard</h3>
+    <h3 id="rfqHeading">Quote — Evosoft Rash Guard</h3>
+    <div class="rfq-config" id="rfqConfig">Your selection: <b id="rfqSummary">Rash Guard · Male · Short sleeves · Compression fit · No silicone gripper</b> · Size <b id="rfqSize">not selected</b> · SKU <b id="rfqSku">ERGCS01M</b></div>
     <form class="rfq-form-body" onsubmit="handleRFQ(event)">
       <div class="form-grid">
         <div class="form-field"><label for="rfq-company">Academy / Company Name *</label><input id="rfq-company" type="text" name="company" placeholder="e.g. Checkmat London" required></div>
@@ -564,8 +676,8 @@
         <div class="form-field"><label for="rfq-phone">WhatsApp / Phone</label><input id="rfq-phone" type="tel" name="phone" placeholder="+1 000 000 0000"></div>
       </div>
       <div class="form-grid">
-        <div class="form-field"><label for="rfq-sleeve">Sleeve Type</label>
-          <select id="rfq-sleeve" name="sleeve"><option>Short Sleeve</option><option>Long Sleeve</option><option>Both</option></select>
+        <div class="form-field" id="rfqSleeveField"><label for="rfq-sleeve">Sleeve Type</label>
+          <select id="rfq-sleeve" name="sleeve"><option>Short Sleeve</option><option>Full Sleeve</option><option>Both</option></select>
         </div>
         <div class="form-field"><label for="rfq-quantity">Estimated Quantity</label>
           <select id="rfq-quantity" name="quantity"><option>10–19 units</option><option>20–49 units</option><option>50–99 units</option><option>100–299 units</option><option>300+ units</option></select>
@@ -643,6 +755,121 @@ function showSizeTab(id,btn){
   document.getElementById('tab-'+id).classList.add('active')
   btn.classList.add('active');btn.setAttribute('aria-selected','true')
 }
+
+// ── Evosoft Configurator ──
+// Photos: design 01 (ERGCS01 / ESHCS01) in black/red, the broad shorts, and the matched set.
+// Full sleeves use the available client sample photo until the design-01 full-sleeve photo exists.
+const PRODUCT_LABEL={rg:'Rash Guard',sh:'No-Gi Shorts',set:'Matched Set'};
+const SIZES={Male:['XS','S','M','L','XL','2XL','3XL'],Female:['XS','S','M','L','XL','2XL','3XL'],Kids:['Y1','Y2','Y3','Y4']};
+const GENDER_CODE={Male:'M',Female:'F',Kids:'K'};
+const LONG_SLEEVE={src:'images/grizzly-nogi-white-800.webp',alt:'Grizzly Jiu Jitsu No-Gi set, models ERGCS04 and ESHCS04 in white and olive — long-sleeve rash guard and matching shorts, front view with the GRIZZLY JIU JITSU lockup and back view with the hexagonal G emblem'};
+const state={product:'rg',gender:'Male',sleeve:'Short',fit:'Compression fit',siliconeGripper:false,shortType:'Broad Short',slit:'None',size:''};
+
+function has(p){return state.product===p||state.product==='set';}   // rash guard or shorts part of the selection
+
+function currentSku(){
+  const c=GENDER_CODE[state.gender];
+  return {rg:'ERGCS01'+c,sh:'ESHCS01'+c,set:'ERGCS01'+c+' + ESHCS01'+c}[state.product];
+}
+
+function currentView(){
+  const full=state.sleeve==='Full';
+  if(state.product==='sh'){
+    return {src:'images/evosoft-sh-wide-short-800.webp',
+      alt:'Evosoft No-Gi broad shorts, model ESHCS01 in black and red — red diamond lattice across the hip, Gimakx waistband label and a red Gimakx monogram on the leg',
+      cap:'<b>'+state.shortType+'</b> · '+state.slit+' side slits · Evosoft Shorts · ESHCS01'};
+  }
+  const set=state.product==='set',what=set?'Evosoft Set':'Evosoft Rash Guard';
+  if(full)return {src:LONG_SLEEVE.src,alt:LONG_SLEEVE.alt,cap:'<b>Full sleeves</b> · shown on client set ERGCS04'};
+  return set
+    ?{src:'images/evosoft-set-short-red-800.webp',alt:'Evosoft No-Gi set, models ERGCS01 and ESHCS01 in black and red — short-sleeve rash guard and matching shorts with the red diamond lattice',cap:'<b>Short sleeves</b> · '+what+' · ERGCS01 / ESHCS01'}
+    :{src:'images/ERG01RED-800.webp',alt:'Evosoft custom BJJ rash guard, model ERGCS01 in black and red — front view with a red Gimakx monogram on the chest, back view with the full Gimakx wordmark across the shoulders',cap:'<b>Short sleeves</b> · '+what+' · ERGCS01'};
+}
+
+function summary(){
+  const p=[PRODUCT_LABEL[state.product],state.gender];
+  if(has('rg')){
+    p.push(state.sleeve+' sleeves',state.fit);
+    p.push(state.siliconeGripper?'Silicone gripper':'No silicone gripper');
+  }
+  if(has('sh'))p.push(state.shortType,state.slit==='None'?'No side slits':'Standard side slits');
+  return p.join(' · ');
+}
+
+function loadSizes(){
+  const wrap=document.getElementById('sizeOpts');
+  wrap.innerHTML='';
+  SIZES[state.gender].forEach(s=>{
+    const b=document.createElement('button');
+    b.type='button';b.className='size-opt';b.textContent=s;
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('#sizeOpts .size-opt').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      state.size=s;
+      render();
+    });
+    wrap.appendChild(b);
+  });
+  state.size='';
+}
+
+function render(){
+  document.querySelectorAll('#evoConfig [data-for]').forEach(g=>{g.hidden=!g.dataset.for.split(' ').includes(state.product);});
+  document.getElementById('selProduct').textContent=PRODUCT_LABEL[state.product];
+  document.getElementById('selGender').textContent=state.gender;
+  document.getElementById('selSleeve').textContent=state.sleeve;
+  document.getElementById('selFit').textContent=state.fit;
+  document.getElementById('siliconeGripper').checked=state.siliconeGripper;
+  document.getElementById('selShortType').textContent=state.shortType;
+  document.getElementById('selSlit').textContent=state.slit;
+  document.getElementById('selSize').textContent=state.size||'— Select a size';
+  const sku=currentSku();
+  document.getElementById('selSku').textContent=sku;
+  document.getElementById('rfqSku').textContent=sku;
+  document.getElementById('rfqSummary').textContent=summary();
+  document.getElementById('rfqSize').textContent=state.size||'not selected';
+  document.getElementById('rfqHeading').textContent='Quote — Evosoft '+{rg:'Rash Guard',sh:'No-Gi Shorts',set:'No-Gi Set'}[state.product];
+  const sleeveField=document.getElementById('rfqSleeveField');
+  const sleeveSelect=document.getElementById('rfq-sleeve');
+  sleeveField.hidden=state.product==='sh';
+  if(sleeveSelect&&state.product!=='sh')sleeveSelect.value=state.sleeve+' Sleeve';
+  const v=currentView(),img=document.getElementById('galleryMain');
+  if(img.getAttribute('src')!==v.src)img.src=v.src;
+  img.alt=v.alt;
+  document.getElementById('galleryCaption').innerHTML=v.cap;
+}
+
+document.querySelectorAll('#evoConfig .config-options[data-key]').forEach(group=>{
+  group.querySelectorAll('.config-opt').forEach(b=>{
+    b.addEventListener('click',()=>{
+      group.querySelectorAll('.config-opt').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false');});
+      b.classList.add('active');b.setAttribute('aria-pressed','true');
+      state[group.dataset.key]=b.dataset.val;
+      if(group.dataset.key==='gender')loadSizes();
+      render();
+    });
+  });
+});
+
+document.getElementById('siliconeGripper').addEventListener('change',e=>{
+  state.siliconeGripper=e.target.checked;
+  render();
+});
+
+// Push the selection into the quote form's notes when the CTA is clicked
+function syncConfigToRFQ(){
+  const sel=document.getElementById('rfq-sleeve');
+  if(sel&&state.product!=='sh')sel.value=state.sleeve+' Sleeve';
+  const ta=document.getElementById('rfq-details');
+  if(ta){
+    const line='Selected: Evosoft '+summary()+' | Size: '+(state.size||'not selected')+' | SKU: '+currentSku()+'\n';
+    if(!ta.value.startsWith('Selected: '))ta.value=line+ta.value;
+    else ta.value=line+ta.value.split('\n').slice(1).join('\n');
+  }
+}
+
+loadSizes();
+render();
 </script>
 <script>
 // Build the RFQ message from the form and hand it to the channel the buyer chose.
@@ -654,6 +881,7 @@ function handleRFQ(e){
   const channel=(btn&&btn.dataset.channel)||'whatsapp';
   const pairs=[];
   form.querySelectorAll('.form-field').forEach(function(f){
+    if(f.hidden)return;   // e.g. Sleeve Type on a shorts-only quote
     const lab=f.querySelector('label'),fld=f.querySelector('input,select,textarea');
     if(!lab||!fld||!fld.value||!fld.value.trim())return;
     pairs.push(lab.textContent.replace(' *','')+': '+fld.value.trim());
