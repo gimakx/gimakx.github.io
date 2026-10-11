@@ -5,7 +5,7 @@
 - Business type: B2B manufacturer (no individual consumer orders)
 - Minimum order quantity (MOQ): 10 units per design
 - BJJ Gi fabric weights: 380 gsm (GiPro Aerotough — lightest IBJJF-legal weight), 450 gsm (GiPro Fortitude — most popular, default competition weight), 500 gsm (GiPro Monolith — heaviest, maximum durability). Note: 350 gsm is below the IBJJF's 380 gsm competition-legal minimum (2024 rule change) and is not a Gimakx product.
-- Rash guard and No-Gi shorts fabric (Evosoft): 240 gsm, 90% polyester / 10% spandex, 4-way stretch, moisture-wicking, anti-bacterial; flatlock stitched; tagless with printed size and care labels
+- Rash guard and No-Gi shorts fabric (Evosoft): 110, 140 or 240 gsm (240 gsm standard), 90% polyester / 10% spandex, 4-way stretch, moisture-wicking, anti-bacterial; flatlock stitched; tagless with printed size and care labels
 - IBJJF-approved standard cuts and fabrics (within the IBJJF 380–650 gsm legal window)
 - Sizes: A0–A4 (men), W1–W4 (women), K0–K4 (kids)
 - Colors: 12+ colors available across all three fabric weights; camouflage as special order
@@ -24,7 +24,7 @@
 ## Products
 
 - [BJJ Gi (GiPro Series)](https://www.gimakx.com/bjj-gi.html): Custom Brazilian Jiu-Jitsu Gis in 380, 450, and 500 gsm pre-shrunk pearl weave. Triple-stitched stress points, IBJJF-approved, full academy customization.
-- [Evosoft Rash Guards](https://www.gimakx.com/evosoft.html): Fully sublimated 240 gsm rash guards for No-Gi and under-Gi training. Custom academy logos, sponsors, and color themes.
+- [Evosoft Rash Guards](https://www.gimakx.com/evosoft.html): Fully sublimated rash guards in 110, 140 or 240 gsm for No-Gi and under-Gi training. Custom academy logos, sponsors, and color themes.
 - [Apparels](https://www.gimakx.com/apparels.html): Academy apparel including GiStrix T-shirts and GiFlex hoodies with custom branding.
 - [Accessories](https://www.gimakx.com/accessories.html): Custom badges, belts, Gi bags, caps, and other academy accessories.
 
