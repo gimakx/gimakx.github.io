@@ -63,7 +63,7 @@
       "@id": "https://www.gimakx.com/evosoft.html#evosoft",
       "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "15", "highPrice": "25", "offerCount": 3, "availability": "https://schema.org/InStock", "seller": { "@id": "https://www.gimakx.com/#organization" }, "url": "https://www.gimakx.com/evosoft.html#pricing" },
       "name": "Evosoft Custom BJJ Rash Guard — 240gsm",
-      "sku": "ERGCS01",
+      "sku": "ERG240CF",
       "description": "90% polyester / 10% spandex 4-way stretch sublimation custom BJJ rash guard in 110, 140 or 240gsm (240gsm standard). Flatlock stitched seams, tagless printed inner labels, moisture wicking, under-Gi and No-Gi use. MOQ 10 units, 3-4 week lead time.",
       "brand": { "@type": "Brand", "name": "Gimakx" },
       "manufacturer": { "@id": "https://www.gimakx.com/#organization" },
@@ -84,7 +84,7 @@
       "@type": "Product",
       "@id": "https://www.gimakx.com/evosoft.html#nogi-shorts",
       "name": "Evosoft Custom No-Gi Shorts — 240gsm",
-      "sku": "ESHCS01",
+      "sku": "ESH240BS",
       "description": "90% polyester / 10% spandex 4-way stretch custom sublimated No-Gi grappling shorts in 110, 140 or 240gsm (240gsm standard), cut from the same fabric as the Evosoft rash guard. Flatlock stitched seams, tagless printed inner labels, hybrid closure waistband, unlined or compression-lined. MOQ 10 units per design.",
       "brand": { "@type": "Brand", "name": "Gimakx" },
       "manufacturer": { "@id": "https://www.gimakx.com/#organization" },
@@ -97,6 +97,7 @@
         { "@type": "PropertyValue", "name": "Seam Construction", "value": "Flatlock stitch" },
         { "@type": "PropertyValue", "name": "Labelling", "value": "Tagless — printed size and care label" },
         { "@type": "PropertyValue", "name": "Waistband", "value": "Hybrid closure, customizable" },
+        { "@type": "PropertyValue", "name": "Type", "value": "Broad short, compression fit or hybrid (broad short with compression lining)" },
         { "@type": "PropertyValue", "name": "Liner", "value": "Unlined or compression-lined" },
         { "@type": "PropertyValue", "name": "Country of Origin", "value": "Sialkot, Pakistan" },
         { "@type": "PropertyValue", "name": "MOQ", "value": "10 units" }
@@ -122,7 +123,7 @@
     { "@type": "Question", "name": "What fabric are your No-Gi shorts made from?", "acceptedAnswer": { "@type": "Answer", "text": "The same fabric as the Evosoft rash guard — 90% polyester and 10% spandex in 110, 140 or 240 GSM (240 GSM as standard), with 4-way stretch, flatlock seams and tagless printed inner labels. Ordering shorts alongside rash guards in the same weight means both pieces take the same sublimated artwork and behave the same way in the wash, because they are the same cloth." } },
     { "@type": "Question", "name": "How is the No-Gi shorts waistband constructed?", "acceptedAnswer": { "@type": "Answer", "text": "Our standard build is a hybrid closure waistband. We can also customize the closure to your specification — tell us what your athletes prefer and we build the waistband to match on your order." } },
     { "@type": "Question", "name": "Are the No-Gi shorts available unlined or compression-lined?", "acceptedAnswer": { "@type": "Answer", "text": "Both are available. Unlined is the single shell, worn over the athlete's own spats or compression shorts, and is the usual choice for grappling. Compression-lined has an inner compression short built into the waistband, so the garment is complete on its own. The price difference between the two is confirmed in your written quotation." } },
-    { "@type": "Question", "name": "What do the model codes like ERGCS01 mean?", "acceptedAnswer": { "@type": "Answer", "text": "Because almost every order is a fresh custom design, we number designs rather than stock. The prefix is the garment — ERG for an Evosoft rash guard, ESH for Evosoft No-Gi shorts — CS marks it as a custom design, and the number is a running count across every design we have produced. A matched set shares one number, so ERGCS02 and ESHCS02 are the rash guard and shorts of the same design. Quote the code back to us on a repeat order and we produce from the same artwork and specification." } }
+    { "@type": "Question", "name": "What do SKU codes like ERG240CF mean?", "acceptedAnswer": { "@type": "Answer", "text": "The SKU describes how the garment is built. E is for Evosoft, RG for a rash guard or SH for shorts, then comes the fabric weight in GSM, then the cut: CF compression fit or LF loose fit on a rash guard, and BS broad short, CF compression fit or HY hybrid (a broad short with a compression lining) on shorts. So ERG240CF is a 240gsm compression-fit rash guard and ESH110CF is a pair of 110gsm compression shorts. Quote the SKU on a repeat order and we build to the same specification." } }
   ]
 }
 </script>
@@ -216,9 +217,9 @@
   </div>
   <div class="gallery">
     <div class="gallery-main">
-      <img id="galleryMain" src="images/ERG01RED-800.webp" alt="Evosoft custom BJJ rash guard, model ERGCS01 in black and red — front view with a red Gimakx monogram on the chest, back view with the full Gimakx wordmark across the shoulders" width="800" height="800" fetchpriority="high">
+      <img id="galleryMain" src="images/ERG01RED-800.webp" alt="Evosoft custom BJJ rash guard in black and red — front view with a red Gimakx monogram on the chest, back view with the full Gimakx wordmark across the shoulders" width="800" height="800" fetchpriority="high">
     </div>
-    <div class="gallery-caption" id="galleryCaption"><b>Black/Red</b> · Evosoft Rash Guard · ERGCS01</div>
+    <div class="gallery-caption" id="galleryCaption"><b>Black/Red</b> · Evosoft Rash Guard</div>
   </div>
   <div class="product-summary">
     <div class="product-badges">
@@ -234,8 +235,8 @@
       <div class="config-group">
         <div class="config-label">Product <span class="config-val" id="selProduct">Rash Guard</span></div>
         <div class="config-options" data-key="product">
-          <button type="button" class="config-opt active" data-val="rg" aria-pressed="true">Rash Guard<small>ERGCS</small></button>
-          <button type="button" class="config-opt" data-val="sh" aria-pressed="false">No-Gi Shorts<small>ESHCS</small></button>
+          <button type="button" class="config-opt active" data-val="rg" aria-pressed="true">Rash Guard<small>ERG</small></button>
+          <button type="button" class="config-opt" data-val="sh" aria-pressed="false">No-Gi Shorts<small>ESH</small></button>
           <button type="button" class="config-opt" data-val="set" aria-pressed="false">Matched Set<small>Rash guard + shorts</small></button>
         </div>
       </div>
@@ -290,14 +291,15 @@
       <div class="config-group" data-for="sh set">
         <div class="config-label">Shorts</div>
         <div class="config-build">
-          <div>
+          <div style="grid-column:1/-1">
             <div class="config-label">Type <span class="config-val" id="selShortType">Broad Short</span></div>
             <div class="config-options" data-key="shortType">
               <button type="button" class="config-opt active" data-val="Broad Short" aria-pressed="true">Broad Short</button>
-              <button type="button" class="config-opt" data-val="Broad Short with lining" aria-pressed="false">Broad Short<small>with lining</small></button>
+              <button type="button" class="config-opt" data-val="Compression Fit" aria-pressed="false">Compression Fit</button>
+              <button type="button" class="config-opt" data-val="Hybrid" aria-pressed="false">Hybrid<small>with compression lining</small></button>
             </div>
           </div>
-          <div>
+          <div id="slitGroup">
             <div class="config-label">Side Slits <span class="config-val" id="selSlit">None</span></div>
             <div class="config-options" data-key="slit">
               <button type="button" class="config-opt active" data-val="None" aria-pressed="true">None</button>
@@ -314,9 +316,9 @@
         <a href="#size-guide" class="config-sizelink">Not sure of your size? View the size guide →</a>
       </div>
 
-      <!-- SKU (design number + gender) -->
+      <!-- SKU (E + RG/SH + gsm + cut) -->
       <div class="config-group">
-        <div class="config-label">SKU <span class="config-val" id="selSku">ERGCS01M</span></div>
+        <div class="config-label">SKU <span class="config-val" id="selSku">ERG240CF</span></div>
       </div>
 
       <div class="config-cta">
@@ -374,7 +376,7 @@
   <h2 class="s-h2">The <em>Details</em></h2>
   <table class="spec-table">
     <tr><th>Product</th><td>Evosoft Custom Rash Guard</td></tr>
-    <tr><th>SKU</th><td>ERGCS01 (design shown) &middot; each new custom design gets its own number</td></tr>
+    <tr><th>SKU</th><td>ERG + GSM + fit &middot; e.g. ERG240CF (240gsm, compression fit) or ERG110LF (110gsm, loose fit)</td></tr>
     <tr><th>Fabric Weight</th><td>110, 140 or 240gsm (240gsm standard) &mdash; consistent across all units of a design</td></tr>
     <tr><th>Fabric Composition</th><td>90% polyester / 10% spandex</td></tr>
     <tr><th>Stretch</th><td>4-way stretch — stretches and recovers along both length and width</td></tr>
@@ -382,6 +384,7 @@
     <tr><th>Seams</th><td>Flatlock stitch throughout — no raised ridge against the skin</td></tr>
     <tr><th>Inner Labelling</th><td>Tagless — size and care printed inside the garment</td></tr>
     <tr><th>Sleeve Options</th><td>Short sleeve / full sleeve</td></tr>
+    <tr><th>Fit</th><td>Compression fit (CF) or loose fit (LF)</td></tr>
     <tr><th>Use Case</th><td>Under-Gi layer &amp; standalone No-Gi training</td></tr>
     <tr><th>Sizing</th><td>XS – 3XL (male &amp; female cuts) &middot; Y1 – Y4 (kids)</td></tr>
     <tr><th>Minimum Order</th><td>10 units per design</td></tr>
@@ -396,19 +399,19 @@
   <h2 class="s-h2">No-Gi <em>Shorts</em></h2>
   <p style="max-width:760px;margin-bottom:28px">Our No-Gi shorts are cut from the same <strong>90% polyester / 10% spandex</strong> 4-way stretch fabric as the Evosoft rash guard, in <strong>110, 140 or 240gsm</strong>, flatlock stitched and supplied tagless in the same way. Ordered together in the same weight, the two pieces take the same sublimated artwork, hold the same colour, and behave the same way in the wash &mdash; because they are the same cloth.</p>
   <div class="variant-panel-media" style="max-width:520px;margin:0 auto 32px">
-    <img src="images/evosoft-shorts-800.webp" alt="Evosoft No-Gi shorts, model ESHCS01 in black and red, matched to the Evosoft rash guard — red diamond lattice across the hip, Gimakx waistband label and a red Gimakx monogram on the leg" width="800" height="800" loading="lazy">
+    <img src="images/evosoft-shorts-800.webp" alt="Evosoft No-Gi shorts in black and red, matched to the Evosoft rash guard — red diamond lattice across the hip, Gimakx waistband label and a red Gimakx monogram on the leg" width="800" height="800" loading="lazy">
     <div class="vpm-badge">90/10 &middot; 4-Way</div>
   </div>
   <table class="spec-table">
     <tr><th>Product</th><td>Custom No-Gi Shorts</td></tr>
-    <tr><th>SKU</th><td>ESHCS01 (design shown) &middot; each new custom design gets its own number</td></tr>
+    <tr><th>SKU</th><td>ESH + GSM + type &middot; e.g. ESH240BS, ESH110CF or ESH240HY</td></tr>
     <tr><th>Fabric Weight</th><td>110, 140 or 240gsm (240gsm standard) &mdash; consistent across all units of a design</td></tr>
     <tr><th>Fabric Composition</th><td>90% polyester / 10% spandex &mdash; same fabric as the Evosoft rash guard</td></tr>
     <tr><th>Stretch</th><td>4-way stretch — stretches and recovers along both length and width</td></tr>
     <tr><th>Seams</th><td>Flatlock stitch throughout — no raised ridge against the skin</td></tr>
     <tr><th>Inner Labelling</th><td>Tagless — size and care printed inside the garment</td></tr>
-    <tr><th>Type</th><td>Broad short or broad short with lining</td></tr>
-    <tr><th>Side Slits</th><td>None or standard side slits</td></tr>
+    <tr><th>Type</th><td>Broad short (BS), compression fit (CF) or hybrid (HY) &mdash; a broad short with a compression lining</td></tr>
+    <tr><th>Side Slits</th><td>None or standard side slits (broad and hybrid shorts)</td></tr>
     <tr><th>Customization</th><td>Full sublimation &mdash; edge-to-edge custom artwork</td></tr>
     <tr><th>Minimum Order</th><td>10 units per design</td></tr>
     <tr><th>Lead Time</th><td>3–4 weeks (typical)</td></tr>
@@ -420,10 +423,10 @@
   <h2 class="s-h2">A Full No-Gi Set, <em>Built to Brief</em></h2>
   <p style="max-width:760px;margin-bottom:28px">Grizzly Jiu Jitsu came to us with a logo and a colourway and left with a matched No-Gi set &mdash; rash guard and shorts, three colours, the same claw artwork sublimated across both pieces. This is what an academy order looks like when the rash guard and the shorts come off the same cutting table.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
-    <div class="related-media"><img src="images/grizzly-nogi-black-800.webp" alt="Grizzly Jiu Jitsu No-Gi set, models ERGCS02 and ESHCS02 in black and white — short-sleeve rash guard and matching shorts, front view with the GRIZZLY wordmark and back view with a grizzly bear head printed across the shoulders" width="800" height="800" loading="lazy"></div>
-    <div class="related-media"><img src="images/grizzly-nogi-olive-800.webp" alt="Grizzly Jiu Jitsu No-Gi set, models ERGCS03 and ESHCS03 in olive and gold — short-sleeve rash guard and matching shorts with gold claw-mark artwork, front and back views" width="800" height="800" loading="lazy"></div>
-    <div class="related-media"><img src="images/grizzly-nogi-white-800.webp" alt="Grizzly Jiu Jitsu No-Gi set, models ERGCS04 and ESHCS04 in white and olive — long-sleeve rash guard and matching shorts, front view with the GRIZZLY JIU JITSU lockup and back view with the hexagonal G emblem" width="800" height="800" loading="lazy"></div>
-    <div class="related-media"><img src="images/grizzly-nogi-shorts-800.webp" alt="Two pairs of Grizzly Jiu Jitsu No-Gi shorts side by side, models ESHCS03 and ESHCS05 — olive with gold claw artwork and black with grey claw artwork, both with a branded hybrid closure waistband" width="800" height="800" loading="lazy"></div>
+    <div class="related-media"><img src="images/grizzly-nogi-black-800.webp" alt="Grizzly Jiu Jitsu No-Gi set in black and white — short-sleeve rash guard and matching shorts, front view with the GRIZZLY wordmark and back view with a grizzly bear head printed across the shoulders" width="800" height="800" loading="lazy"></div>
+    <div class="related-media"><img src="images/grizzly-nogi-olive-800.webp" alt="Grizzly Jiu Jitsu No-Gi set in olive and gold — short-sleeve rash guard and matching shorts with gold claw-mark artwork, front and back views" width="800" height="800" loading="lazy"></div>
+    <div class="related-media"><img src="images/grizzly-nogi-white-800.webp" alt="Grizzly Jiu Jitsu No-Gi set in white and olive — long-sleeve rash guard and matching shorts, front view with the GRIZZLY JIU JITSU lockup and back view with the hexagonal G emblem" width="800" height="800" loading="lazy"></div>
+    <div class="related-media"><img src="images/grizzly-nogi-shorts-800.webp" alt="Two pairs of Grizzly Jiu Jitsu No-Gi shorts side by side — olive with gold claw artwork and black with grey claw artwork, both with a branded hybrid closure waistband" width="800" height="800" loading="lazy"></div>
   </div>
 
   <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
@@ -646,8 +649,8 @@
     </div>
 
     <div class="faq-item">
-      <h3 class="faq-q">What do the model codes like ERGCS01 mean?</h3>
-      <p class="faq-a">Because almost every order is a fresh custom design, we number designs rather than stock. The prefix is the garment — ERG for an Evosoft rash guard, ESH for Evosoft No-Gi shorts — CS marks it as a custom design, and the number is a running count across every design we have produced. A matched set shares one number, so ERGCS02 and ESHCS02 are the rash guard and shorts of the same design. Quote the code back to us on a repeat order and we produce from the same artwork and specification.</p>
+      <h3 class="faq-q">What do SKU codes like ERG240CF mean?</h3>
+      <p class="faq-a">The SKU describes how the garment is built. E is for Evosoft, RG for a rash guard or SH for shorts, then comes the fabric weight in GSM, then the cut: CF compression fit or LF loose fit on a rash guard, and BS broad short, CF compression fit or HY hybrid (a broad short with a compression lining) on shorts. So ERG240CF is a 240gsm compression-fit rash guard and ESH110CF is a pair of 110gsm compression shorts. Quote the SKU on a repeat order and we build to the same specification.</p>
     </div>
 
   </div>
@@ -675,7 +678,7 @@
   </div>
   <div class="rfq-right">
     <h3 id="rfqHeading">Quote — Evosoft Rash Guard</h3>
-    <div class="rfq-config" id="rfqConfig">Your selection: <b id="rfqSummary">Rash Guard · Male · Short sleeves · Compression fit · No silicone gripper</b> · Size <b id="rfqSize">not selected</b> · SKU <b id="rfqSku">ERGCS01M</b></div>
+    <div class="rfq-config" id="rfqConfig">Your selection: <b id="rfqSummary">Rash Guard · Male · Short sleeves · Compression fit · No silicone gripper</b> · Size <b id="rfqSize">not selected</b> · SKU <b id="rfqSku">ERG240CF</b></div>
     <form class="rfq-form-body" onsubmit="handleRFQ(event)">
       <div class="form-grid">
         <div class="form-field"><label for="rfq-company">Academy / Company Name *</label><input id="rfq-company" type="text" name="company" placeholder="e.g. Checkmat London" required></div>
@@ -767,33 +770,36 @@ function showSizeTab(id,btn){
 }
 
 // ── Evosoft Configurator ──
-// Photos: design 01 (ERGCS01 / ESHCS01) in black/red, the broad shorts, and the matched set.
+// Photos: the black/red design as a rash guard, broad shorts and the matched set.
 // Full sleeves use the available client sample photo until the design-01 full-sleeve photo exists.
 const PRODUCT_LABEL={rg:'Rash Guard',sh:'No-Gi Shorts',set:'Matched Set'};
 const SIZES={Male:['XS','S','M','L','XL','2XL','3XL'],Female:['XS','S','M','L','XL','2XL','3XL'],Kids:['Y1','Y2','Y3','Y4']};
-const GENDER_CODE={Male:'M',Female:'F',Kids:'K'};
-const LONG_SLEEVE={src:'images/grizzly-nogi-white-800.webp',alt:'Grizzly Jiu Jitsu No-Gi set, models ERGCS04 and ESHCS04 in white and olive — long-sleeve rash guard and matching shorts, front view with the GRIZZLY JIU JITSU lockup and back view with the hexagonal G emblem'};
+// SKU = E (Evosoft) + RG/SH + gsm + cut: CF/LF on a rash guard; BS/CF/HY on shorts (hybrid = broad short with compression lining).
+const FIT_CODE={'Compression fit':'CF','Loose fit':'LF'};
+const SHORT_CODE={'Broad Short':'BS','Compression Fit':'CF','Hybrid':'HY'};
+const LONG_SLEEVE={src:'images/grizzly-nogi-white-800.webp',alt:'Grizzly Jiu Jitsu No-Gi set in white and olive — long-sleeve rash guard and matching shorts, front view with the GRIZZLY JIU JITSU lockup and back view with the hexagonal G emblem'};
 const state={product:'rg',weight:'240gsm',gender:'Male',sleeve:'Short',fit:'Compression fit',siliconeGripper:false,shortType:'Broad Short',slit:'None',size:''};
 
 function has(p){return state.product===p||state.product==='set';}   // rash guard or shorts part of the selection
+function hasSlits(){return state.shortType!=='Compression Fit';}      // compression shorts are cut without side slits
 
 function currentSku(){
-  const c=GENDER_CODE[state.gender];
-  return {rg:'ERGCS01'+c,sh:'ESHCS01'+c,set:'ERGCS01'+c+' + ESHCS01'+c}[state.product];
+  const g=state.weight.replace('gsm',''),rg='ERG'+g+FIT_CODE[state.fit],sh='ESH'+g+SHORT_CODE[state.shortType];
+  return {rg:rg,sh:sh,set:rg+' + '+sh}[state.product];
 }
 
 function currentView(){
   const full=state.sleeve==='Full';
   if(state.product==='sh'){
     return {src:'images/evosoft-sh-wide-short-800.webp',
-      alt:'Evosoft No-Gi broad shorts, model ESHCS01 in black and red — red diamond lattice across the hip, Gimakx waistband label and a red Gimakx monogram on the leg',
-      cap:'<b>'+state.shortType+'</b> · '+state.slit+' side slits · Evosoft Shorts · ESHCS01'};
+      alt:'Evosoft No-Gi broad shorts in black and red — red diamond lattice across the hip, Gimakx waistband label and a red Gimakx monogram on the leg',
+      cap:'<b>'+state.shortType+'</b>'+(hasSlits()?' · '+state.slit+' side slits':'')+' · Evosoft Shorts'};
   }
   const set=state.product==='set',what=set?'Evosoft Set':'Evosoft Rash Guard';
-  if(full)return {src:LONG_SLEEVE.src,alt:LONG_SLEEVE.alt,cap:'<b>Full sleeves</b> · shown on client set ERGCS04'};
+  if(full)return {src:LONG_SLEEVE.src,alt:LONG_SLEEVE.alt,cap:'<b>Full sleeves</b> · shown on a client set'};
   return set
-    ?{src:'images/evosoft-set-short-red-800.webp',alt:'Evosoft No-Gi set, models ERGCS01 and ESHCS01 in black and red — short-sleeve rash guard and matching shorts with the red diamond lattice',cap:'<b>Short sleeves</b> · '+what+' · ERGCS01 / ESHCS01'}
-    :{src:'images/ERG01RED-800.webp',alt:'Evosoft custom BJJ rash guard, model ERGCS01 in black and red — front view with a red Gimakx monogram on the chest, back view with the full Gimakx wordmark across the shoulders',cap:'<b>Short sleeves</b> · '+what+' · ERGCS01'};
+    ?{src:'images/evosoft-set-short-red-800.webp',alt:'Evosoft No-Gi set in black and red — short-sleeve rash guard and matching shorts with the red diamond lattice',cap:'<b>Short sleeves</b> · '+what}
+    :{src:'images/ERG01RED-800.webp',alt:'Evosoft custom BJJ rash guard in black and red — front view with a red Gimakx monogram on the chest, back view with the full Gimakx wordmark across the shoulders',cap:'<b>Short sleeves</b> · '+what};
 }
 
 function summary(){
@@ -802,7 +808,10 @@ function summary(){
     p.push(state.sleeve+' sleeves',state.fit);
     p.push(state.siliconeGripper?'Silicone gripper':'No silicone gripper');
   }
-  if(has('sh'))p.push(state.shortType,state.slit==='None'?'No side slits':'Standard side slits');
+  if(has('sh')){
+    p.push(state.shortType);
+    if(hasSlits())p.push(state.slit==='None'?'No side slits':'Standard side slits');
+  }
   return p.join(' · ');
 }
 
@@ -833,6 +842,7 @@ function render(){
   document.getElementById('siliconeGripper').checked=state.siliconeGripper;
   document.getElementById('selShortType').textContent=state.shortType;
   document.getElementById('selSlit').textContent=state.slit;
+  document.getElementById('slitGroup').hidden=!hasSlits();
   document.getElementById('selSize').textContent=state.size||'— Select a size';
   const sku=currentSku();
   document.getElementById('selSku').textContent=sku;

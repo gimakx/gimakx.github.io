@@ -7,7 +7,7 @@
 - BJJ Gi fabric weights: 380 gsm (GiPro Aerotough — lightest IBJJF-legal weight), 450 gsm (GiPro Fortitude — most popular, default competition weight), 500 gsm (GiPro Monolith — heaviest, maximum durability). Note: 350 gsm is below the IBJJF's 380 gsm competition-legal minimum (2024 rule change) and is not a Gimakx product.
 - Rash guard and No-Gi shorts fabric (Evosoft): 110, 140 or 240 gsm (240 gsm standard), 90% polyester / 10% spandex, 4-way stretch, moisture-wicking, anti-bacterial; flatlock stitched; tagless with printed size and care labels
 - IBJJF-approved standard cuts and fabrics (within the IBJJF 380–650 gsm legal window)
-- Sizes: A0–A4 (men), W1–W4 (women), K0–K4 (kids)
+- Sizes: A0–A4 (men), F1–F4 (women), M0–M4 (kids)
 - Colors: 12+ colors available across all three fabric weights; camouflage as special order
 - Customization: embroidery, woven patches, sublimation, custom neck labels, branded packaging, private labeling
 - Lead times: GiPro Custom Series 3–4 weeks; GiPro Standard Series ships within a few days
@@ -32,14 +32,14 @@
 
 - [BJJ Gi Fabric Weights: 380 vs 450 vs 500 GSM](https://www.gimakx.com/guides/bjj-gi-fabric-weights.html): Manufacturer's guide explaining what GSM means and comparing 380 gsm (Aerotough, lightweight — kids/hot climates/weight-cutters), 450 gsm (Fortitude, mid-weight — where adult beginners start, and the most popular default competition weight), and 500 gsm (Monolith, heavyweight — instructors/masters, grip resistance, max durability). Covers feel, durability, climate, care, IBJJF legality (all three sit inside the IBJJF 380–650 gsm window), and why 350 gsm is not competition-legal.
 - [Start a BJJ Academy Risk-Free: The Gimakx Partnership Program](https://www.gimakx.com/guides/bjj-academy-partnership-program.html): How new BJJ academy owners partner with Gimakx risk-free — first order of just 10 custom Gis (mixed sizes allowed), a free personalised mockup with the academy's logo and colours, no contracts or reorder obligations, and a 30-day Local Promotion Program (up to $50 of targeted local ads behind the academy's video content, aimed at people searching for BJJ lessons nearby). Includes the 4-step onboarding process and a comparison with typical bulk vendors.
-- [BJJ Gi Size Chart: A0–A4, W1–W4, K0–K4](https://www.gimakx.com/guides/bjj-gi-size-chart.html): Full height-by-weight size charts for men's (A0–A4), women's (W1–W4) and kids' (K0–K4) BJJ Gis. Covers how to read the chart, the quick weight ranges per size (A2 is the most ordered adult size at 156–225 lbs), what to do when you fall between two sizes, 1–3% shrinkage on pre-shrunk pearl weave, and ordering mixed sizes within the 10-unit MOQ.
+- [BJJ Gi Size Chart: A0–A4, F1–F4, M0–M4](https://www.gimakx.com/guides/bjj-gi-size-chart.html): Full height-by-weight size charts for men's (A0–A4), women's (F1–F4) and kids' (M0–M4) BJJ Gis. Covers how to read the chart, the quick weight ranges per size (A2 is the most ordered adult size at 156–225 lbs), what to do when you fall between two sizes, 1–3% shrinkage on pre-shrunk pearl weave, and ordering mixed sizes within the 10-unit MOQ.
 - [Guides Hub](https://www.gimakx.com/guides/): Index of Gimakx BJJ Gi guides on fabric, sizing, and buying for academies.
 
 ## Main Pages
 
 - [Home](https://www.gimakx.com/): Overview of Gimakx products and B2B manufacturing capabilities.
 - [About Us](https://www.gimakx.com/about.html): Gimakx company story — in-house factory in Sialkot, Pakistan, making BJJ uniforms for 3+ years, backed by 20+ years of combined team experience across garment manufacturing.
-- [Size Guide](https://www.gimakx.com/bjj-gi.html#size-guide): BJJ Gi sizing charts for A0–A4, W1–W4, and K0–K4 by height and weight.
+- [Size Guide](https://www.gimakx.com/bjj-gi.html#size-guide): BJJ Gi sizing charts for A0–A4, F1–F4, and M0–M4 by height and weight.
 - [Request a Quote](https://www.gimakx.com/#rfq): B2B quote request for custom orders.
 
 ## Optional
