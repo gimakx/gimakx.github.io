@@ -159,7 +159,7 @@
 .config-check input{appearance:none;width:22px;height:22px;border:1px solid rgba(255,255,255,0.18);border-radius:3px;background:rgba(255,255,255,0.04);display:grid;place-items:center;cursor:pointer}
 .config-check input:checked{background:var(--gold);border-color:var(--gold)}
 .config-check input:checked::after{content:'✓';color:var(--navy);font-size:16px;font-weight:800;line-height:1}
-.config-sizes{display:flex;gap:8px;flex-wrap:wrap}
+.config-sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .size-opt{min-width:50px;height:46px;padding:0 10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);border-radius:3px;cursor:pointer;font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:700;font-size:16px;transition:all 0.18s}
 .size-opt:hover{border-color:rgba(200,146,42,0.45)}
 .size-opt.active{background:var(--gold);border-color:var(--gold);color:var(--navy)}
@@ -386,7 +386,7 @@
     <tr><th>Sleeve Options</th><td>Short sleeve / full sleeve</td></tr>
     <tr><th>Fit</th><td>Compression fit (CF) or loose fit (LF)</td></tr>
     <tr><th>Use Case</th><td>Under-Gi layer &amp; standalone No-Gi training</td></tr>
-    <tr><th>Sizing</th><td>XS – 3XL (male &amp; female cuts) &middot; Y1 – Y4 (kids)</td></tr>
+    <tr><th>Sizing</th><td>XS – 4XL (male &amp; female cuts) &middot; Y1 – Y4 (kids)</td></tr>
     <tr><th>Minimum Order</th><td>10 units per design</td></tr>
     <tr><th>Lead Time</th><td>3–4 weeks (typical)</td></tr>
     <tr><th>Country of Origin</th><td>Manufactured in Sialkot, Pakistan</td></tr>
@@ -458,9 +458,9 @@
 <section class="size-section s-wrap" id="size-guide" style="padding-top:0">
   <div class="s-eye">Sizing</div>
   <h2 class="s-h2">Find Your <em>Perfect Fit</em></h2>
-  <p class="size-intro">Evosoft rash guards run <strong>XS–3XL</strong> for adults and <strong>Y1–Y4</strong> for kids. Find your height across the top and your weight down the side — the cell where they meet is your size.</p>
+  <p class="size-intro">Evosoft rash guards run <strong>XS–4XL</strong> for adults and <strong>Y1–Y4</strong> for kids. Find your height across the top and your weight down the side — the cell where they meet is your size.</p>
   <div class="size-tabs" role="tablist">
-    <button class="size-tab active" onclick="showSizeTab('rashguard',this)" role="tab" aria-selected="true" aria-controls="tab-rashguard">Rash Guard (XS–3XL)</button>
+    <button class="size-tab active" onclick="showSizeTab('rashguard',this)" role="tab" aria-selected="true" aria-controls="tab-rashguard">Rash Guard (XS–4XL)</button>
     <button class="size-tab" onclick="showSizeTab('kids',this)" role="tab" aria-selected="false" aria-controls="tab-kids">Kids (Y1–Y4)</button>
     <button class="size-tab" onclick="showSizeTab('shorts',this)" role="tab" aria-selected="false" aria-controls="tab-shorts">Shorts (Waist)</button>
   </div>
@@ -487,6 +487,8 @@
           <tr><td>246 – 255<br><span class="td-sub">112 – 116</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="rg-3xl">3XL</td><td class="rg-3xl">3XL</td><td class="rg-3xl">3XL</td><td class="rg-3xl">3XL</td><td class="rg-3xl">3XL</td></tr>
           <tr><td>256 – 265<br><span class="td-sub">116 – 120</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="rg-3xl">3XL</td><td class="rg-3xl">3XL</td><td class="rg-3xl">3XL</td></tr>
           <tr><td>266 – 275<br><span class="td-sub">121 – 125</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="rg-3xl">3XL</td><td class="rg-3xl">3XL</td></tr>
+          <tr><td>276 – 285<br><span class="td-sub">125 – 129</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="rg-4xl">4XL</td><td class="rg-4xl">4XL</td></tr>
+          <tr><td>286 – 295<br><span class="td-sub">130 – 134</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="rg-4xl">4XL</td><td class="rg-4xl">4XL</td></tr>
         </tbody>
       </table>
     </div>
@@ -545,6 +547,7 @@
           <tr><td class="rg-xl">XL</td><td>35" – 37"</td><td>89 – 94</td></tr>
           <tr><td class="rg-2xl">2XL</td><td>37" – 39"</td><td>94 – 99</td></tr>
           <tr><td class="rg-3xl">3XL</td><td>39" – 41"</td><td>99 – 104</td></tr>
+          <tr><td class="rg-4xl">4XL</td><td>41" – 43"</td><td>104 – 109</td></tr>
         </tbody>
       </table>
     </div>
@@ -773,7 +776,7 @@ function showSizeTab(id,btn){
 // Photos: the black/red design as a rash guard, broad shorts and the matched set.
 // Full sleeves use the available client sample photo until the design-01 full-sleeve photo exists.
 const PRODUCT_LABEL={rg:'Rash Guard',sh:'No-Gi Shorts',set:'Matched Set'};
-const SIZES={Male:['XS','S','M','L','XL','2XL','3XL'],Female:['XS','S','M','L','XL','2XL','3XL'],Kids:['Y1','Y2','Y3','Y4']};
+const SIZES={Male:['XS','S','M','L','XL','2XL','3XL','4XL'],Female:['XS','S','M','L','XL','2XL','3XL','4XL'],Kids:['Y1','Y2','Y3','Y4']};
 // SKU = E (Evosoft) + RG/SH + gsm + cut: CF/LF on a rash guard; BS/CF/HY on shorts (hybrid = broad short with compression lining).
 const FIT_CODE={'Compression fit':'CF','Loose fit':'LF'};
 const SHORT_CODE={'Broad Short':'BS','Compression Fit':'CF','Hybrid':'HY'};
