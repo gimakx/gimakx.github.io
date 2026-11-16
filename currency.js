@@ -36,6 +36,8 @@
     // Whole units read better on a price list; keep cents where rounding would
     // distort a low-value line (a $2 belt must not become £1).
     var s = v >= 10 ? String(Math.round(v)) : v.toFixed(2);
+    // A USD price authored with cents ($24.99) is the price list: show it as written, never rounded.
+    if (cur === 'USD' && usd % 1 !== 0) s = usd.toFixed(2);
     return SYMBOL[cur] + s;
   }
 
