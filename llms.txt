@@ -1,6 +1,6 @@
 # Gimakx
 
-> Gimakx is a B2B manufacturer of custom Brazilian Jiu-Jitsu (BJJ) Gis, rash guards, and academy apparel. We handle full in-house production — from cutting to final stitching and quality checks — using a premium pre-shrunk 60% cotton / 40% polyester pearl weave and a 100% natural cotton option that is not pre-shrunk, in three fabric weights (380, 450, and 500 gsm), with 270 gsm ripstop cotton trousers. We serve academies, gyms, retailers, and apparel brands worldwide with custom branding, private labeling, and low minimum order quantities (10 units per design).
+> Gimakx is a B2B manufacturer of custom Brazilian Jiu-Jitsu (BJJ) Gis, rash guards, and academy apparel. We handle full in-house production — from cutting to final stitching and quality checks — using a premium pre-shrunk 60% cotton / 40% polyester pearl weave and a pre-shrunk 100% natural cotton option, in three fabric weights (380, 450, and 500 gsm), with 270 gsm ripstop cotton trousers. We serve academies, gyms, retailers, and apparel brands worldwide with custom branding, private labeling, and low minimum order quantities (10 units per design).
 
 - Business type: B2B manufacturer (no individual consumer orders)
 - Minimum order quantity (MOQ): 10 units per design
